@@ -167,12 +167,6 @@
                             @endforeach
                             <a href="forum/id/10542/cid/11044/index.html"><span>食品类</span></a>
                             <a href="forum/id/10542/cid/11045/index.html"><span>母婴类</span></a>
-                            <a href="forum/id/10542/cid/11431/index.html"><span>泛家居</span></a>
-                            <a href="forum/id/10542/cid/11047/index.html"><span>个护/彩妆</span></a>
-                            <a href="forum/id/10542/cid/11043/index.html"><span>服饰箱包</span></a>
-                            <a href="forum/id/10542/cid/10550/index.html"><span>居家日用</span></a>
-                            <a href="forum/id/10542/cid/29965/index.html"><span>IP演绎</span></a>
-                            <a href="forum/id/10542/cid/11046/index.html"><span>平面包装</span></a>
                         </div>
                     </div>
                     <div class="container_content">
