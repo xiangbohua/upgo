@@ -348,99 +348,99 @@
                     <div class="clear"></div>
                 </div>
             </div><!--mlist-->
-            <div class="mlist news module" style=" background-color:#F9F9F9;">
-                <div class="bgmask"></div>
-                <div class="module_container">
-                    <div class="container_hc">
-                        <div class="container_header wow">
-                            <p class="title">OUR NEWS</p>
-                        </div>
-                        <div class="container_category wow one hide">
-                            <a href="forum/id/10552/index.html" class="active"><span>全部</span></a>
-                        </div>
-                    </div>
-                    <div class="container_content">
-                        <div class="content_wrapper">
-                            <ul class="content_list row gutter">
-                                <li id="item_block_0" class="item_block col-33 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334174/index.html" class="item_img" target="_blank"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/16536360313.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/16536360313.jpg"/>
-                                            <div class="item_img_mask"></div>
-                                        </a>
-                                        <div class="item_wrapper">
-                                            <a class="title ellipsis" href="forum/post/334174/index.html"
-                                               target="_blank">用10000字讲透新锐品牌自有IP塑造方法论【汤臣杰逊品牌研究院】</a>
-                                            <div class="line">
-                                                <div></div>
-                                            </div>
-                                            <div class="description">
-                                                <p>自有IP——新锐品牌的忠实伴侣。</p>
-                                            </div>
-                                        </div>
-                                        <div class="item_date">
-                                            <p class="year">2022</p>
-                                            <p class="day">05-27</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li id="item_block_1" class="item_block col-33 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334173/index.html" class="item_img" target="_blank"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/1653557687114.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/1653557687114.jpg"/>
-                                            <div class="item_img_mask"></div>
-                                        </a>
-                                        <div class="item_wrapper">
-                                            <a class="title ellipsis" href="forum/post/334173/index.html"
-                                               target="_blank">好麦多|两年销量破十亿，麦片品牌凭什么？【汤臣杰逊品牌研究院】</a>
-                                            <div class="line">
-                                                <div></div>
-                                            </div>
-                                            <div class="description">
-                                                <p>强产品力造就长红麦片品牌。</p>
-                                            </div>
-                                        </div>
-                                        <div class="item_date">
-                                            <p class="year">2022</p>
-                                            <p class="day">05-26</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li id="item_block_2" class="item_block col-33 wow" style="animation-delay:.2s">
-                                    <div class="content">
-                                        <a href="forum/post/334169/index.html" class="item_img" target="_blank"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/1652778539770.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/1652778539770.jpg"/>
-                                            <div class="item_img_mask"></div>
-                                        </a>
-                                        <div class="item_wrapper">
-                                            <a class="title ellipsis" href="forum/post/334169/index.html"
-                                               target="_blank">躺岛|从情绪切入圈粉新世代年轻人【汤臣杰逊品牌研究院】</a>
-                                            <div class="line">
-                                                <div></div>
-                                            </div>
-                                            <div class="description">
-                                                <p>好玩有趣的睡眠产品。</p>
-                                            </div>
-                                        </div>
-                                        <div class="item_date">
-                                            <p class="year">2022</p>
-                                            <p class="day">05-17</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <a href="forum/id/10552/index.html" class="more hide wow"
-                               style="animation-delay:.5s">查看更多</a>
-                        </div><!--wrapper-->
-                        <div class="clear"></div>
-                        <a href="forum/id/10552/index.html" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div><!--mlist-->
+{{--            <div class="mlist news module" style=" background-color:#F9F9F9;">--}}
+{{--                <div class="bgmask"></div>--}}
+{{--                <div class="module_container">--}}
+{{--                    <div class="container_hc">--}}
+{{--                        <div class="container_header wow">--}}
+{{--                            <p class="title">OUR NEWS</p>--}}
+{{--                        </div>--}}
+{{--                        <div class="container_category wow one hide">--}}
+{{--                            <a href="forum/id/10552/index.html" class="active"><span>全部</span></a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="container_content">--}}
+{{--                        <div class="content_wrapper">--}}
+{{--                            <ul class="content_list row gutter">--}}
+{{--                                <li id="item_block_0" class="item_block col-33 wow" style="animation-delay:.0s">--}}
+{{--                                    <div class="content">--}}
+{{--                                        <a href="forum/post/334174/index.html" class="item_img" target="_blank"--}}
+{{--                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/16536360313.jpg)">--}}
+{{--                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/16536360313.jpg"/>--}}
+{{--                                            <div class="item_img_mask"></div>--}}
+{{--                                        </a>--}}
+{{--                                        <div class="item_wrapper">--}}
+{{--                                            <a class="title ellipsis" href="forum/post/334174/index.html"--}}
+{{--                                               target="_blank">用10000字讲透新锐品牌自有IP塑造方法论【汤臣杰逊品牌研究院】</a>--}}
+{{--                                            <div class="line">--}}
+{{--                                                <div></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="description">--}}
+{{--                                                <p>自有IP——新锐品牌的忠实伴侣。</p>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="item_date">--}}
+{{--                                            <p class="year">2022</p>--}}
+{{--                                            <p class="day">05-27</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                                <li id="item_block_1" class="item_block col-33 wow" style="animation-delay:.1s">--}}
+{{--                                    <div class="content">--}}
+{{--                                        <a href="forum/post/334173/index.html" class="item_img" target="_blank"--}}
+{{--                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/1653557687114.jpg)">--}}
+{{--                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/1653557687114.jpg"/>--}}
+{{--                                            <div class="item_img_mask"></div>--}}
+{{--                                        </a>--}}
+{{--                                        <div class="item_wrapper">--}}
+{{--                                            <a class="title ellipsis" href="forum/post/334173/index.html"--}}
+{{--                                               target="_blank">好麦多|两年销量破十亿，麦片品牌凭什么？【汤臣杰逊品牌研究院】</a>--}}
+{{--                                            <div class="line">--}}
+{{--                                                <div></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="description">--}}
+{{--                                                <p>强产品力造就长红麦片品牌。</p>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="item_date">--}}
+{{--                                            <p class="year">2022</p>--}}
+{{--                                            <p class="day">05-26</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                                <li id="item_block_2" class="item_block col-33 wow" style="animation-delay:.2s">--}}
+{{--                                    <div class="content">--}}
+{{--                                        <a href="forum/post/334169/index.html" class="item_img" target="_blank"--}}
+{{--                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/1652778539770.jpg)">--}}
+{{--                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/1652778539770.jpg"/>--}}
+{{--                                            <div class="item_img_mask"></div>--}}
+{{--                                        </a>--}}
+{{--                                        <div class="item_wrapper">--}}
+{{--                                            <a class="title ellipsis" href="forum/post/334169/index.html"--}}
+{{--                                               target="_blank">躺岛|从情绪切入圈粉新世代年轻人【汤臣杰逊品牌研究院】</a>--}}
+{{--                                            <div class="line">--}}
+{{--                                                <div></div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="description">--}}
+{{--                                                <p>好玩有趣的睡眠产品。</p>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="item_date">--}}
+{{--                                            <p class="year">2022</p>--}}
+{{--                                            <p class="day">05-17</p>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                            <a href="forum/id/10552/index.html" class="more hide wow"--}}
+{{--                               style="animation-delay:.5s">查看更多</a>--}}
+{{--                        </div><!--wrapper-->--}}
+{{--                        <div class="clear"></div>--}}
+{{--                        <a href="forum/id/10552/index.html" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>--}}
+{{--                    </div>--}}
+{{--                    <div class="clear"></div>--}}
+{{--                </div>--}}
+{{--            </div><!--mlist-->--}}
             <div class="mlist imagelink module" style=" background-color:#FFFFFF;">
                 <div class="bgmask"></div>
                 <div class="module_container">
