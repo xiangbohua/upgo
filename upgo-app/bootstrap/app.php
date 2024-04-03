@@ -15,6 +15,9 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+// 引入全局使用的自定义函数
+require_once __DIR__ . '/../app/Helpers.php';
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
