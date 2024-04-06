@@ -1,613 +1,98 @@
-@include('common.head', ['page_title'=>'首页'])
-<body><!--wrapper 整体宽度 container-->
+@include('common.head', ['page_title'=>'CASE'])
+<body class="child"><!--wrapper 整体宽度 container-->
 <div id="siteWrapper">
     @include('common.navi')
     <div id="sitecontent">
         <!--page-->
-        <div id="indexPage">
-            <!--slider-->
-            <div id="topSlider" class="mslider module">
-                <div class="module_container wide">
-                    <ul class="content_list" data-slider-height="0" data-slider-auto="1" data-slider-mode="0" data-slider-pause="4" data-slider-ease="ease-out" data-slider-speed="0.5" style="height:1000px">
-                        @foreach ($homePageImage as $pageUrl)
-                            <li>
-                                <div class="item_bg image" data-thumb="" style="background-image:url('{{$pageUrl}}')">
-                                    <img src="{{$pageUrl}}"/>
-                                </div>
-                                <div class="wrapper">
-                                    <div class="description mc">
-                                        <p class="title ellipsis"></p>
-                                        <p class="subtitle"></p>
-                                    </div>
-                                </div>
-                            </li>
-                        @endforeach
-
-                        <li class="active">
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689821833435.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1690276074816.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689821881534.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1690276160916.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689817279461.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689817561288.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                            <a href="forum/post/334267/index.html" class="full" target="_blank"></a></a>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689820604990.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/168982060911.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                            <a href="forum/post/334222/index.html" class="full" target="_blank"></a></a>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689820826673.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689820830303.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                            <a href="forum/post/334215/index.html" class="full" target="_blank"></a></a>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689821177563.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689821180856.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                            <a href="forum/post/334145/index.html" class="full" target="_blank"></a></a>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689821772784.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689821776729.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                            <a href="forum/post/334261/index.html" class="full" target="_blank"></a></a>
-                        </li>
-                    </ul>
-                    <div class="sliderArrow fa fa-angle-down"></div>
-                </div>
+        <div class="npagePage">
+            <div id="banner">
+                <img src="{{$bannerImage}}">
             </div>
-            <div class="mcounter module" style=" background-color:#FFFFFF;">
-                <div class="bgmask"></div>
-                <div class="module_container wide">
-                    <div class="container_content">
-                        <ul class="content_list row">
-                            <li class="col-25">
-                                <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span
-                                                class="unit">年</span></p>
-                                    <p class="title">3年间</p>
-                                </div>
-                            </li>
-                            <li class="col-25">
-                                <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="23">23</span><span
-                                                class="unit">+</span></p>
-                                    <p class="title">助23个品牌</p>
-                                </div>
-                            </li>
-                            <li class="col-25">
-                                <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span
-                                                class="unit"></span></p>
-                                    <p class="title">占据类目前3</p>
-                                </div>
-                            </li>
-                            <li class="col-25">
-                                <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="126">126</span><span
-                                                class="unit">亿</span></p>
-                                    <p class="title">提升126亿销售</p>
-                                </div>
-                            </li>
-                        </ul>
+            <div class="content">
+                <div class="mlist project module" style="">
+                    <div class="bgmask"></div>
+                    <div class="module_container wide">
+                        <div class="container_hc">
+                            <div class="container_header wow animated" style="visibility: visible;">
+                                <p class="title">CASE</p>
+                            </div>
+                            <div class="container_category wow animated" style="visibility: visible;">
+                                <a href="{{hCategoryPage(0)}}"><span>全部</span></a>
+                                @foreach ($homePageInfo->categoryList as $cateInfo)
+                                    <a href="{{hCategoryPage($cateInfo->categoryId)}}"><span>{{$cateInfo->cateName}}</span></a>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="container_content">
+                            <div class="content_wrapper ">
+                                <ul class="content_list row gutter">
+                                    <li id="item_block_0" class="item_block col-25 wow" style="animation-delay: 0s; visibility: visible; animation-name: fadeInUp;">
+                                        <div class="content">
+                                            <a href="//www.toonsoon.com.cn/forum/post/334290/" target="_blank">
+                                                <div class="item_img" style="background-image:url(//resources.jsmo.xin/templates/upload/13313/202307/1689826305599.jpg)">
+                                                    <img src="//resources.jsmo.xin/templates/upload/13313/202307/1689826305599.jpg">
+                                                    <div class="item_img_mask"></div>
+                                                    <div class="item_icon">
+                                                        <div class="PostImage">
+                                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                                            <div class="item_icon_bg"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="item_wrapper">
+                                                    <p class="title ellipsis" target="_blank">汤臣杰逊 X 智库｜品牌超级体系视觉</p>
+                                                    <p class="subtitle ellipsis"></p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    @foreach($caseList as $oneCase)
+                                        <li id="item_block_1" class="item_block col-25 wow" style="animation-delay: 0.1s; visibility: visible; animation-name: fadeInUp;">
+                                            <div class="content">
+                                                <a href="{{hCasePage($oneCase->caseInfoId)}}" target="_blank">
+                                                    <div class="item_img" style="background-image:url({{$oneCase->imageUrl}})">
+                                                        <img src="{{$oneCase->imageUrl}}">
+                                                        <div class="item_img_mask"></div>
+                                                        <div class="item_icon">
+                                                            <div class="PostImage">
+                                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                                                <div class="item_icon_bg"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item_wrapper">
+                                                        <p class="title ellipsis" target="_blank">{{$oneCase->title}}</p>
+                                                        <p class="subtitle ellipsis">{{$oneCase->subTitle}}</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                                <a href="" class="more hide wow animated" style="animation-delay: 0.5s; visibility: visible;">查看更多</a>
+                            </div><!--wrapper-->
+                            <div class="clear"></div>
+                            <div id="pages">
+                                <a href="//www.toonsoon.com.cn/forum/id/10542/cid/11045/page/1/" class="active">1</a>
+                                <a href="//www.toonsoon.com.cn/forum/id/10542/cid/11045/page/2/">2</a>
+                                <a class="next" href="//www.toonsoon.com.cn/forum/id/10542/cid/11045/page/2/">&nbsp;<i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
                         <div class="clear"></div>
                     </div>
-                </div>
-            </div><!--counter-->
-            <div class="mlist project module" style="">
-                <div class="bgmask"></div>
-                <div class="module_container wide">
-                    <div class="container_hc">
-                        <div class="container_header wow">
-                            <p class="title">Brand New Strategy</p>
-                        </div>
-                        <div class="container_category wow">
-                            @foreach ($caseCategory as $cateInfo)
-                                <a href="{{$cateInfo['url']}}"><span>{{$cateInfo['name']}}</span></a>
-                            @endforeach
-                            <a href="forum/id/10542/cid/11044/index.html"><span>食品类</span></a>
-                            <a href="forum/id/10542/cid/11045/index.html"><span>母婴类</span></a>
-                            <a href="forum/id/10542/cid/11431/index.html"><span>泛家居</span></a>
-                            <a href="forum/id/10542/cid/11047/index.html"><span>个护/彩妆</span></a>
-                            <a href="forum/id/10542/cid/11043/index.html"><span>服饰箱包</span></a>
-                            <a href="forum/id/10542/cid/10550/index.html"><span>居家日用</span></a>
-                            <a href="forum/id/10542/cid/29965/index.html"><span>IP演绎</span></a>
-                            <a href="forum/id/10542/cid/11046/index.html"><span>平面包装</span></a>
-                        </div>
-                    </div>
-                    <div class="container_content">
-                        <div class="content_wrapper">
-                            <ul class="content_list row gutter">
-                                <li id="item_block_0" class="item_block col-50 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334390/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202401/1705570480614.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202401/1705570480614.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    林芃床垫｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_1" class="item_block col-50 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334389/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202401/1705569617159.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202401/1705569617159.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    无穷｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_2" class="item_block col-50 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334388/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202401/1705569551224.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202401/1705569551224.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    彩虹电热毯｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_3" class="item_block col-50 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334387/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202401/1705569388229.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202401/1705569388229.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    好人家｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_4" class="item_block col-50 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334386/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202401/1705569293509.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202401/1705569293509.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    小番薯｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_5" class="item_block col-50 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334291/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202308/1691652597178.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202308/1691652597178.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    袋鼠先生｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_6" class="item_block col-50 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334290/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689826305599.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689826305599.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    智库｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_7" class="item_block col-50 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334278/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1688626588960.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1688626588960.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    本家良田｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <a href="forum/id/10542/index.html" class="more hide wow"
-                               style="animation-delay:.5s">查看更多</a>
-                        </div><!--wrapper-->
-                        <div class="clear"></div>
-                        <a href="forum/id/10542/index.html" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div><!--mlist-->
-{{--            <div class="mlist news module" style=" background-color:#F9F9F9;">--}}
-{{--                <div class="bgmask"></div>--}}
-{{--                <div class="module_container">--}}
-{{--                    <div class="container_hc">--}}
-{{--                        <div class="container_header wow">--}}
-{{--                            <p class="title">OUR NEWS</p>--}}
-{{--                        </div>--}}
-{{--                        <div class="container_category wow one hide">--}}
-{{--                            <a href="forum/id/10552/index.html" class="active"><span>全部</span></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="container_content">--}}
-{{--                        <div class="content_wrapper">--}}
-{{--                            <ul class="content_list row gutter">--}}
-{{--                                <li id="item_block_0" class="item_block col-33 wow" style="animation-delay:.0s">--}}
-{{--                                    <div class="content">--}}
-{{--                                        <a href="forum/post/334174/index.html" class="item_img" target="_blank"--}}
-{{--                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/16536360313.jpg)">--}}
-{{--                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/16536360313.jpg"/>--}}
-{{--                                            <div class="item_img_mask"></div>--}}
-{{--                                        </a>--}}
-{{--                                        <div class="item_wrapper">--}}
-{{--                                            <a class="title ellipsis" href="forum/post/334174/index.html"--}}
-{{--                                               target="_blank">用10000字讲透新锐品牌自有IP塑造方法论【汤臣杰逊品牌研究院】</a>--}}
-{{--                                            <div class="line">--}}
-{{--                                                <div></div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="description">--}}
-{{--                                                <p>自有IP——新锐品牌的忠实伴侣。</p>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="item_date">--}}
-{{--                                            <p class="year">2022</p>--}}
-{{--                                            <p class="day">05-27</p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li id="item_block_1" class="item_block col-33 wow" style="animation-delay:.1s">--}}
-{{--                                    <div class="content">--}}
-{{--                                        <a href="forum/post/334173/index.html" class="item_img" target="_blank"--}}
-{{--                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/1653557687114.jpg)">--}}
-{{--                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/1653557687114.jpg"/>--}}
-{{--                                            <div class="item_img_mask"></div>--}}
-{{--                                        </a>--}}
-{{--                                        <div class="item_wrapper">--}}
-{{--                                            <a class="title ellipsis" href="forum/post/334173/index.html"--}}
-{{--                                               target="_blank">好麦多|两年销量破十亿，麦片品牌凭什么？【汤臣杰逊品牌研究院】</a>--}}
-{{--                                            <div class="line">--}}
-{{--                                                <div></div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="description">--}}
-{{--                                                <p>强产品力造就长红麦片品牌。</p>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="item_date">--}}
-{{--                                            <p class="year">2022</p>--}}
-{{--                                            <p class="day">05-26</p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li id="item_block_2" class="item_block col-33 wow" style="animation-delay:.2s">--}}
-{{--                                    <div class="content">--}}
-{{--                                        <a href="forum/post/334169/index.html" class="item_img" target="_blank"--}}
-{{--                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/1652778539770.jpg)">--}}
-{{--                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/1652778539770.jpg"/>--}}
-{{--                                            <div class="item_img_mask"></div>--}}
-{{--                                        </a>--}}
-{{--                                        <div class="item_wrapper">--}}
-{{--                                            <a class="title ellipsis" href="forum/post/334169/index.html"--}}
-{{--                                               target="_blank">躺岛|从情绪切入圈粉新世代年轻人【汤臣杰逊品牌研究院】</a>--}}
-{{--                                            <div class="line">--}}
-{{--                                                <div></div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="description">--}}
-{{--                                                <p>好玩有趣的睡眠产品。</p>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="item_date">--}}
-{{--                                            <p class="year">2022</p>--}}
-{{--                                            <p class="day">05-17</p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                            <a href="forum/id/10552/index.html" class="more hide wow"--}}
-{{--                               style="animation-delay:.5s">查看更多</a>--}}
-{{--                        </div><!--wrapper-->--}}
-{{--                        <div class="clear"></div>--}}
-{{--                        <a href="forum/id/10552/index.html" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>--}}
-{{--                    </div>--}}
-{{--                    <div class="clear"></div>--}}
-{{--                </div>--}}
-{{--            </div><!--mlist-->--}}
-            <div class="mlist imagelink module" style=" background-color:#FFFFFF;">
-                <div class="bgmask"></div>
-                <div class="module_container">
-                    <div class="container_hc">
-                        <div class="container_category wow one hide">
-                            <a href="forum/id/10554/index.html" class="active"><span>全部</span></a>
-                        </div>
-                    </div>
-                    <div class="container_content">
-                        <div class="content_wrapper">
-                            <ul class="content_list row gutter">
-                                <li id="item_block_0" class="item_block col-16 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334267/index.html" class="item_img" target="_blank"
-                                           title="好孩子"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823411530.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823411530.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_1" class="item_block col-16 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334222/index.html" class="item_img" target="_blank"
-                                           title="觅菓"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823812154.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823812154.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_2" class="item_block col-16 wow" style="animation-delay:.2s">
-                                    <div class="content">
-                                        <a href="forum/post/333834/index.html" class="item_img" target="_blank"
-                                           title="全棉时代"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823489843.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823489843.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_3" class="item_block col-16 wow" style="animation-delay:.3s">
-                                    <div class="content">
-                                        <a href="forum/post/333796/index.html" class="item_img" target="_blank"
-                                           title="奶酪博士"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823552499.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823552499.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_4" class="item_block col-16 wow" style="animation-delay:.4s">
-                                    <div class="content">
-                                        <a href="forum/post/333810/index.html" class="item_img" target="_blank"
-                                           title="劲仔"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823760284.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823760284.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_5" class="item_block col-16 wow" style="animation-delay:.5s">
-                                    <div class="content">
-                                        <a href="forum/post/334188/index.html" class="item_img" target="_blank"
-                                           title="兔头妈妈"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689824041657.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689824041657.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_6" class="item_block col-16 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334215/index.html" class="item_img" target="_blank"
-                                           title="十月结晶"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823874478.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823874478.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_7" class="item_block col-16 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/333625/index.html" class="item_img" target="_blank"
-                                           title="九牧王"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/168982372481.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/168982372481.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_8" class="item_block col-16 wow" style="animation-delay:.2s">
-                                    <div class="content">
-                                        <a href="forum/post/334191/index.html" class="item_img" target="_blank"
-                                           title="今麦郎"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823991839.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823991839.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_9" class="item_block col-16 wow" style="animation-delay:.3s">
-                                    <div class="content">
-                                        <a href="forum/post/334228/index.html" class="item_img" target="_blank"
-                                           title="海澜之家"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689824078256.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689824078256.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_10" class="item_block col-16 wow" style="animation-delay:.4s">
-                                    <div class="content">
-                                        <a href="forum/post/333441/index.html" class="item_img" target="_blank"
-                                           title="布鲁可"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823641943.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823641943.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_11" class="item_block col-16 wow" style="animation-delay:.5s">
-                                    <div class="content">
-                                        <a href="forum/post/333874/index.html" class="item_img" target="_blank"
-                                           title="溜溜梅"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823954731.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823954731.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <a href="forum/id/10554/index.html" class="more hide wow"
-                               style="animation-delay:.5s">查看更多</a>
-                        </div><!--wrapper-->
-                        <div class="clear"></div>
-                        <a href="forum/id/10554/index.html" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div><!--mlist-->
-        </div><!--index-->
+                </div><!--mlist-->
+                <div class="clear"></div>
+                <!--projectlist-->
+            </div>
+        </div><!--npagePage list-->
         <!--page-->
     </div>
     @include('common.footer')
 </div><!--siteWrapper-->
 <div id="rshares">
-    <a href="http://service.weibo.com/share/share.php?appkey=3206975293&amp;" target="_blank" class="sweibo"><i
-                class="fa fa-weibo"></i></a>
+    <a href="http://service.weibo.com/share/share.php?appkey=3206975293&amp;title=CASE+-+%E6%B1%A4%E8%87%A3%E6%9D%B0%E9%80%8A%E5%93%81%E7%89%8C%E6%88%98%E7%95%A5%E5%92%A8%E8%AF%A2+%7C+10%E4%BA%BF%E7%BA%A7%E8%B6%85%E7%BA%A7%E5%A4%A7%E5%8D%95%E5%93%81%E6%89%93%E9%80%A0&amp;url=http%3A%2F%2Fwww.toonsoon.com.cn%2Fforum%2Fid%2F10542%2Fcid%2F11045%2F" target="_blank" class="sweibo"><i class="fa fa-weibo"></i></a>
     <a href="javascript:;" class="sweixin"><i class="fa fa-mobile"></i></a>
-    <a href="javascript:;" id="gotop"><i class="fa fa-angle-up"></i></a>
+    <a href="javascript:;" id="gotop" style="display: block;"><i class="fa fa-angle-up"></i></a>
 </div>
 <div class="fixed" id="fixed_weixin">
     <div class="fixed-container">
@@ -621,20 +106,248 @@
         在线咨询<i class="fa fa-times fr" id="online_close"></i>
     </div>
     <ul id="olx_qq">
-        <li><a href="tencent://message/?uin=&Site=uelike&Menu=yes"><i class="fa fa-qq"></i></a></li>
+        <li><a href="tencent://message/?uin=&amp;Site=uelike&amp;Menu=yes"><i class="fa fa-qq"></i></a></li>
     </ul>
     <div id="olx_tel">
         <div><i class="fa fa-phone"></i>联系电话</div>
         <p>
-            15920410275<br/>
+            15920410275<br>
         </p>
     </div>
 </div>
-<div class="hide">
-    <script src="http://resources.jsmo.xin/templates/upload/13313/13313.js" type="text/javascript"></script>
-</div>
+<div class="hide"><script src="//resources.jsmo.xin/templates/upload/13313/13313.js" type="text/javascript"></script></div>
 <div class="loading">
     <div class="spinner"></div>
 </div>
-</body>
+<div class="fixed" id="fixed_mp"><div class="fixed-container"><img src="//resources.jsmo.xin/templates/upload/13313/201901/1546587377152.png"><p>微信扫一扫</p></div></div><div class="index-mask"></div><div id="screenity-ui"><div class="screenity-shadow-dom"><div><div></div><div></div></div><style type="text/css">
+            #screenity-ui, #screenity-ui div {
+                background-color: unset;
+                padding: unset;
+                width: unset;
+                box-shadow: unset;
+                display: unset;
+                margin: unset;
+                border-radius: unset;
+            }
+            .screenity-outline {
+                position: absolute;
+                z-index: 99999999999;
+                border: 2px solid #3080F8;
+                outline-offset: -2px;
+                pointer-events: none;
+                border-radius: 5px!important;
+            }
+            .screenity-blur {
+                filter: blur(10px)!important;
+            }
+            .screenity-shadow-dom * {
+                transition: unset;
+            }
+            .screenity-shadow-dom .TooltipContent {
+                border-radius: 30px!important;
+                background-color: #29292F!important;
+                padding: 10px 15px!important;
+                font-size: 12px;
+                margin-bottom: 10px!important;
+                bottom: 100px;
+                line-height: 1;
+                font-family: 'Satoshi-Medium', sans-serif;
+                z-index: 99999999!important;
+                color: #FFF;
+                box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px!important;
+                user-select: none;
+                transition: opacity 0.3 ease-in-out;
+                will-change: transform, opacity;
+                animation-duration: 400ms;
+                animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+                will-change: transform, opacity;
+            }
+            .screenity-shadow-dom .hide-tooltip {
+                display: none!important;
+            }
+            .screenity-shadow-dom .tooltip-tall {
+                margin-bottom: 20px;
+            }
+            .screenity-shadow-dom .tooltip-small {
+                margin-bottom: 5px;
+            }
+            .screenity-shadow-dom .TooltipContent[data-state='delayed-open'][data-side='top'] {
+                animation-name: slideDownAndFade;
+            }
+            .screenity-shadow-dom .TooltipContent[data-state='delayed-open'][data-side='right'] {
+                animation-name: slideLeftAndFade;
+            }
+            .screenity-shadow-dom.TooltipContent[data-state='delayed-open'][data-side='bottom'] {
+                animation-name: slideUpAndFade;
+            }
+            .screenity-shadow-dom.TooltipContent[data-state='delayed-open'][data-side='left'] {
+                animation-name: slideRightAndFade;
+            }
+            @keyframes slideUpAndFade {
+                from {
+                    opacity: 0;
+                    transform: translateY(2px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes slideRightAndFade {
+                from {
+                    opacity: 0;
+                    transform: translateX(-2px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            @keyframes slideDownAndFade {
+                from {
+                    opacity: 0;
+                    transform: translateY(-2px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes slideLeftAndFade {
+                from {
+                    opacity: 0;
+                    transform: translateX(2px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            #screenity-ui [data-radix-popper-content-wrapper] { z-index: 999999999999!important; }
+            .screenity-shadow-dom .CanvasContainer {
+                position: fixed;
+                pointer-events: all!important;
+                top: 0px!important;
+                left: 0px!important;
+                z-index: 99999999999!important;
+            }
+            .screenity-shadow-dom .canvas {
+                position: fixed;
+                top: 0px!important;
+                left: 0px!important;
+                z-index: 99999999999!important;
+                background: transparent!important;
+            }
+            .screenity-shadow-dom .canvas-container {
+                top: 0px!important;
+                left: 0px!important;
+                z-index: 99999999999;
+                position: fixed!important;
+                background: transparent!important;
+            }
+            .ScreenityDropdownMenuContent {
+                z-index: 99999999999!important;
+                min-width: 200px;
+                background-color: white;
+                margin-top: 4px;
+                margin-right: 8px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                border-radius: 15px;
+                z-index: 99999;
+                font-family: 'Satoshi-Medium', sans-serif;
+                color: #29292F;
+                box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+                0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+                animation-duration: 400ms;
+                animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+                will-change: transform, opacity;
+            }
+            .ScreenityDropdownMenuContent[data-side="top"] {
+                animation-name: slideDownAndFade;
+            }
+            .ScreenityDropdownMenuContent[data-side="right"] {
+                animation-name: slideLeftAndFade;
+            }
+            .ScreenityDropdownMenuContent[data-side="bottom"] {
+                animation-name: slideUpAndFade;
+            }
+            .ScreenityDropdownMenuContent[data-side="left"] {
+                animation-name: slideRightAndFade;
+            }
+            .ScreenityItemIndicator {
+                position: absolute;
+                right: 12px;
+                width: 18px;
+                height: 18px;
+                background: #3080F8;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .ScreenityDropdownMenuItem,
+            .ScreenityDropdownMenuRadioItem {
+                font-size: 14px;
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                height: 40px;
+                padding: 0 5px;
+                position: relative;
+                padding-left: 22px;
+                padding-right: 22px;
+                user-select: none;
+                outline: none;
+            }
+            .ScreenityDropdownMenuItem:hover {
+                background-color: #F6F7FB !important;
+                cursor: pointer;
+            }
+            .ScreenityDropdownMenuItem[data-disabled] {
+                color: #6E7684; !important;
+                cursor: not-allowed;
+                background-color: #F6F7FB !important;
+            }
+            @keyframes slideUpAndFade {
+                from {
+                    opacity: 0;
+                    transform: translateY(2px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes slideRightAndFade {
+                from {
+                    opacity: 0;
+                    transform: translateX(-2px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            @keyframes slideDownAndFade {
+                from {
+                    opacity: 0;
+                    transform: translateY(-2px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes slideLeftAndFade {
+                from {
+                    opacity: 0;
+                    transform: translateX(2px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        </style></div></div></body>
 </html>

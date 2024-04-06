@@ -21,7 +21,7 @@
                                     </div>
                                 </div>
                                 @if(!$banner->onlyImage)
-                                    <a href="page/case/{{$banner->caseInfoId}}}" class="full" target="_blank"></a></a>
+                                    <a href="{{hCasePage($banner->caseInfoId)}}}" class="full" target="_blank"></a></a>
                                 @endif
                             </li>
                         @endforeach
@@ -165,198 +165,37 @@
                             <p class="title">Brand New Strategy</p>
                         </div>
                         <div class="container_category wow">
-                            @foreach ($caseCategory as $cateInfo)
-                                <a href="{{$cateInfo['url']}}"><span>{{$cateInfo['name']}}</span></a>
+                            @foreach ($homePageInfo->categoryList as $cateInfo)
+                                <a href="{{hCategoryPage($cateInfo->categoryId)}}"><span>{{$cateInfo->cateName}}</span></a>
                             @endforeach
-                            <a href="forum/id/10542/cid/11044/index.html"><span>食品类</span></a>
-                            <a href="forum/id/10542/cid/11045/index.html"><span>母婴类</span></a>
-                            <a href="forum/id/10542/cid/11431/index.html"><span>泛家居</span></a>
-                            <a href="forum/id/10542/cid/11047/index.html"><span>个护/彩妆</span></a>
-                            <a href="forum/id/10542/cid/11043/index.html"><span>服饰箱包</span></a>
-                            <a href="forum/id/10542/cid/10550/index.html"><span>居家日用</span></a>
-                            <a href="forum/id/10542/cid/29965/index.html"><span>IP演绎</span></a>
-                            <a href="forum/id/10542/cid/11046/index.html"><span>平面包装</span></a>
                         </div>
                     </div>
                     <div class="container_content">
                         <div class="content_wrapper">
                             <ul class="content_list row gutter">
-                                <li id="item_block_0" class="item_block col-50 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334390/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202401/1705570480614.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202401/1705570480614.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
+                                @foreach($homePageInfo->defaultCaseList as $case)
+                                    <li id="item_block_0" class="item_block col-50 wow" style="animation-delay:.0s">
+                                        <div class="content">
+                                            <a href="{{hCasePage($case->caseInfoId)}}" target="_blank">
+                                                <div class="item_img"
+                                                     style="background-image:url({{$case->imageUrl}})">
+                                                    <img src="{{$case->imageUrl}}"/>
+                                                    <div class="item_img_mask"></div>
+                                                    <div class="item_icon">
+                                                        <div class="PostImage">
+                                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                                            <div class="item_icon_bg"></div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    林芃床垫｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_1" class="item_block col-50 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334389/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202401/1705569617159.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202401/1705569617159.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
+                                                <div class="item_wrapper">
+                                                    <p class="title ellipsis" target="_blank">{{$case->title}}</p>
+                                                    <p class="subtitle ellipsis"></p>
                                                 </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    无穷｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_2" class="item_block col-50 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334388/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202401/1705569551224.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202401/1705569551224.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    彩虹电热毯｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_3" class="item_block col-50 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334387/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202401/1705569388229.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202401/1705569388229.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    好人家｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_4" class="item_block col-50 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334386/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202401/1705569293509.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202401/1705569293509.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    小番薯｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_5" class="item_block col-50 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334291/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202308/1691652597178.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202308/1691652597178.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    袋鼠先生｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_6" class="item_block col-50 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334290/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689826305599.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689826305599.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    智库｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_7" class="item_block col-50 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334278/index.html" target="_blank">
-                                            <div class="item_img"
-                                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1688626588960.jpg)">
-                                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1688626588960.jpg"/>
-                                                <div class="item_img_mask"></div>
-                                                <div class="item_icon">
-                                                    <div class="PostImage">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                        <div class="item_icon_bg"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item_wrapper">
-                                                <p class="title ellipsis" target="_blank">汤臣杰逊 X
-                                                    本家良田｜品牌超级体系视觉</p>
-                                                <p class="subtitle ellipsis"></p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
+                                            </a>
+                                        </div>
+                                    </li>
+                                @endforeach
                             </ul>
                             <a href="forum/id/10542/index.html" class="more hide wow"
                                style="animation-delay:.5s">查看更多</a>
@@ -367,99 +206,6 @@
                     <div class="clear"></div>
                 </div>
             </div><!--mlist-->
-{{--            <div class="mlist news module" style=" background-color:#F9F9F9;">--}}
-{{--                <div class="bgmask"></div>--}}
-{{--                <div class="module_container">--}}
-{{--                    <div class="container_hc">--}}
-{{--                        <div class="container_header wow">--}}
-{{--                            <p class="title">OUR NEWS</p>--}}
-{{--                        </div>--}}
-{{--                        <div class="container_category wow one hide">--}}
-{{--                            <a href="forum/id/10552/index.html" class="active"><span>全部</span></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="container_content">--}}
-{{--                        <div class="content_wrapper">--}}
-{{--                            <ul class="content_list row gutter">--}}
-{{--                                <li id="item_block_0" class="item_block col-33 wow" style="animation-delay:.0s">--}}
-{{--                                    <div class="content">--}}
-{{--                                        <a href="forum/post/334174/index.html" class="item_img" target="_blank"--}}
-{{--                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/16536360313.jpg)">--}}
-{{--                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/16536360313.jpg"/>--}}
-{{--                                            <div class="item_img_mask"></div>--}}
-{{--                                        </a>--}}
-{{--                                        <div class="item_wrapper">--}}
-{{--                                            <a class="title ellipsis" href="forum/post/334174/index.html"--}}
-{{--                                               target="_blank">用10000字讲透新锐品牌自有IP塑造方法论【汤臣杰逊品牌研究院】</a>--}}
-{{--                                            <div class="line">--}}
-{{--                                                <div></div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="description">--}}
-{{--                                                <p>自有IP——新锐品牌的忠实伴侣。</p>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="item_date">--}}
-{{--                                            <p class="year">2022</p>--}}
-{{--                                            <p class="day">05-27</p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li id="item_block_1" class="item_block col-33 wow" style="animation-delay:.1s">--}}
-{{--                                    <div class="content">--}}
-{{--                                        <a href="forum/post/334173/index.html" class="item_img" target="_blank"--}}
-{{--                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/1653557687114.jpg)">--}}
-{{--                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/1653557687114.jpg"/>--}}
-{{--                                            <div class="item_img_mask"></div>--}}
-{{--                                        </a>--}}
-{{--                                        <div class="item_wrapper">--}}
-{{--                                            <a class="title ellipsis" href="forum/post/334173/index.html"--}}
-{{--                                               target="_blank">好麦多|两年销量破十亿，麦片品牌凭什么？【汤臣杰逊品牌研究院】</a>--}}
-{{--                                            <div class="line">--}}
-{{--                                                <div></div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="description">--}}
-{{--                                                <p>强产品力造就长红麦片品牌。</p>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="item_date">--}}
-{{--                                            <p class="year">2022</p>--}}
-{{--                                            <p class="day">05-26</p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                                <li id="item_block_2" class="item_block col-33 wow" style="animation-delay:.2s">--}}
-{{--                                    <div class="content">--}}
-{{--                                        <a href="forum/post/334169/index.html" class="item_img" target="_blank"--}}
-{{--                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202205/1652778539770.jpg)">--}}
-{{--                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202205/1652778539770.jpg"/>--}}
-{{--                                            <div class="item_img_mask"></div>--}}
-{{--                                        </a>--}}
-{{--                                        <div class="item_wrapper">--}}
-{{--                                            <a class="title ellipsis" href="forum/post/334169/index.html"--}}
-{{--                                               target="_blank">躺岛|从情绪切入圈粉新世代年轻人【汤臣杰逊品牌研究院】</a>--}}
-{{--                                            <div class="line">--}}
-{{--                                                <div></div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="description">--}}
-{{--                                                <p>好玩有趣的睡眠产品。</p>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="item_date">--}}
-{{--                                            <p class="year">2022</p>--}}
-{{--                                            <p class="day">05-17</p>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                            <a href="forum/id/10552/index.html" class="more hide wow"--}}
-{{--                               style="animation-delay:.5s">查看更多</a>--}}
-{{--                        </div><!--wrapper-->--}}
-{{--                        <div class="clear"></div>--}}
-{{--                        <a href="forum/id/10552/index.html" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>--}}
-{{--                    </div>--}}
-{{--                    <div class="clear"></div>--}}
-{{--                </div>--}}
-{{--            </div><!--mlist-->--}}
             <div class="mlist imagelink module" style=" background-color:#FFFFFF;">
                 <div class="bgmask"></div>
                 <div class="module_container">

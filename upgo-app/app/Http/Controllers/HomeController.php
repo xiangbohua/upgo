@@ -14,7 +14,6 @@ use App\Service\PartnerService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends BaseController
@@ -25,16 +24,28 @@ class HomeController extends BaseController
     public function home(BannerService $bannerService,
                         CategoryService $categoryService,
                         CaseService $caseService,
-                        PartnerService $partnerService
+                        PartnerService $partnerService,
+                         HomeService $homeService
                         ) {
-        echo env('DB_HOST');
         $homePageInfo = new HomePageInfo();
         $homePageInfo->categoryList = $categoryService->getDefaultCategory();
         $homePageInfo->bannerList = $bannerService->getBanners();
         $homePageInfo->partnerList = $partnerService->getPartnerForHomePage();
         $homePageInfo->defaultCaseList = $caseService->getDefaultCase();
 
-        return view('home', ['homePageInfo'=>$homePageInfo]);
+        $result = array_merge($homeService->getFooterInfo(), ['homePageInfo'=>$homePageInfo]);
+
+        return view('home', $result);
     }
+
+
+
+    public function aboutPage(HomeService $homeService) {
+        $footerInfo = $homeService->getFooterInfo();
+        $footerInfo = array_merge($footerInfo, []);
+        return view('about', $footerInfo);
+    }
+
+
 
 }

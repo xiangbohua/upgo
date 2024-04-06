@@ -21,6 +21,22 @@ function hUrlAsset($path, $secure = null) {
     defined('_STATIC_FILE_VERSION_') ? _STATIC_FILE_VERSION_ : 0;
 }
 
+function hCasePage($caseInfoId)
+{
+    return '/page/case/'.$caseInfoId;
+}
+
+function hCategoryPage($categoryPage, $page = '0')
+{
+    if (!isset($categoryPage) ) {
+        return '/page/cate';
+    }
+
+    $pageStr = !isset($page) || $page == 0 ? '' : ('/page/'.$page);
+
+    return '/page/cate/'.$categoryPage.$pageStr;
+}
+
 function hCheckViewWidget($allWidget, $widgetName){
     if(empty($allWidget) || empty($widgetName))
         return false;

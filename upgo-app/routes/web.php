@@ -14,3 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@home');
+Route::get('/page/cate/{cateId}', 'CaseController@listCaseByCategory');
+Route::get('/page/cate/{cateId}/page/{page}', 'CaseController@listCaseByCategory');
+

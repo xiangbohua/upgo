@@ -4,7 +4,7 @@ namespace App\Models;
 
 class CategoryInfo
 {
-    public $title;
+    public $cateName;
 
     public $categoryId;
 }

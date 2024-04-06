@@ -19,7 +19,7 @@ class CategoryService
 
         foreach ($categorys as $cate) {
             $categoryInfo = new CategoryInfo();
-            $categoryInfo->title = $cate->cate_name;
+            $categoryInfo->cateName = $cate->cate_name;
             $categoryInfo->categoryId = $cate->id;
             $result[] = $categoryInfo;
         }

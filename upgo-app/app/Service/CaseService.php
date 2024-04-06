@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\DB;
 class CaseService
 {
     public function getDefaultCase() {
-        $result = [];
         $cases = DB::table('case_page')
             ->where('deleted', 0)
             ->where('display', 1)
@@ -18,7 +17,25 @@ class CaseService
             ->limit(8)
             ->get();
 
-        foreach ($cases as $ca) {
+
+        return $this->convertFromDb($cases);
+    }
+
+    public function getCasesByCateId($cateId, $page) {
+        $cases = DB::table('case_page')
+            ->where('deleted', 0)
+            ->where('display', 1)
+            ->where('home_page_display', 1)
+            ->orderBy('display_index')
+            ->limit(12)
+            ->get();
+
+        return $this->convertFromDb($cases);
+    }
+
+    private function convertFromDb($dbData) {
+        $result = [];
+        foreach ($dbData as $ca) {
             $caseInfo = new CaseInfo();
             $caseInfo->caseInfoId = $ca->id;
             $caseInfo->imageUrl = $ca->main_image_url;
