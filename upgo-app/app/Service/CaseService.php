@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Service;
+
+use App\Models\CaseInfo;
+use App\Models\CategoryInfo;
+use Illuminate\Support\Facades\DB;
+
+class CaseService
+{
+    public function getDefaultCase() {
+        $result = [];
+        $cases = DB::table('case_page')
+            ->where('deleted', 0)
+            ->where('display', 1)
+            ->where('home_page_display', 1)
+            ->orderBy('display_index')
+            ->limit(8)
+            ->get();
+
+        foreach ($cases as $ca) {
+            $caseInfo = new CaseInfo();
+            $caseInfo->caseInfoId = $ca->id;
+            $caseInfo->imageUrl = $ca->main_image_url;
+            $caseInfo->categoryId = $ca->category_id;
+            $caseInfo->title = $ca->title;
+            $caseInfo->subTitle = $ca->sub_title;
+            $caseInfo->displayIndex = $ca->display_index;
+            $result[] = $caseInfo;
+        }
+        return $result;
+    }
+
+}

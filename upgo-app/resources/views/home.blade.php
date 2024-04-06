@@ -9,10 +9,10 @@
             <div id="topSlider" class="mslider module">
                 <div class="module_container wide">
                     <ul class="content_list" data-slider-height="0" data-slider-auto="1" data-slider-mode="0" data-slider-pause="4" data-slider-ease="ease-out" data-slider-speed="0.5" style="height:1000px">
-                        @foreach ($homePageImage as $pageUrl)
+                        @foreach ($homePageInfo->bannerList as $banner)
                             <li>
-                                <div class="item_bg image" data-thumb="" style="background-image:url('{{$pageUrl}}')">
-                                    <img src="{{$pageUrl}}"/>
+                                <div class="item_bg image" data-thumb="" style="background-image:url('{{$banner->imageUrl}}')">
+                                    <img src="{{$banner->imageUrl}}"/>
                                 </div>
                                 <div class="wrapper">
                                     <div class="description mc">
@@ -20,6 +20,9 @@
                                         <p class="subtitle"></p>
                                     </div>
                                 </div>
+                                @if(!$banner->onlyImage)
+                                    <a href="page/case/{{$banner->caseInfoId}}}" class="full" target="_blank"></a></a>
+                                @endif
                             </li>
                         @endforeach
 
@@ -118,41 +121,41 @@
             </div>
             <div class="mcounter module" style=" background-color:#FFFFFF;">
                 <div class="bgmask"></div>
-                <div class="module_container wide">
-                    <div class="container_content">
-                        <ul class="content_list row">
-                            <li class="col-25">
-                                <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span
-                                                class="unit">年</span></p>
-                                    <p class="title">3年间</p>
-                                </div>
-                            </li>
-                            <li class="col-25">
-                                <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="23">23</span><span
-                                                class="unit">+</span></p>
-                                    <p class="title">助23个品牌</p>
-                                </div>
-                            </li>
-                            <li class="col-25">
-                                <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span
-                                                class="unit"></span></p>
-                                    <p class="title">占据类目前3</p>
-                                </div>
-                            </li>
-                            <li class="col-25">
-                                <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="126">126</span><span
-                                                class="unit">亿</span></p>
-                                    <p class="title">提升126亿销售</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+{{--                <div class="module_container wide">--}}
+{{--                    <div class="container_content">--}}
+{{--                        <ul class="content_list row">--}}
+{{--                            <li class="col-25">--}}
+{{--                                <div>--}}
+{{--                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span--}}
+{{--                                                class="unit">年</span></p>--}}
+{{--                                    <p class="title">3年间</p>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="col-25">--}}
+{{--                                <div>--}}
+{{--                                    <p class="number"><span class="counterDX" data-counter-value="23">23</span><span--}}
+{{--                                                class="unit">+</span></p>--}}
+{{--                                    <p class="title">助23个品牌</p>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="col-25">--}}
+{{--                                <div>--}}
+{{--                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span--}}
+{{--                                                class="unit"></span></p>--}}
+{{--                                    <p class="title">占据类目前3</p>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="col-25">--}}
+{{--                                <div>--}}
+{{--                                    <p class="number"><span class="counterDX" data-counter-value="126">126</span><span--}}
+{{--                                                class="unit">亿</span></p>--}}
+{{--                                    <p class="title">提升126亿销售</p>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                        <div class="clear"></div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div><!--counter-->
             <div class="mlist project module" style="">
                 <div class="bgmask"></div>
