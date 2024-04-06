@@ -35,6 +35,7 @@ class HomeController extends BaseController
 
         $result = array_merge($homeService->getFooterInfo(), ['homePageInfo'=>$homePageInfo]);
 
+
         return view('home', $result);
     }
 
