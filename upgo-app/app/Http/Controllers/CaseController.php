@@ -17,20 +17,19 @@ class CaseController extends BaseController
                                        CategoryService $categoryService,
                                        HomeService $homeService,
                                        $cateId, $page = 1) {
-        $caseList = $caseService->getCasesByCateId($cateId, $page);
-        $cseCount = $caseService->listCaseCount($cateId);
+        $caseList = $caseService->getCasesByCateId($cateId, $page, $this->defaultPageSize);
+        $caseCount = $caseService->listCaseCount($cateId);
 
         $cateList = $categoryService->getDefaultCategory();
 
         $bannerImage = 'localhost';
-
-
         $result = array_merge($homeService->getFooterInfo(),
                 [
                     'caseList'=>$caseList,
                     'cateList'=>$cateList,
                     'bannerImage'=>$bannerImage,
-                    'total'=>$cseCount,
+                    'currentCategory'=>$cateId,
+                    'totalPage'=>hTotalPage($caseCount, $this->defaultPageSize),
                     'current'=>$page,
                     'size'=>$this->defaultPageSize
                 ]);

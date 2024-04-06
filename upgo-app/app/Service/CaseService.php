@@ -21,7 +21,7 @@ class CaseService
         return $this->convertFromDb($cases);
     }
 
-    public function getCasesByCateId($cateId, $page) {
+    public function getCasesByCateId($cateId, $page, $pageSize) {
 
         $page = !isset($page) || $page <= 0 ? 1 : $page;
 
@@ -34,7 +34,7 @@ class CaseService
         }
 
         $cases = $query->orderBy('display_index')
-            ->limit(12)
+            ->limit($pageSize)
             ->get();
 
         return $this->convertFromDb($cases);

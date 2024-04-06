@@ -26,26 +26,6 @@
                         <div class="container_content">
                             <div class="content_wrapper ">
                                 <ul class="content_list row gutter">
-                                    <li id="item_block_0" class="item_block col-25 wow" style="animation-delay: 0s; visibility: visible; animation-name: fadeInUp;">
-                                        <div class="content">
-                                            <a href="//www.toonsoon.com.cn/forum/post/334290/" target="_blank">
-                                                <div class="item_img" style="background-image:url(//resources.jsmo.xin/templates/upload/13313/202307/1689826305599.jpg)">
-                                                    <img src="//resources.jsmo.xin/templates/upload/13313/202307/1689826305599.jpg">
-                                                    <div class="item_img_mask"></div>
-                                                    <div class="item_icon">
-                                                        <div class="PostImage">
-                                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                                            <div class="item_icon_bg"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item_wrapper">
-                                                    <p class="title ellipsis" target="_blank">汤臣杰逊 X 智库｜品牌超级体系视觉</p>
-                                                    <p class="subtitle ellipsis"></p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
                                     @foreach($caseList as $oneCase)
                                         <li id="item_block_1" class="item_block col-25 wow" style="animation-delay: 0.1s; visibility: visible; animation-name: fadeInUp;">
                                             <div class="content">
@@ -73,9 +53,16 @@
                             </div><!--wrapper-->
                             <div class="clear"></div>
                             <div id="pages">
-                                <a href="//www.toonsoon.com.cn/forum/id/10542/cid/11045/page/1/" class="active">1</a>
-                                <a href="//www.toonsoon.com.cn/forum/id/10542/cid/11045/page/2/">2</a>
-                                <a class="next" href="//www.toonsoon.com.cn/forum/id/10542/cid/11045/page/2/">&nbsp;<i class="fa fa-angle-right"></i></a>
+                                @if($current > 1)
+                                    <a class="prev" href="{{hCategoryPage($currentCategory, $current - 1)}}">&nbsp;<i class="fa fa-angle-left"></i></a>
+                                @endif
+                                @for($pageIndex = 1; $pageIndex <= $totalPage; $pageIndex ++)
+                                    <a @if($current != $pageIndex) href="{{hCategoryPage($currentCategory, $pageIndex)}}" @endif @if($pageIndex == $current) class="active" @endif>{{$pageIndex}}</a>
+                                @endfor
+                                @if($totalPage > 1 && $current < $totalPage)
+                                    <a class="next" href="{{hCategoryPage($currentCategory, $current + 1)}}">&nbsp;<i class="fa fa-angle-right"></i></a>
+                                @endif
+
                             </div>
                         </div>
                         <div class="clear"></div>

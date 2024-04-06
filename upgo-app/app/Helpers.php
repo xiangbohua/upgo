@@ -37,6 +37,15 @@ function hCategoryPage($categoryPage, $page = 0)
     return '/page/cate/'.$categoryPage.$pageStr;
 }
 
+function hTotalPage($total, $size)
+{
+    if (!isset($total)) {
+        return 0;
+    }
+    $size = $size ?? 12;
+    return ceil($total / $size);
+}
+
 function hCheckViewWidget($allWidget, $widgetName){
     if(empty($allWidget) || empty($widgetName))
         return false;
