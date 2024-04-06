@@ -46,6 +46,29 @@ function hTotalPage($total, $size)
     return ceil($total / $size);
 }
 
+function hCaseDetail($serviceId)
+{
+    return '/page/case/d/'.$serviceId;
+}
+
+function hServicePage($categoryPage, $page = 0)
+{
+    if (!isset($categoryPage) || $categoryPage == 0) {
+        return '/page/service';
+    }
+
+    $pageStr = !isset($page) || $page == 0 ? '' : ('/page/'.$page);
+
+    return '/page/service/'.$categoryPage.$pageStr;
+}
+
+function hServiceDetail($serviceId)
+{
+    return '/page/service/d/'.$serviceId;
+}
+
+
+
 function hCheckViewWidget($allWidget, $widgetName){
     if(empty($allWidget) || empty($widgetName))
         return false;

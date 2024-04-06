@@ -26,8 +26,8 @@
                         <div class="container_content">
                             <div class="content_wrapper ">
                                 <ul class="content_list row gutter">
-                                    @foreach($caseList as $oneCase)
-                                        <li id="item_block_1" class="item_block col-25 wow" style="animation-delay: 0.1s; visibility: visible; animation-name: fadeInUp;">
+                                    @foreach($caseList as $index => $oneCase)
+                                        <li id="item_block_{{$index}}" class="item_block col-25 wow" style="animation-delay: 0.1s; visibility: visible; animation-name: fadeInUp;">
                                             <div class="content">
                                                 <a href="{{hCasePage($oneCase->caseInfoId)}}" target="_blank">
                                                     <div class="item_img" style="background-image:url({{$oneCase->imageUrl}})">
@@ -62,7 +62,6 @@
                                 @if($totalPage > 1 && $current < $totalPage)
                                     <a class="next" href="{{hCategoryPage($currentCategory, $current + 1)}}">&nbsp;<i class="fa fa-angle-right"></i></a>
                                 @endif
-
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -102,7 +101,7 @@
         </p>
     </div>
 </div>
-<div class="hide"><script src="//resources.jsmo.xin/templates/upload/13313/13313.js" type="text/javascript"></script></div>
+<div class="hide"><script src="13313/13313.js" type="text/javascript"></script></div>
 <div class="loading">
     <div class="spinner"></div>
 </div>

@@ -6,4 +6,7 @@ class ServiceInfo extends ImageInfo
 {
     public $serviceId;
 
+    public $title;
+
+    public $subTitle;
 }

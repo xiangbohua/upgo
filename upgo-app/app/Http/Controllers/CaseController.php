@@ -16,12 +16,13 @@ class CaseController extends BaseController
     public function listCaseByCategory(CaseService $caseService,
                                        CategoryService $categoryService,
                                        HomeService $homeService,
-                                       $cateId, $page = 1) {
+                                       $cateId = 0, $page = 1) {
         $caseList = $caseService->getCasesByCateId($cateId, $page, $this->defaultPageSize);
         $caseCount = $caseService->listCaseCount($cateId);
 
         $cateList = $categoryService->getDefaultCategory();
 
+        //TODO
         $bannerImage = 'localhost';
         $result = array_merge($homeService->getFooterInfo(),
                 [

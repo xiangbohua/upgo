@@ -34,8 +34,6 @@ class HomeController extends BaseController
         $homePageInfo->defaultCaseList = $caseService->getDefaultCase();
 
         $result = array_merge($homeService->getFooterInfo(), ['homePageInfo'=>$homePageInfo]);
-
-
         return view('home', $result);
     }
 

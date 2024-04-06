@@ -22,7 +22,6 @@ class CaseService
     }
 
     public function getCasesByCateId($cateId, $page, $pageSize) {
-
         $page = !isset($page) || $page <= 0 ? 1 : $page;
 
         $query = DB::table('case_page')
@@ -34,6 +33,7 @@ class CaseService
         }
 
         $cases = $query->orderBy('display_index')
+            ->offset($page * $pageSize)
             ->limit($pageSize)
             ->get();
 
