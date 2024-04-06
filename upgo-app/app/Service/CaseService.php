@@ -22,15 +22,33 @@ class CaseService
     }
 
     public function getCasesByCateId($cateId, $page) {
-        $cases = DB::table('case_page')
+
+        $page = !isset($page) || $page <= 0 ? 1 : $page;
+
+        $query = DB::table('case_page')
             ->where('deleted', 0)
             ->where('display', 1)
-            ->where('home_page_display', 1)
-            ->orderBy('display_index')
+            ->where('home_page_display', 1);
+        if (isset($cateId) && !is_null($cateId) && $cateId > 0) {
+            $query->where('category_id', $cateId);
+        }
+
+        $cases = $query->orderBy('display_index')
             ->limit(12)
             ->get();
 
         return $this->convertFromDb($cases);
+    }
+
+    public function listCaseCount($cateId) {
+        $query = DB::table('case_page')
+                ->where('deleted', 0)
+                ->where('display', 1)
+                ->where('home_page_display', 1);
+        if (isset($cateId) && !is_null($cateId) && $cateId > 0) {
+            $query->where('category_id', $cateId);
+        }
+        return $query->count();
     }
 
     private function convertFromDb($dbData) {

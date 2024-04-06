@@ -16,6 +16,7 @@ class HomeService
         'resumeContact'=>'简历投递地址及其备注',
         'siteLogo'=>'网站logo',
         'brandTitle'=>'品牌名称',
+        'brandShortName'=>'品牌简称',
         'brandDesc'=>'网站详细介绍',
         'weiboLink'=>'微博地址',
         'qqLink'=>'qq地址',

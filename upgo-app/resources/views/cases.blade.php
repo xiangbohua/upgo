@@ -18,7 +18,7 @@
                             </div>
                             <div class="container_category wow animated" style="visibility: visible;">
                                 <a href="{{hCategoryPage(0)}}"><span>全部</span></a>
-                                @foreach ($homePageInfo->categoryList as $cateInfo)
+                                @foreach ($cateList as $cateInfo)
                                     <a href="{{hCategoryPage($cateInfo->categoryId)}}"><span>{{$cateInfo->cateName}}</span></a>
                                 @endforeach
                             </div>

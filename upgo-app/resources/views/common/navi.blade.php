@@ -1,41 +1,33 @@
 <div id="header">
     <div class="content">
         <div id="headTop">
-            <a href="index.html" id="logo"><img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689763568580.jpg" alt="汤臣杰逊品牌战略咨询 | 10亿级超级大单品打造" /></a>
+            <a href="index.html" id="logo"><img src="{{$siteLogo}}" alt="{{$brandTitle}}" /></a>
         </div>
         <div id="navWrapper">
             <div class="content">
                 <ul class="nav">
                     <li class="navitem">
-                        <a  class="active" href="index.html" target="_self"><span data-title="首页">首页</span>
+                        <a  class="active" href="/" target="_self"><span data-title="首页">首页</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="forum/id/10542/index.html" target="_self"><span data-title="案例">案例</span>
+                        <a  href="{{hCategoryPage(0)}}" target="_self"><span data-title="案例">案例</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="forum/id/10551/index.html" target="_self"><span data-title="服务范围">服务范围</span>
+                        <a  href="/page/service" target="_self"><span data-title="服务范围">服务范围</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="forum/id/10552/index.html" target="_self"><span data-title="动态">动态</span>
+                        <a  href="/page/about" target="_self"><span data-title="关于">关于{{$brandShortName}}</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="javascript:;" target=""><span data-title="关于">关于</span>
-                            <i class="fa fa-angle-down"></i></a>
-                        <ul class="subnav">
-                            <li>
-                                <a  href="page/about.html" target="_self">关于汤臣杰逊<i class="fa fa-angle-right"></i></a>
-                            </li>
-                            <li>
-                                <a  href="forum/id/10554/index.html" target="_self">合作伙伴<i class="fa fa-angle-right"></i></a>
-                            </li>
-                        </ul>
+                        <a  href="/page/partner" target="_self"><span data-title="合作伙伴">合作伙伴</span>
+                        </a>
                     </li>
                     <li class="navitem">
-                        <a  href="page/contact2.html" target="_self"><span data-title="联系我们">联系我们</span>
+                        <a  href="/page/contact" target="_self"><span data-title="联系我们">联系我们</span>
                         </a>
                     </li>
                 </ul>

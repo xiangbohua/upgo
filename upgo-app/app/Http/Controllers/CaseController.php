@@ -16,8 +16,9 @@ class CaseController extends BaseController
     public function listCaseByCategory(CaseService $caseService,
                                        CategoryService $categoryService,
                                        HomeService $homeService,
-                                       $cateId, $page) {
+                                       $cateId, $page = 1) {
         $caseList = $caseService->getCasesByCateId($cateId, $page);
+        $cseCount = $caseService->listCaseCount($cateId);
 
         $cateList = $categoryService->getDefaultCategory();
 
@@ -25,7 +26,14 @@ class CaseController extends BaseController
 
 
         $result = array_merge($homeService->getFooterInfo(),
-            ['caseList'=>$caseList, 'cateList'=>$cateList, 'bannerImage'=>$bannerImage]);
+                [
+                    'caseList'=>$caseList,
+                    'cateList'=>$cateList,
+                    'bannerImage'=>$bannerImage,
+                    'total'=>$cseCount,
+                    'current'=>$page,
+                    'size'=>$this->defaultPageSize
+                ]);
         return view('cases', $result);
     }
 

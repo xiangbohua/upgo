@@ -12,7 +12,7 @@ class BaseController extends FrameworkController
     public $user_id = null;
     protected $_request = null;
 
-    private $defaultPageSize = 10;
+    protected $defaultPageSize = 12;
 
     public function __construct(Request $request)
     {

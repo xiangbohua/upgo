@@ -26,9 +26,9 @@ function hCasePage($caseInfoId)
     return '/page/case/'.$caseInfoId;
 }
 
-function hCategoryPage($categoryPage, $page = '0')
+function hCategoryPage($categoryPage, $page = 0)
 {
-    if (!isset($categoryPage) ) {
+    if (!isset($categoryPage) || $categoryPage == 0) {
         return '/page/cate';
     }
 
