@@ -16,13 +16,16 @@ class PartnerService
             ->orderBy('display_index')
             ->limit(8)
             ->get();
-
+        $index = 0;
         foreach ($partners as $pat) {
             $partner = new PartnerInfo();
             $partner->defaultCaseId = $pat->case_id;
+            $partner->partnerName = $pat->partner_name;
             $partner->imageUrl = $pat->logo_url;
             $partner->displayIndex = $pat->display_index;
+            $partner->index = $index;
             $result[] = $partner;
+            $index ++;
         }
         return $result;
     }

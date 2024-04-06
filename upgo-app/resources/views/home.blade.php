@@ -211,138 +211,28 @@
                 <div class="module_container">
                     <div class="container_hc">
                         <div class="container_category wow one hide">
-                            <a href="forum/id/10554/index.html" class="active"><span>全部</span></a>
+                            <a href="/page/partner" class="active"><span>全部</span></a>
                         </div>
                     </div>
                     <div class="container_content">
                         <div class="content_wrapper">
                             <ul class="content_list row gutter">
-                                <li id="item_block_0" class="item_block col-16 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334267/index.html" class="item_img" target="_blank"
-                                           title="好孩子"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823411530.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823411530.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_1" class="item_block col-16 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/334222/index.html" class="item_img" target="_blank"
-                                           title="觅菓"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823812154.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823812154.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_2" class="item_block col-16 wow" style="animation-delay:.2s">
-                                    <div class="content">
-                                        <a href="forum/post/333834/index.html" class="item_img" target="_blank"
-                                           title="全棉时代"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823489843.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823489843.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_3" class="item_block col-16 wow" style="animation-delay:.3s">
-                                    <div class="content">
-                                        <a href="forum/post/333796/index.html" class="item_img" target="_blank"
-                                           title="奶酪博士"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823552499.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823552499.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_4" class="item_block col-16 wow" style="animation-delay:.4s">
-                                    <div class="content">
-                                        <a href="forum/post/333810/index.html" class="item_img" target="_blank"
-                                           title="劲仔"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823760284.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823760284.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_5" class="item_block col-16 wow" style="animation-delay:.5s">
-                                    <div class="content">
-                                        <a href="forum/post/334188/index.html" class="item_img" target="_blank"
-                                           title="兔头妈妈"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689824041657.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689824041657.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_6" class="item_block col-16 wow" style="animation-delay:.0s">
-                                    <div class="content">
-                                        <a href="forum/post/334215/index.html" class="item_img" target="_blank"
-                                           title="十月结晶"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823874478.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823874478.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_7" class="item_block col-16 wow" style="animation-delay:.1s">
-                                    <div class="content">
-                                        <a href="forum/post/333625/index.html" class="item_img" target="_blank"
-                                           title="九牧王"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/168982372481.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/168982372481.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_8" class="item_block col-16 wow" style="animation-delay:.2s">
-                                    <div class="content">
-                                        <a href="forum/post/334191/index.html" class="item_img" target="_blank"
-                                           title="今麦郎"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823991839.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823991839.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_9" class="item_block col-16 wow" style="animation-delay:.3s">
-                                    <div class="content">
-                                        <a href="forum/post/334228/index.html" class="item_img" target="_blank"
-                                           title="海澜之家"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689824078256.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689824078256.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_10" class="item_block col-16 wow" style="animation-delay:.4s">
-                                    <div class="content">
-                                        <a href="forum/post/333441/index.html" class="item_img" target="_blank"
-                                           title="布鲁可"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823641943.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823641943.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li id="item_block_11" class="item_block col-16 wow" style="animation-delay:.5s">
-                                    <div class="content">
-                                        <a href="forum/post/333874/index.html" class="item_img" target="_blank"
-                                           title="溜溜梅"
-                                           style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689823954731.jpg)">
-                                            <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689823954731.jpg"
-                                                 width="225" height="110"/>
-                                        </a>
-                                    </div>
-                                </li>
+                                @foreach($homePageInfo->partnerList as $partnerInfo)
+                                    <li id="item_block_{{$partnerInfo->index}}" class="item_block col-16 wow" style="animation-delay:.0s">
+                                        <div class="content">
+                                            <a href="{{hCasePage($partnerInfo->defaultCaseId)}}" class="item_img" target="_blank"
+                                               title="{{$partnerInfo->partnerName}}"
+                                               style="background-image:url({{$partnerInfo->imageUrl}})">
+                                                <img src="{{$partnerInfo->imageUrl}}" width="225" height="110"/>
+                                            </a>
+                                        </div>
+                                    </li>
+                                @endforeach
                             </ul>
-                            <a href="forum/id/10554/index.html" class="more hide wow"
-                               style="animation-delay:.5s">查看更多</a>
+                            <a href="{{hCategoryPage(0)}}" class="more hide wow" style="animation-delay:.5s">查看更多</a>
                         </div><!--wrapper-->
                         <div class="clear"></div>
-                        <a href="forum/id/10554/index.html" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>
+                        <a href="/page/partner" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>
                     </div>
                     <div class="clear"></div>
                 </div>
