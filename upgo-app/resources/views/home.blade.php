@@ -12,7 +12,7 @@
                         @foreach ($homePageInfo->bannerList as $banner)
                             <li>
                                 <div class="item_bg image" data-thumb="" style="background-image:url('{{$banner->imageUrl}}')">
-                                    <img src="{{$banner->imageUrl}}"/>
+                                    <img src="{{hUrlImage($banner->imageUrl)}}"/>
                                 </div>
                                 <div class="wrapper">
                                     <div class="description mc">

@@ -1,7 +1,7 @@
 <div id="header">
     <div class="content">
         <div id="headTop">
-            <a href="index.html" id="logo"><img src="{{$siteLogo}}" alt="{{$brandTitle}}" /></a>
+            <a href="index.html" id="logo"><img src="{{hUrlImage($siteLogo)}}" alt="{{$brandTitle}}" /></a>
         </div>
         <div id="navWrapper">
             <div class="content">

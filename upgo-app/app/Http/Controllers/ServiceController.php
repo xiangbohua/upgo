@@ -22,11 +22,9 @@ class ServiceController extends BaseController
 //        $serviceArray = collect($allService)->chunk(3);
 
         //TODO
-        $bannerImage = 'localhost';
         $result = array_merge($homeService->getFooterInfo(),
             [
                 'serviceList'=>$allService,
-                'bannerImage'=>$bannerImage,
                 'totalPage'=>hTotalPage($total, $size),
                 'current'=>$page,
                 'size'=>$size

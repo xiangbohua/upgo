@@ -21,6 +21,15 @@ function hUrlAsset($path, $secure = null) {
     defined('_STATIC_FILE_VERSION_') ? _STATIC_FILE_VERSION_ : 0;
 }
 
+/**
+ * 生成静态文件路径，并后缀系统版本号
+ * @param type $path 路径
+ * @param type $secure 是否使用https
+ */
+function hUrlImage($path, $secure = null) {
+    echo URL::asset($path, $secure);
+}
+
 function hCasePage($caseInfoId)
 {
     return '/page/case/'.$caseInfoId;

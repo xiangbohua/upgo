@@ -15,12 +15,12 @@ class ServiceService
             ->where('deleted', 0)
             ->where('display', 1);
 
-        $cases = $query->orderBy('display_index')
-            ->offset($page * $pageSize)
+        $service = $query->orderBy('display_index')
+            ->offset($page - 1 * $pageSize)
             ->limit($pageSize)
             ->get();
 
-        return $this->convertFromDb($cases);
+        return $this->convertFromDb($service);
     }
 
     public function getTotalService() {

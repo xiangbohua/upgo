@@ -6,7 +6,7 @@
         <!--page-->
         <div class="npagePage">
             <div id="banner">
-                <img src="{{$bannerImage}}">
+                <img src="{{hUrlImage($serviceTitleImg)}}">
             </div>
             <div class="content">
                 <div class="mlist service module" style="">

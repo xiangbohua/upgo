@@ -29,4 +29,9 @@ class PartnerService
         }
         return $result;
     }
+
+    public function getTotalPartnerCount() {
+        return DB::table('partner')
+            ->where('deleted', 0)->count();
+    }
 }

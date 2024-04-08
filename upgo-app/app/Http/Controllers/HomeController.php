@@ -39,10 +39,14 @@ class HomeController extends BaseController
 
 
 
-    public function aboutPage(HomeService $homeService) {
+    public function aboutPage(HomeService $homeService,
+            PartnerService $partnerService) {
         $footerInfo = $homeService->getFooterInfo();
-        $footerInfo = array_merge($footerInfo, []);
-        return view('about', $footerInfo);
+
+        $aboutPageSetting = $homeService->listAboutPageSetting();
+
+
+        return view('about', array_merge($footerInfo, $aboutPageSetting));
     }
 
 

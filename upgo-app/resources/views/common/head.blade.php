@@ -10,7 +10,7 @@
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
-    <link rel="shortcut icon" href="http://resources.jsmo.xin/templates/upload/13313/201901/1547119794547.ico" />
+    <link rel="shortcut icon" href="{{hUrlImage($siteLogo)}}" />
     <link rel="stylesheet" type="text/css" href="{{hUrlAsset('public/templates/ue_content/templates/css/lib.css')}}">
     <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('public/templates/ue_content/templates/css/style.css')}}">
     <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('public/templates/ue_content/templates/css/style.css')}}">

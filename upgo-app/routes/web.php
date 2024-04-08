@@ -20,3 +20,5 @@ Route::get('/page/cate/{cateId}/page/{page}', 'CaseController@listCaseByCategory
 
 Route::get('page/service', 'ServiceController@listAllService');
 Route::get('page/service/{page}', 'ServiceController@listAllService');
+
+Route::get('page/about', 'HomeController@aboutPage');
