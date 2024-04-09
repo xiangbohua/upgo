@@ -30,6 +30,37 @@ class PartnerService
         return $result;
     }
 
+    /**
+     * 分页获取
+     * @param $page
+     * @param $pageSize
+     * @return array
+     */
+    public function listPartnerPage($page, $pageSize) {
+        $result = [];
+        $partners = DB::table('partner')
+            ->where('deleted', 0)
+            ->where('display', 1)
+            ->orderBy('display_index')
+            ->orderBy('id', 'desc')
+            ->offset(($page - 1) * $pageSize)
+            ->limit($pageSize)
+            ->get();
+
+        $index = 0;
+        foreach ($partners as $pat) {
+            $partner = new PartnerInfo();
+            $partner->defaultCaseId = $pat->case_id;
+            $partner->partnerName = $pat->partner_name;
+            $partner->imageUrl = $pat->logo_url;
+            $partner->displayIndex = $pat->display_index;
+            $partner->index = $index;
+            $result[] = $partner;
+            $index ++;
+        }
+        return $result;
+    }
+
     public function getTotalPartnerCount() {
         return DB::table('partner')
             ->where('deleted', 0)->count();

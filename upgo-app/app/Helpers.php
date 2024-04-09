@@ -7,7 +7,6 @@
  * @version 2017-05-04
  */
 
-use App\Exceptions\KnownLogicException;
 use Illuminate\Support\Facades\Log;
 
 /**
@@ -30,22 +29,29 @@ function hUrlImage($path, $secure = null) {
     echo URL::asset($path, $secure);
 }
 
-function hCasePage($caseInfoId)
+function hCaseDetailPage($caseInfoId)
 {
-    return '/page/case/'.$caseInfoId;
+    return '/case/case/'.$caseInfoId;
 }
 
-function hCategoryPage($categoryPage, $page = 0)
+function hCategoryPage($categoryId, $page = 0)
 {
-    if (!isset($categoryPage) || $categoryPage == 0) {
-        return '/page/cate';
-    }
-
-    $pageStr = !isset($page) || $page == 0 ? '' : ('/page/'.$page);
-
-    return '/page/cate/'.$categoryPage.$pageStr;
+//    if (empty($categoryId) && $categoryId == 0 && empty($page) && $page == 0) {
+//        return '/case/cate';
+//    }
+//
+//    if (empty($categoryId)) {
+//        return '/case/page/'.$page;
+//    }
+    return '/case/cate/'.$categoryId.'/page/'.$page;
 }
 
+/**
+ * 计算总页数
+ * @param $total
+ * @param $size
+ * @return false|float|int
+ */
 function hTotalPage($total, $size)
 {
     if (!isset($total)) {
@@ -55,42 +61,41 @@ function hTotalPage($total, $size)
     return ceil($total / $size);
 }
 
-function hCaseDetail($serviceId)
-{
-    return '/page/case/d/'.$serviceId;
-}
-
+/**
+ * 指定服务的界面
+ * @param $categoryPage
+ * @param $page
+ * @return string
+ */
 function hServicePage($categoryPage, $page = 0)
 {
     if (!isset($categoryPage) || $categoryPage == 0) {
-        return '/page/service';
+        return '/service';
     }
 
     $pageStr = !isset($page) || $page == 0 ? '' : ('/page/'.$page);
 
-    return '/page/service/'.$categoryPage.$pageStr;
+    return '/service/'.$categoryPage.$pageStr;
 }
 
+/**
+ * 服务详情界面
+ * @param $serviceId
+ * @return string
+ */
 function hServiceDetail($serviceId)
 {
     return '/page/service/d/'.$serviceId;
 }
 
-
-
-function hCheckViewWidget($allWidget, $widgetName){
-    if(empty($allWidget) || empty($widgetName))
-        return false;
-
-    if(isset($allWidget['view_widget'])){
-        foreach ($allWidget['view_widget'] as $ww){
-            if(isset($ww['action']) && $ww['action'] == $widgetName){
-                return true;
-            }
-        }
-    }
-    return false;
+/**
+ * @param $partnerId
+ * @return string
+ */
+function hPartnerPage($pageIndex) {
+    return '/partner/page/'.$pageIndex;
 }
+
 
 function hdate($timestamp = 0, $formatter = 'Y-m-d H:i:s')
 {
@@ -119,35 +124,5 @@ function hTryShowTime($timeString, $holder = '') {
         return $timeString;
     } else {
         return $holder;
-    }
-}
-
-function hFormatException(\Exception $e, $writeLog = false)
-{
-    $traceString = '';
-    $arr = $e->getTrace();
-    foreach ($arr as $tra) {
-        $traceString .= key_exists('file', $tra) ? ' FILE:'. $tra['file'] ." ": '';
-        $traceString .= key_exists('line', $tra) ? ' LINE:'.$tra['line'] ." " : '';
-        $traceString .= key_exists('function', $tra) ? ' FUNCTION:'.$tra['function'] ." " : '';
-        $traceString .= "\n";
-    }
-    $msg = $e->getMessage()."\n".
-        "TRACE:".$traceString;
-    if ($writeLog === true) {
-        Log::error($msg);
-    }
-    return $msg;
-}
-/**
- * 使用此方法检查逻辑是否满足条件，如果检查的表达式为false，则抛出KnownLogicException，此错误可以被捕捉并且直接返回错误
- * @param  bool $checkBoolValue 需要检查的值货值表达式
- * @param string $errorMessage 检查条件不满足时应当返回的错误信息
- * @throws KnownLogicException 抛出错误
- */
-function checkLogicAndThrow($checkBoolValue, $errorMessage = '逻辑错误')
-{
-    if (!$checkBoolValue) {
-        throw new KnownLogicException($errorMessage);
     }
 }

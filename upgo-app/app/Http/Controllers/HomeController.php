@@ -38,17 +38,39 @@ class HomeController extends BaseController
     }
 
 
-
+    /**
+     * 关于界面
+     * @param HomeService $homeService
+     * @param PartnerService $partnerService
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function aboutPage(HomeService $homeService,
             PartnerService $partnerService) {
         $footerInfo = $homeService->getFooterInfo();
 
         $aboutPageSetting = $homeService->listAboutPageSetting();
-
-
         return view('about', array_merge($footerInfo, $aboutPageSetting));
     }
 
+
+    /**
+     * 合作伙伴界面
+     * @param HomeService $homeService
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function partnerPage(HomeService $homeService,
+                                PartnerService $partnerService,
+                                $page = 1) {
+        $footerInfo = $homeService->getFooterInfo();
+        $partnerCount = $partnerService->getTotalPartnerCount();
+
+        $result = [
+            'partnerList'=>$partnerService->listPartnerPage($page, $this->defaultPageSize),
+            'totalPage'=>hTotalPage($partnerCount, $this->defaultPageSize),
+            'current'=>$page
+        ];
+        return view('partner', array_merge($footerInfo, $result));
+    }
 
 
 }

@@ -14,11 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@home');
-Route::get('/page/cate', 'CaseController@listCaseByCategory');
-Route::get('/page/cate/{cateId}', 'CaseController@listCaseByCategory');
-Route::get('/page/cate/{cateId}/page/{page}', 'CaseController@listCaseByCategory');
+//无分类，第一页
+Route::get('/case/cate', 'CaseController@listCaseByCategory');
+//无分类，第N页
+Route::get('/case/page/{page}', 'CaseController@listCaseByCategory');
 
-Route::get('page/service', 'ServiceController@listAllService');
-Route::get('page/service/{page}', 'ServiceController@listAllService');
+//有分类，第一页
+Route::get('/case/cate/{cateId}', 'CaseController@listCaseByCategory');
+//有分类，第N页
+Route::get('/case/cate/{cateId}/page/{page}', 'CaseController@listCaseByCategory');
 
-Route::get('page/about', 'HomeController@aboutPage');
+Route::get('/service', 'ServiceController@listAllService');
+Route::get('/service/{page}', 'ServiceController@listAllService');
+
+Route::get('/about', 'HomeController@aboutPage');
+Route::get('/partner', 'HomeController@partnerPage');
+Route::get('/partner/page/{page}', 'HomeController@partnerPage');

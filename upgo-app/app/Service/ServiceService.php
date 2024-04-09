@@ -16,7 +16,8 @@ class ServiceService
             ->where('display', 1);
 
         $service = $query->orderBy('display_index')
-            ->offset($page - 1 * $pageSize)
+            ->orderBy('id', 'desc')
+            ->offset(($page - 1) * $pageSize)
             ->limit($pageSize)
             ->get();
 

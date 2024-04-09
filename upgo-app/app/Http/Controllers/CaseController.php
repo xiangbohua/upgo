@@ -20,20 +20,20 @@ class CaseController extends BaseController
         $caseList = $caseService->getCasesByCateId($cateId, $page, $this->defaultPageSize);
         $caseCount = $caseService->listCaseCount($cateId);
 
+//        var_dump('当前第'.$page.'页，分类是'.$cateId);
         $cateList = $categoryService->getDefaultCategory();
 
         //TODO
-        $bannerImage = 'localhost';
         $result = array_merge($homeService->getFooterInfo(),
                 [
                     'caseList'=>$caseList,
                     'cateList'=>$cateList,
-                    'bannerImage'=>$bannerImage,
                     'currentCategory'=>$cateId,
                     'totalPage'=>hTotalPage($caseCount, $this->defaultPageSize),
                     'current'=>$page,
                     'size'=>$this->defaultPageSize
                 ]);
+
         return view('cases', $result);
     }
 

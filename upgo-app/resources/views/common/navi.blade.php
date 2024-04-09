@@ -15,19 +15,19 @@
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="/page/service" target="_self"><span data-title="服务范围">服务范围</span>
+                        <a  href="/service" target="_self"><span data-title="服务范围">服务范围</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="/page/about" target="_self"><span data-title="关于">关于{{$brandShortName}}</span>
+                        <a  href="/about" target="_self"><span data-title="关于">关于{{$brandShortName}}</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="/page/partner" target="_self"><span data-title="合作伙伴">合作伙伴</span>
+                        <a  href="/partner" target="_self"><span data-title="合作伙伴">合作伙伴</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="/page/contact" target="_self"><span data-title="联系我们">联系我们</span>
+                        <a  href="/contact" target="_self"><span data-title="联系我们">联系我们</span>
                         </a>
                     </li>
                 </ul>

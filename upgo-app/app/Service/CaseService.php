@@ -33,7 +33,8 @@ class CaseService
         }
 
         $cases = $query->orderBy('display_index')
-            ->offset($page * $pageSize)
+            ->orderBy('id', 'desc')
+            ->offset(($page - 1) * $pageSize)
             ->limit($pageSize)
             ->get();
 
@@ -45,6 +46,7 @@ class CaseService
                 ->where('deleted', 0)
                 ->where('display', 1)
                 ->where('home_page_display', 1);
+
         if (isset($cateId) && !is_null($cateId) && $cateId > 0) {
             $query->where('category_id', $cateId);
         }

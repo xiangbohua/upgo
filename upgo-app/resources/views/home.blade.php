@@ -8,10 +8,12 @@
             <!--slider-->
             <div id="topSlider" class="mslider module">
                 <div class="module_container wide">
-                    <ul class="content_list" data-slider-height="0" data-slider-auto="1" data-slider-mode="0" data-slider-pause="4" data-slider-ease="ease-out" data-slider-speed="0.5" style="height:1000px">
+                    <ul class="content_list" data-slider-height="0" data-slider-auto="1" data-slider-mode="0"
+                        data-slider-pause="4" data-slider-ease="ease-out" data-slider-speed="0.5" style="height:1000px">
                         @foreach ($homePageInfo->bannerList as $banner)
                             <li>
-                                <div class="item_bg image" data-thumb="" style="background-image:url('{{$banner->imageUrl}}')">
+                                <div class="item_bg image" data-thumb=""
+                                     style="background-image:url('{{hUrlImage($banner->imageUrl)}}')">
                                     <img src="{{hUrlImage($banner->imageUrl)}}"/>
                                 </div>
                                 <div class="wrapper">
@@ -21,141 +23,52 @@
                                     </div>
                                 </div>
                                 @if(!$banner->onlyImage)
-                                    <a href="{{hCasePage($banner->caseInfoId)}}}" class="full" target="_blank"></a></a>
+                                    <a href="{{hCaseDetailPage($banner->caseInfoId)}}}" class="full"
+                                       target="_blank"></a></a>
                                 @endif
                             </li>
                         @endforeach
-
-                        <li class="active">
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689821833435.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1690276074816.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689821881534.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1690276160916.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689817279461.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689817561288.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                            <a href="forum/post/334267/index.html" class="full" target="_blank"></a></a>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689820604990.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/168982060911.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                            <a href="forum/post/334222/index.html" class="full" target="_blank"></a></a>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689820826673.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689820830303.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                            <a href="forum/post/334215/index.html" class="full" target="_blank"></a></a>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689821177563.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689821180856.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                            <a href="forum/post/334145/index.html" class="full" target="_blank"></a></a>
-                        </li>
-                        <li>
-                            <div class="item_bg image" data-thumb=""
-                                 style="background-image:url(http://resources.jsmo.xin/templates/upload/13313/202307/1689821772784.jpg)">
-                                <img src="http://resources.jsmo.xin/templates/upload/13313/202307/1689821776729.jpg"/>
-                            </div>
-                            <div class="wrapper">
-                                <div class="description mc">
-                                    <p class="title ellipsis"></p>
-                                    <p class="subtitle"></p>
-                                </div>
-                            </div>
-                            <a href="forum/post/334261/index.html" class="full" target="_blank"></a></a>
-                        </li>
                     </ul>
                     <div class="sliderArrow fa fa-angle-down"></div>
                 </div>
             </div>
             <div class="mcounter module" style=" background-color:#FFFFFF;">
                 <div class="bgmask"></div>
-{{--                <div class="module_container wide">--}}
-{{--                    <div class="container_content">--}}
-{{--                        <ul class="content_list row">--}}
-{{--                            <li class="col-25">--}}
-{{--                                <div>--}}
-{{--                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span--}}
-{{--                                                class="unit">年</span></p>--}}
-{{--                                    <p class="title">3年间</p>--}}
-{{--                                </div>--}}
-{{--                            </li>--}}
-{{--                            <li class="col-25">--}}
-{{--                                <div>--}}
-{{--                                    <p class="number"><span class="counterDX" data-counter-value="23">23</span><span--}}
-{{--                                                class="unit">+</span></p>--}}
-{{--                                    <p class="title">助23个品牌</p>--}}
-{{--                                </div>--}}
-{{--                            </li>--}}
-{{--                            <li class="col-25">--}}
-{{--                                <div>--}}
-{{--                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span--}}
-{{--                                                class="unit"></span></p>--}}
-{{--                                    <p class="title">占据类目前3</p>--}}
-{{--                                </div>--}}
-{{--                            </li>--}}
-{{--                            <li class="col-25">--}}
-{{--                                <div>--}}
-{{--                                    <p class="number"><span class="counterDX" data-counter-value="126">126</span><span--}}
-{{--                                                class="unit">亿</span></p>--}}
-{{--                                    <p class="title">提升126亿销售</p>--}}
-{{--                                </div>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                        <div class="clear"></div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                {{--                <div class="module_container wide">--}}
+                {{--                    <div class="container_content">--}}
+                {{--                        <ul class="content_list row">--}}
+                {{--                            <li class="col-25">--}}
+                {{--                                <div>--}}
+                {{--                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span--}}
+                {{--                                                class="unit">年</span></p>--}}
+                {{--                                    <p class="title">3年间</p>--}}
+                {{--                                </div>--}}
+                {{--                            </li>--}}
+                {{--                            <li class="col-25">--}}
+                {{--                                <div>--}}
+                {{--                                    <p class="number"><span class="counterDX" data-counter-value="23">23</span><span--}}
+                {{--                                                class="unit">+</span></p>--}}
+                {{--                                    <p class="title">助23个品牌</p>--}}
+                {{--                                </div>--}}
+                {{--                            </li>--}}
+                {{--                            <li class="col-25">--}}
+                {{--                                <div>--}}
+                {{--                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span--}}
+                {{--                                                class="unit"></span></p>--}}
+                {{--                                    <p class="title">占据类目前3</p>--}}
+                {{--                                </div>--}}
+                {{--                            </li>--}}
+                {{--                            <li class="col-25">--}}
+                {{--                                <div>--}}
+                {{--                                    <p class="number"><span class="counterDX" data-counter-value="126">126</span><span--}}
+                {{--                                                class="unit">亿</span></p>--}}
+                {{--                                    <p class="title">提升126亿销售</p>--}}
+                {{--                                </div>--}}
+                {{--                            </li>--}}
+                {{--                        </ul>--}}
+                {{--                        <div class="clear"></div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
             </div><!--counter-->
             <div class="mlist project module" style="">
                 <div class="bgmask"></div>
@@ -176,7 +89,7 @@
                                 @foreach($homePageInfo->defaultCaseList as $case)
                                     <li id="item_block_0" class="item_block col-50 wow" style="animation-delay:.0s">
                                         <div class="content">
-                                            <a href="{{hCasePage($case->caseInfoId)}}" target="_blank">
+                                            <a href="{{hCaseDetailPage($case->caseInfoId)}}" target="_blank">
                                                 <div class="item_img"
                                                      style="background-image:url({{$case->imageUrl}})">
                                                     <img src="{{$case->imageUrl}}"/>
@@ -218,9 +131,11 @@
                         <div class="content_wrapper">
                             <ul class="content_list row gutter">
                                 @foreach($homePageInfo->partnerList as $partnerInfo)
-                                    <li id="item_block_{{$partnerInfo->index}}" class="item_block col-16 wow" style="animation-delay:.0s">
+                                    <li id="item_block_{{$partnerInfo->index}}" class="item_block col-16 wow"
+                                        style="animation-delay:.0s">
                                         <div class="content">
-                                            <a href="{{hCasePage($partnerInfo->defaultCaseId)}}" class="item_img" target="_blank"
+                                            <a href="{{hCaseDetailPage($partnerInfo->defaultCaseId)}}" class="item_img"
+                                               target="_blank"
                                                title="{{$partnerInfo->partnerName}}"
                                                style="background-image:url({{$partnerInfo->imageUrl}})">
                                                 <img src="{{$partnerInfo->imageUrl}}" width="225" height="110"/>
@@ -229,7 +144,8 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            <a href="{{hCategoryPage(0)}}" class="more hide wow" style="animation-delay:.5s">查看更多</a>
+                            <a href="{{hCategoryPage(0)}}" class="more hide wow"
+                               style="animation-delay:.5s">查看更多</a>
                         </div><!--wrapper-->
                         <div class="clear"></div>
                         <a href="/page/partner" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>
