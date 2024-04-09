@@ -23,8 +23,8 @@
                                     @foreach($serviceList as $index => $item)
                                         <li id="item_block_{{$index}}" class="item_block col-33 wow" style="animation-delay: 0s; visibility: visible; animation-name: fadeInUp;">
                                             <div class="content">
-                                                <a href="{{hServiceDetail($item->serviceId)}}" class="item_img" target="_blank" style="background-image:url({{$item->imageUrl}})">
-                                                    <img src="background-image:url({{$item->imageUrl}}">
+                                                <a href="{{hServiceDetail($item->serviceId)}}" class="item_img" target="_blank" style="background-image:url({{hUrlImage($item->imageUrl)}})">
+                                                    <img src="background-image:url({{hUrlImage($item->imageUrl)}}">
                                                     <div class="item_img_mask"></div>
                                                 </a>
                                                 <div class="item_wrapper">
