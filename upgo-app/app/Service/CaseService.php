@@ -53,6 +53,24 @@ class CaseService
         return $query->count();
     }
 
+    /**
+     * @param $keyWork
+     * @return array|\Illuminate\Support\Collection
+     */
+    public function searchCase($keyWork) {
+        if (empty($keyWork)) {
+            return [];
+        }
+        $result = DB::table('case_page')
+            ->where('title', 'like', '%'.$keyWork.'%')
+            ->orWhere('sub_title', 'like', '%'.$keyWork.'%')
+            ->select('id', 'title')
+            ->orderBy('id', 'desc')
+            ->limit(100)
+            ->get();
+        return $result;
+    }
+
     private function convertFromDb($dbData) {
         $result = [];
         foreach ($dbData as $ca) {

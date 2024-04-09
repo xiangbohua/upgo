@@ -159,31 +159,10 @@
     @include('common.footer')
 </div><!--siteWrapper-->
 <div id="rshares">
-    <a href="http://service.weibo.com/share/share.php?appkey=3206975293&amp;" target="_blank" class="sweibo"><i
-                class="fa fa-weibo"></i></a>
-    <a href="javascript:;" class="sweixin"><i class="fa fa-mobile"></i></a>
-    <a href="javascript:;" id="gotop"><i class="fa fa-angle-up"></i></a>
 </div>
 <div class="fixed" id="fixed_weixin">
-    <div class="fixed-container">
-        <div id="qrcode"></div>
-        <p>扫描二维码分享到微信</p>
-    </div>
 </div>
-<div id="online_open"><i class="fa fa-comments-o"></i></div>
 <div id="online_lx">
-    <div id="olx_head">
-        在线咨询<i class="fa fa-times fr" id="online_close"></i>
-    </div>
-    <ul id="olx_qq">
-        <li><a href="tencent://message/?uin=&Site=uelike&Menu=yes"><i class="fa fa-qq"></i></a></li>
-    </ul>
-    <div id="olx_tel">
-        <div><i class="fa fa-phone"></i>联系电话</div>
-        <p>
-            15920410275<br/>
-        </p>
-    </div>
 </div>
 <div class="hide">
     <script src="http://resources.jsmo.xin/templates/upload/13313/13313.js" type="text/javascript"></script>

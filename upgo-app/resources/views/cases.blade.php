@@ -82,31 +82,11 @@
     @include('common.footer')
 </div><!--siteWrapper-->
 <div id="rshares">
-    <a href="http://service.weibo.com/share/share.php?appkey=3206975293&amp;title=CASE+-+%E6%B1%A4%E8%87%A3%E6%9D%B0%E9%80%8A%E5%93%81%E7%89%8C%E6%88%98%E7%95%A5%E5%92%A8%E8%AF%A2+%7C+10%E4%BA%BF%E7%BA%A7%E8%B6%85%E7%BA%A7%E5%A4%A7%E5%8D%95%E5%93%81%E6%89%93%E9%80%A0&amp;url=http%3A%2F%2Fwww.toonsoon.com.cn%2Fforum%2Fid%2F10542%2Fcid%2F11045%2F"
-       target="_blank" class="sweibo"><i class="fa fa-weibo"></i></a>
-    <a href="javascript:;" class="sweixin"><i class="fa fa-mobile"></i></a>
-    <a href="javascript:;" id="gotop" style="display: block;"><i class="fa fa-angle-up"></i></a>
 </div>
 <div class="fixed" id="fixed_weixin">
-    <div class="fixed-container">
-        <div id="qrcode"></div>
-        <p>扫描二维码分享到微信</p>
-    </div>
 </div>
-<div id="online_open"><i class="fa fa-comments-o"></i></div>
 <div id="online_lx">
-    <div id="olx_head">
-        在线咨询<i class="fa fa-times fr" id="online_close"></i>
-    </div>
-    <ul id="olx_qq">
-        <li><a href="tencent://message/?uin=&amp;Site=uelike&amp;Menu=yes"><i class="fa fa-qq"></i></a></li>
-    </ul>
-    <div id="olx_tel">
-        <div><i class="fa fa-phone"></i>联系电话</div>
-        <p>
-            15920410275<br>
-        </p>
-    </div>
+
 </div>
 <div class="hide">
     <script src="13313/13313.js" type="text/javascript"></script>

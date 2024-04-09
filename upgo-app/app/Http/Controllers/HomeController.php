@@ -87,4 +87,16 @@ class HomeController extends BaseController
         return view('contact', array_merge($footerInfo, $webSetting, $result));
     }
 
+    public function searchCase(HomeService $homeService,
+    CaseService $caseService, $keyWork) {
+        $footerInfo = $homeService->getFooterInfo();
+
+        $caseList = $caseService->searchCase($keyWork);
+        $result = [
+            'searchResult'=>$caseList,
+            'keyWord'=>$keyWork
+        ];
+        return view('search', array_merge($footerInfo, $result));
+    }
+
 }

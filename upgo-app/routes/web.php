@@ -32,3 +32,4 @@ Route::get('/partner', 'HomeController@partnerPage');
 Route::get('/partner/page/{page}', 'HomeController@partnerPage');
 
 Route::get('/contact', 'HomeController@contactPage');
+Route::get('/search/{keyWord}', 'HomeController@searchCase');
