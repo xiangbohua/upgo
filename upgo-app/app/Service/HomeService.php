@@ -51,11 +51,19 @@ class HomeService
 
     public function getFooterInfo() {
         $allSetting = $this->listWebSetting();
+        $addressList = $this->listAllContactAddress(3);
+        return array_merge($allSetting, ['addressList'=>$addressList]);
+    }
 
-        $addressInfos = DB::table('contact_address')
-            ->where('deleted', 0)
-            ->limit(3)
-            ->get();
+    public function listAllContactAddress($limit) {
+        $query = DB::table('contact_address')
+            ->where('deleted', 0);
+
+
+        if (!empty($limit) && $limit > 0) {
+            $query->limit($limit);
+        }
+        $addressInfos = $query->get();
         $addressList = [];
         foreach ($addressInfos as $addressData) {
             $address = new ContactInfo();
@@ -65,11 +73,11 @@ class HomeService
             $address->contactMobile = $addressData->contact_mobile;
             $address->contactChat = $addressData->contact_chat;
             $address->postCode = $addressData->post_code;
+            $address->displayImage = $addressData->display_image;
             $addressList[] = $address;
         }
-        return array_merge($allSetting, ['addressList'=>$addressList]);
+        return $addressList;
     }
-
 
     public function listWebSetting() {
         $allSettingData = DB::table('site_setting')

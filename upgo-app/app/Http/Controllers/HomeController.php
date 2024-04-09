@@ -72,5 +72,19 @@ class HomeController extends BaseController
         return view('partner', array_merge($footerInfo, $result));
     }
 
+    /**
+     * 联系界面
+     * @param HomeService $homeService
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function contactPage(HomeService $homeService) {
+        $footerInfo = $homeService->getFooterInfo();
+        $webSetting = $homeService->listWebSetting();
+        $result = [
+            'addressList'=>$homeService->listAllContactAddress(0)
+        ];
+
+        return view('contact', array_merge($footerInfo, $webSetting, $result));
+    }
 
 }

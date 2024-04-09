@@ -14,7 +14,7 @@ class PartnerService
             ->where('deleted', 0)
             ->where('display', 1)
             ->orderBy('display_index')
-            ->limit(8)
+            ->limit(12)
             ->get();
         $index = 0;
         foreach ($partners as $pat) {

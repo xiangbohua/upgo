@@ -30,3 +30,5 @@ Route::get('/service/{page}', 'ServiceController@listAllService');
 Route::get('/about', 'HomeController@aboutPage');
 Route::get('/partner', 'HomeController@partnerPage');
 Route::get('/partner/page/{page}', 'HomeController@partnerPage');
+
+Route::get('/contact', 'HomeController@contactPage');
