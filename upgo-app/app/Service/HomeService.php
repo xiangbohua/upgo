@@ -56,7 +56,7 @@ class HomeService
     }
 
     public function listAllContactAddress($limit) {
-        $query = DB::table('contact_address')
+        $query = DB::table('web_contact_address')
             ->where('deleted', 0);
 
 
@@ -80,7 +80,7 @@ class HomeService
     }
 
     public function listWebSetting() {
-        $allSettingData = DB::table('site_setting')
+        $allSettingData = DB::table('web_site_setting')
             ->select(['setting_code','setting_value'])
             ->get();
         $allSetting = [];
@@ -98,7 +98,7 @@ class HomeService
      * @return array|string[] 关于界面配置
      */
     public function listAboutPageSetting() {
-        $setting = DB::table('about_page')->limit(1)->first();
+        $setting = DB::table('web_about_page')->limit(1)->first();
         if (empty($setting)) {
             return $this->aboutPageSetting;
         } else {

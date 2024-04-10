@@ -9,7 +9,7 @@ class BannerService
 {
     public function getBanners() {
         $result = [];
-        $banners = DB::table('home_banner')
+        $banners = DB::table('web_home_banner')
             ->where('deleted', 0)
             ->where('display', 1)
             ->select(['title', 'case_id', 'image_url', 'display_index'])

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class CaseService
 {
     public function getDefaultCase() {
-        $cases = DB::table('case_page')
+        $cases = DB::table('web_case_page')
             ->where('deleted', 0)
             ->where('display', 1)
             ->where('home_page_display', 1)
@@ -24,7 +24,7 @@ class CaseService
     public function getCasesByCateId($cateId, $page, $pageSize) {
         $page = !isset($page) || $page <= 0 ? 1 : $page;
 
-        $query = DB::table('case_page')
+        $query = DB::table('web_case_page')
             ->where('deleted', 0)
             ->where('display', 1)
             ->where('home_page_display', 1);
@@ -42,7 +42,7 @@ class CaseService
     }
 
     public function listCaseCount($cateId) {
-        $query = DB::table('case_page')
+        $query = DB::table('web_case_page')
                 ->where('deleted', 0)
                 ->where('display', 1)
                 ->where('home_page_display', 1);
@@ -61,7 +61,7 @@ class CaseService
         if (empty($keyWork)) {
             return [];
         }
-        $result = DB::table('case_page')
+        $result = DB::table('web_case_page')
             ->where('title', 'like', '%'.$keyWork.'%')
             ->orWhere('sub_title', 'like', '%'.$keyWork.'%')
             ->select('id', 'title')

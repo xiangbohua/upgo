@@ -9,7 +9,7 @@ class CategoryService
 {
     public function getDefaultCategory() {
         $result = [];
-        $categorys = DB::table('category')
+        $categorys = DB::table('web_category')
             ->where('deleted', 0)
             ->where('display', 1)
             ->select(['id', 'cate_name'])

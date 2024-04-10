@@ -11,7 +11,7 @@ class ServiceService
     public function getServiceByPage($page, $pageSize) {
         $page = !isset($page) || $page <= 0 ? 1 : $page;
 
-        $query = DB::table('service_page')
+        $query = DB::table('web_service_page')
             ->where('deleted', 0)
             ->where('display', 1);
 
@@ -25,7 +25,7 @@ class ServiceService
     }
 
     public function getTotalService() {
-        return DB::table('service_page')
+        return DB::table('web_service_page')
             ->where('deleted', 0)
             ->where('display', 1)
             ->count();
