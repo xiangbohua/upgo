@@ -95,8 +95,6 @@
     <div class="spinner"></div>
 </div>
 <div class="fixed" id="fixed_mp">
-    <div class="fixed-container"><img src="//resources.jsmo.xin/templates/upload/13313/201901/1546587377152.png">
-        <p>微信扫一扫</p></div>
 </div>
 <div class="index-mask"></div>
 <div id="screenity-ui">

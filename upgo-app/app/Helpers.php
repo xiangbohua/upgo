@@ -8,6 +8,7 @@
  */
 
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\URL;
 
 /**
  * 生成静态文件路径，并后缀系统版本号

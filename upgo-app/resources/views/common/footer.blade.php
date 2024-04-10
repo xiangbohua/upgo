@@ -57,9 +57,6 @@
             <span class="ellipsis">COPYRIGHT (©) 2024  UPGO品牌战略咨询 | 100亿级超级大单品打造. </span>
             <a id="fbeian" href="https://beian.miit.gov.cn/" target="_blank">沪ICP备xxx号</a>
             <span style="vertical-align: top;">&nbsp;&nbsp;&nbsp;&nbsp;技术支持</span>
-{{--            <a id="flogo" target="_blank" href="http://www.uemo.net">--}}
-{{--                <img src="http://resources.jsmo.xin/templates/upload/2/logo/logo.png" width="50" height="20"/>--}}
-{{--            </a>--}}
         </div>
     </div>
 </div>
