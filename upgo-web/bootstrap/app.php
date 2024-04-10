@@ -26,6 +26,8 @@ $app = new Illuminate\Foundation\Application(
 |
 */
 
+require_once __DIR__ . '/../app/Helpers.php';
+
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
     App\Http\Kernel::class
