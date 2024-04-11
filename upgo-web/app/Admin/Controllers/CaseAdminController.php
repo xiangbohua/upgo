@@ -2,8 +2,10 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\CaseDetailAction;
 use App\Admin\Models\WebCasePage;
 use App\Admin\Models\WebCategory;
+use App\Service\CaseService;
 use App\Service\CategoryService;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -30,7 +32,6 @@ class CaseAdminController extends AdminController
         $categoryService = new CategoryService();
         $categoryList = $categoryService->getDropList();
 
-
         $grid->column('id', __('ID'))->sortable()->width(80);
         $grid->column('title', __('标题'))->sortable()->display(function ($text) {
             return $text;
@@ -40,13 +41,9 @@ class CaseAdminController extends AdminController
             return $text;
         })->filter('like')->editable();
 
-        $grid->column('main_image_url', __('封面'))->display(function($url) {
-            return '<img src="'. hGetImage($url) . '" style="width:40px;height:40px">';
-        });
+        $grid->column('main_image_url', __('封面'))->image();
 
-        $grid->column('category_id', __('案例分类'))->display(function($cateId) use ($categoryList) {
-            return !empty($categoryList[$cateId]) ?? '未知';
-        })->editable('select', $categoryList);
+        $grid->column('category_id', __('案例分类'))->editable('select', $categoryList);
 
         $grid->column('home_page_display', __('是否首页现实'))
             ->using(['0' => '不显示', '1' => '显示'])->filter(valuesDisplay());
@@ -66,7 +63,9 @@ class CaseAdminController extends AdminController
 
         $grid->model()->where('is_deleted', '=', 0);
 
-
+        $grid->actions(function ($actions) {
+            $actions->add(new CaseDetailAction());
+        });
 
         $grid->filter(function ($filter) use ($categoryList) {
             $filter->disableIdFilter();
@@ -127,7 +126,25 @@ class CaseAdminController extends AdminController
 
         $form->number('display_index', __('展示顺序'))->min(1);
 
+        $form->footer(function ($footer) {
+            // 去掉`重置`按钮
+            $footer->disableReset();
+            // 去掉`提交`按钮
+//            $footer->disableSubmit();
+            // 去掉`查看`checkbox
+//            $footer->disableViewCheck();
+            // 去掉`继续编辑`checkbox
+//            $footer->disableEditingCheck();
+            // 去掉`继续创建`checkbox
+//            $footer->disableCreatingCheck();
+        });
+
 
         return $form;
+    }
+
+
+    protected function editImages(CaseService $service, $caseId) {
+        return view('welcome');
     }
 }

@@ -15,4 +15,10 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('users', 'UserController');
     $router->resource('cases', 'CaseAdminController');
+    $router->resource('contact', 'AddressAdminController');
+    $router->resource('banner', 'HomeBannerAdminController');
+    $router->resource('partner', 'PartnerAdminController');
+    $router->resource('service', 'ServiceAdminController');
+
+
 });
