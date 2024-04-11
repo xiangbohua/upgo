@@ -10,7 +10,7 @@ class CaseService
 {
     public function getDefaultCase() {
         $cases = DB::table('web_case_page')
-            ->where('deleted', 0)
+            ->where('is_deleted', 0)
             ->where('display', 1)
             ->where('home_page_display', 1)
             ->orderBy('display_index')
@@ -25,7 +25,7 @@ class CaseService
         $page = !isset($page) || $page <= 0 ? 1 : $page;
 
         $query = DB::table('web_case_page')
-            ->where('deleted', 0)
+            ->where('is_deleted', 0)
             ->where('display', 1)
             ->where('home_page_display', 1);
         if (isset($cateId) && !is_null($cateId) && $cateId > 0) {
@@ -43,7 +43,7 @@ class CaseService
 
     public function listCaseCount($cateId) {
         $query = DB::table('web_case_page')
-                ->where('deleted', 0)
+                ->where('is_deleted', 0)
                 ->where('display', 1)
                 ->where('home_page_display', 1);
 

@@ -14,7 +14,5 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('users', 'UserController');
-
-    $router->get('/setting', 'SettingController@grid')->name("setting");
-
+    $router->resource('cases', 'CaseAdminController');
 });

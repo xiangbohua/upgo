@@ -57,7 +57,7 @@ class HomeService
 
     public function listAllContactAddress($limit) {
         $query = DB::table('web_contact_address')
-            ->where('deleted', 0);
+            ->where('is_deleted', 0);
 
 
         if (!empty($limit) && $limit > 0) {

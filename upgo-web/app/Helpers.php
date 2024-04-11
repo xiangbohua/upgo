@@ -47,6 +47,7 @@ function hCategoryPage($categoryId, $page = 0)
     return '/case/cate/'.$categoryId.'/page/'.$page;
 }
 
+
 /**
  * 计算总页数
  * @param $total
@@ -60,6 +61,17 @@ function hTotalPage($total, $size)
     }
     $size = $size ?? 12;
     return ceil($total / $size);
+}
+
+/**
+ * 匹配数据
+ * @param $yesOrNo
+ * @param $yesValue
+ * @param $noValue
+ * @return mixed
+ */
+function forYesOrNoValue($yesOrNo, $yesValue, $noValue) {
+    return !empty($yesOrNo) ? $yesValue : $noValue;
 }
 
 /**
@@ -97,6 +109,15 @@ function hPartnerPage($pageIndex) {
     return '/partner/page/'.$pageIndex;
 }
 
+/**
+ * 生成静态文件路径，并后缀系统版本号
+ * @param type $path 路径
+ * @param type $secure 是否使用https
+ */
+function hGetImage($path, $secure = null) {
+    return URL::asset($path, $secure);
+}
+
 
 function hdate($timestamp = 0, $formatter = 'Y-m-d H:i:s')
 {
@@ -105,6 +126,10 @@ function hdate($timestamp = 0, $formatter = 'Y-m-d H:i:s')
         return date($formatter, time());
     }
     return date($formatter, $timestamp);
+}
+
+function hFormatTime($time) {
+    return date("Y-m-d h:m", strtotime($time));
 }
 
 function hIsTestEvn(){
@@ -126,4 +151,8 @@ function hTryShowTime($timeString, $holder = '') {
     } else {
         return $holder;
     }
+}
+
+function valuesDisplay() {
+    return ['1'=>'显示', '0'=>'不显示'];
 }

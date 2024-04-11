@@ -11,7 +11,7 @@ class PartnerService
         $result = [];
 
         $partners = DB::table('web_partner')
-            ->where('deleted', 0)
+            ->where('is_deleted', 0)
             ->where('display', 1)
             ->orderBy('display_index')
             ->limit(12)
@@ -39,7 +39,7 @@ class PartnerService
     public function listPartnerPage($page, $pageSize) {
         $result = [];
         $partners = DB::table('web_partner')
-            ->where('deleted', 0)
+            ->where('is_deleted', 0)
             ->where('display', 1)
             ->orderBy('display_index')
             ->orderBy('id', 'desc')
@@ -63,6 +63,6 @@ class PartnerService
 
     public function getTotalPartnerCount() {
         return DB::table('web_partner')
-            ->where('deleted', 0)->count();
+            ->where('is_deleted', 0)->count();
     }
 }
