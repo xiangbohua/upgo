@@ -11,6 +11,11 @@ class WebCasePage extends Authenticatable
 
     protected $table = 'web_case_page';
 
+
+    public function WebCasePageItem() {
+        return $this->hasMany(WebCasePageItem::class, 'case_id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

@@ -44,7 +44,6 @@ class PartnerAdminController extends AdminController
             return hFormatTime($time);
         });
 
-        $grid->model()->where('is_deleted', '=', 0);
         return $grid;
     }
 

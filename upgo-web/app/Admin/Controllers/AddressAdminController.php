@@ -27,16 +27,19 @@ class AddressAdminController extends AdminController
         $grid = new Grid(new WebContactAddress());
 
         $grid->column('id', __('Id'));
-        $grid->column('title_name', __('Title name'));
-        $grid->column('title_hint', __('Title hint'));
-        $grid->column('detail_address', __('Detail address'));
-        $grid->column('contact_mobile', __('Contact mobile'));
-        $grid->column('contact_chat', __('Contact chat'));
-        $grid->column('post_code', __('Post code'));
-        $grid->column('display_image', __('Display image'));
-        $grid->column('is_deleted', __('Is deleted'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('title_name', __('地址标题'));
+        $grid->column('title_hint', __('地址提示'));
+        $grid->column('detail_address', __('详细地址'));
+        $grid->column('contact_mobile', __('联系手机号'));
+        $grid->column('contact_chat', __('微信号'));
+        $grid->column('post_code', __('邮编'));
+        $grid->column('display_image', __('图片展示'))->image();
+        $grid->column('created_at', __('添加时间'))->display(function ($time) {
+            return hFormatTime($time);
+        });;
+        $grid->column('updated_at', __('更新时间'))->display(function ($time) {
+            return hFormatTime($time);
+        });
 
         return $grid;
     }
@@ -52,16 +55,15 @@ class AddressAdminController extends AdminController
         $show = new Show(WebContactAddress::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('title_name', __('Title name'));
-        $show->field('title_hint', __('Title hint'));
-        $show->field('detail_address', __('Detail address'));
-        $show->field('contact_mobile', __('Contact mobile'));
-        $show->field('contact_chat', __('Contact chat'));
-        $show->field('post_code', __('Post code'));
-        $show->field('display_image', __('Display image'));
-        $show->field('is_deleted', __('Is deleted'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('title_name', __('地址标题'));
+        $show->field('title_hint', __('地址提示'));
+        $show->field('detail_address', __('详细地址'));
+        $show->field('contact_mobile', __('联系手机号'));
+        $show->field('contact_chat', __('微信号'));
+        $show->field('post_code', __('邮编'));
+        $show->field('display_image', __('图片展示'))->image();
+        $show->field('created_at', __('添加时间'));
+        $show->field('updated_at', __('修改时间'));
 
         return $show;
     }
@@ -75,15 +77,15 @@ class AddressAdminController extends AdminController
     {
         $form = new Form(new WebContactAddress());
 
-        $form->text('title_name', __('Title name'));
-        $form->text('title_hint', __('Title hint'));
-        $form->text('detail_address', __('Detail address'));
-        $form->text('contact_mobile', __('Contact mobile'));
-        $form->text('contact_chat', __('Contact chat'));
-        $form->text('post_code', __('Post code'));
-        $form->text('display_image', __('Display image'));
-        $form->switch('is_deleted', __('Is deleted'));
+        $form->text('title_name', __('地址标题'))->required();
+        $form->text('title_hint', __('地址提示'))->required();
+        $form->text('detail_address', __('详细地址'))->required();
+        $form->mobile('contact_mobile', __('联系手机号'))->required();
+        $form->text('contact_chat', __('微信号'))->required();
+        $form->text('post_code', __('邮编'))->required();
+        $form->image('display_image', __('图片展示'))->required();
 
+        $form->confirm('确定提交吗？');
         return $form;
     }
 }

@@ -43,13 +43,13 @@ class CaseAdminController extends AdminController
 
         $grid->column('main_image_url', __('封面'))->image();
 
-        $grid->column('category_id', __('案例分类'))->select($categoryList)->editable();
+        $grid->column('category_id', __('案例分类'))->filter($categoryList)->select($categoryList);
 
         $grid->column('home_page_display', __('是否首页现实'))
-            ->using(['0' => '不显示', '1' => '显示'])->filter(valuesDisplay());
+            ->filter(valuesDisplay())->select(valuesDisplay());
 
         $grid->column('display', __('列表显示'))
-            ->using(valuesDisplay())->filter(valuesDisplay());
+            ->filter(valuesDisplay())->select(valuesDisplay());
 
         $grid->column('display_index', __('展示顺序'))->sortable();
         $grid->column('created_at', __('添加时间'))->display(function ($time) {
@@ -59,13 +59,9 @@ class CaseAdminController extends AdminController
             return hFormatTime($time);
         });
 
-        $grid->paginate(5);
+//        $grid->paginate(5);
 
-        $grid->model()->where('is_deleted', '=', 0);
-
-        $grid->actions(function ($actions) {
-            $actions->add(new CaseDetailAction());
-        });
+        $grid->disableExport();
 
         $grid->filter(function ($filter) use ($categoryList) {
             $filter->disableIdFilter();
@@ -94,7 +90,40 @@ class CaseAdminController extends AdminController
     {
         $show = new Show(WebCasePage::findOrFail($id));
 
+        $categorySer = new CategoryService();
+        $dropList = $categorySer->getDropList();
 
+        $show->field('title', __('标题'));
+
+        $show->field('sub_title', __('案例副标题'));
+
+        $show->field('main_image_url', __('封面'))->image();
+
+        $show->field('category_id', __('案例分类'))->using($dropList);;
+
+        $show->field('home_page_display', __('是否首页现实'))->using(valuesDisplay());;
+
+        $show->field('display', __('列表显示'))->using(valuesDisplay());
+
+        $show->field('display_index', __('展示顺序'))->number();
+
+        $show->relation('WebCasePageItem', '图片展示', function ($grid) {
+            $grid->column('image_url', '图片')->image();
+            $grid->column('display_index', '展示顺序')->number();
+            $grid->disableFilter();
+            $grid->disableExport();
+            $grid->disableCreateButton();
+            $grid->disableCreateButton();
+            $grid->disableColumnSelector();
+
+            $grid->actions(function ($actions) {
+                // 去掉编辑
+                $actions->disableEdit();
+                // 去掉查看
+                $actions->disableView();
+            });
+
+        });
 
         return $show;
     }
@@ -126,6 +155,11 @@ class CaseAdminController extends AdminController
 
         $form->number('display_index', __('展示顺序'))->min(1)->rules('required');
 
+        $form->hasMany('WebCasePageItem', '图片展示', function (Form\NestedForm $form) {
+            $form->image('image_url', '图片');
+            $form->number('display_index', '展示顺序')->min(1);
+        });
+
         $form->footer(function ($footer) {
             // 去掉`重置`按钮
             $footer->disableReset();
@@ -139,12 +173,8 @@ class CaseAdminController extends AdminController
 //            $footer->disableCreatingCheck();
         });
 
-
+        $form->confirm('确定提交吗？');
         return $form;
     }
 
-
-    protected function editImages(CaseService $service, $caseId) {
-        return view('welcome');
-    }
 }

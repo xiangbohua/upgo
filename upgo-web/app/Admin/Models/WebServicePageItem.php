@@ -6,15 +6,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class WebServicePage extends Authenticatable
+class WebServicePageItem extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'web_service_page';
+    protected $table = 'web_service_page_item';
 
-    public function WebServicePageItem()
-    {
-        return $this->hasMany(WebServicePageItem::class, 'service_id');
+    public function WebServicePage() {
+        return $this->belongsTo(WebServicePage::class, 'service_id');
     }
 
     /**
@@ -23,7 +22,8 @@ class WebServicePage extends Authenticatable
      * @var array
      */
     protected $fillable = [
-
+        'image_url',
+        'display_index'
     ];
 
     /**

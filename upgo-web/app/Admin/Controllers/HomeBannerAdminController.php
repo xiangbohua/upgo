@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Models\WebHomeBanner;
+use App\Service\CaseService;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -15,7 +16,7 @@ class HomeBannerAdminController extends AdminController
      *
      * @var string
      */
-    protected $title = 'WebHomeBanner';
+    protected $title = '首页轮播图设置';
 
     /**
      * Make a grid builder.
@@ -25,17 +26,27 @@ class HomeBannerAdminController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new WebHomeBanner());
+        $caseSer = new CaseService();
 
-        $grid->column('id', __('Id'));
-        $grid->column('position', __('Position'));
-        $grid->column('title', __('Title'));
-        $grid->column('case_id', __('Case id'));
-        $grid->column('image_url', __('Image url'));
-        $grid->column('display', __('Display'));
-        $grid->column('display_index', __('Display index'));
-        $grid->column('is_deleted', __('Is deleted'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('id', __('ID'));
+        $grid->column('title', __('标题'))->filter('like')->editable();
+        $grid->column('case_id', __('关联案例'))->display(function($caseId) use ($caseSer) {
+            return $caseSer->getCaseFullNameById($caseId);
+        });
+        $grid->column('image_url', __('轮播图片'))->image();
+        $grid->column('display', __('是否展示'))
+            ->filter(valuesDisplay())
+            ->select(valuesDisplay());
+
+        $grid->column('display_index', __('轮播顺序'))->sortable()->editable();
+
+        $grid->column('created_at', __('添加时间'))->display(function ($time) {
+            return hFormatTime($time);
+        });
+        $grid->column('updated_at', __('修改时间'))->display(function ($time) {
+            return hFormatTime($time);
+        });
+        $grid->disableExport();
 
         return $grid;
     }
@@ -51,13 +62,11 @@ class HomeBannerAdminController extends AdminController
         $show = new Show(WebHomeBanner::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('position', __('Position'));
         $show->field('title', __('Title'));
         $show->field('case_id', __('Case id'));
         $show->field('image_url', __('Image url'));
         $show->field('display', __('Display'));
         $show->field('display_index', __('Display index'));
-        $show->field('is_deleted', __('Is deleted'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -72,14 +81,15 @@ class HomeBannerAdminController extends AdminController
     protected function form()
     {
         $form = new Form(new WebHomeBanner());
+        $caseService = new CaseService();
+        $caseDrop = $caseService->listForDropDown();
 
-        $form->switch('position', __('Position'));
-        $form->text('title', __('Title'));
-        $form->number('case_id', __('Case id'));
-        $form->text('image_url', __('Image url'));
-        $form->switch('display', __('Display'));
-        $form->number('display_index', __('Display index'));
-        $form->switch('is_deleted', __('Is deleted'));
+
+        $form->text('title', __('标题'));
+        $form->select('case_id', __('关联案例'))->options($caseDrop);
+        $form->image('image_url', __('轮播图'))->required();
+        $form->switch('display', __('是否展示'))->options(displaySwitch());
+        $form->number('display_index', __('展示顺序'))->min(1);
 
         return $form;
     }

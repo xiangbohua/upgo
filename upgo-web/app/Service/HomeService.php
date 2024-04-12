@@ -57,8 +57,7 @@ class HomeService
     }
 
     public function listAllContactAddress($limit) {
-        $query = DB::table('web_contact_address')
-            ->where('is_deleted', 0);
+        $query = DB::table('web_contact_address');
 
         if (!empty($limit) && $limit > 0) {
             $query->limit($limit);
@@ -88,7 +87,6 @@ class HomeService
         $service = new ServiceService();
 
         $query = DB::table('web_service_page')
-            ->where('is_deleted', 0)
             ->where('display', 1);
         $serviceList = $query->orderBy('display_index')
             ->limit($limit)

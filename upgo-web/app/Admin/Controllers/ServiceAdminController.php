@@ -44,9 +44,8 @@ class ServiceAdminController extends AdminController
             return hFormatTime($time);
         });
 
-        $grid->model()->where('is_deleted', '=', 0);
 
-
+        $grid->disableExport();
         return $grid;
     }
 
@@ -66,9 +65,25 @@ class ServiceAdminController extends AdminController
         $show->field('image_url', __('Image url'));
         $show->field('display', __('Display'));
         $show->field('display_index', __('Display index'));
-        $show->field('is_deleted', __('Is deleted'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
+
+        $show->relation('WebServicePageItem', '图片展示', function ($grid) {
+            $grid->column('image_url', '图片')->image();
+            $grid->column('display_index', '展示顺序')->number();
+            $grid->disableFilter();
+            $grid->disableExport();
+            $grid->disableCreateButton();
+            $grid->disableCreateButton();
+            $grid->disableColumnSelector();
+
+            $grid->actions(function ($actions) {
+                // 去掉编辑
+                $actions->disableEdit();
+                // 去掉查看
+                $actions->disableView();
+            });
+        });
 
         return $show;
     }
@@ -82,12 +97,17 @@ class ServiceAdminController extends AdminController
     {
         $form = new Form(new WebServicePage());
 
-        $form->text('title', __('Title'));
-        $form->text('sub_title', __('Sub title'));
-        $form->text('image_url', __('Image url'));
-        $form->switch('display', __('Display'));
-        $form->number('display_index', __('Display index'));
-        $form->switch('is_deleted', __('Is deleted'));
+        $form->text('title', __('服务标题'));
+        $form->text('sub_title', __('服务副标题'));
+        $form->image('image_url', __('展示URL'));
+        $form->switch('display', __('是否展示'));
+        $form->number('display_index', __('展示顺序'))->min(1);
+
+
+        $form->hasMany('WebServicePageItem', '图片展示', function (Form\NestedForm $form) {
+            $form->image('image_url', '图片');
+            $form->number('display_index', '展示顺序');
+        });
 
         return $form;
     }

@@ -2,19 +2,17 @@
 
 namespace App\Admin\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class WebServicePage extends Authenticatable
+class WebCasePageItem extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'web_service_page';
+    protected $table = 'web_case_page_item';
 
-    public function WebServicePageItem()
-    {
-        return $this->hasMany(WebServicePageItem::class, 'service_id');
+    public function WebCasePage() {
+        return $this->belongsTo(WebCasePage::class, 'case_id');
     }
 
     /**
@@ -23,7 +21,8 @@ class WebServicePage extends Authenticatable
      * @var array
      */
     protected $fillable = [
-
+        'image_url',
+        'display_index'
     ];
 
     /**
@@ -32,7 +31,7 @@ class WebServicePage extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
@@ -44,4 +43,5 @@ class WebServicePage extends Authenticatable
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
+
 }

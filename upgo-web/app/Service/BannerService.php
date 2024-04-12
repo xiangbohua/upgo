@@ -10,7 +10,6 @@ class BannerService
     public function getBanners() {
         $result = [];
         $banners = DB::table('web_home_banner')
-            ->where('is_deleted', 0)
             ->where('display', 1)
             ->select(['title', 'case_id', 'image_url', 'display_index'])
             ->orderBy('display_index')
