@@ -4,9 +4,9 @@
             <ul class="content_list row gutter">
                 <li id="fitem_block_0" class="fitem_block_info item_block col-25 wow">
                     <h3 class="title">
-                        <a href="">{{$brandTitle}}</a>
+                        <a href="">{{$brand_title}}</a>
                     </h3>
-                    <p class="description">{{$brandDesc}}</p>
+                    <p class="description">{{$brand_desc}}</p>
                     <div class="shareicon">
 {{--                        <a class="fl" target="_blank"--}}
 {{--                           href="{{$weiboLink}}">--}}
@@ -32,9 +32,9 @@
                 <li id="fitem_block_2" class="fitem_block_link item_block col-25 wow">
                     <ul>
                         <li class="title"><span class="ellipsis">服务范围</span></li>
-                        <li><a class="ellipsis" href="forum/post/79361/index.html" target="_blank">新视觉创意策划</a></li>
-                        <li><a class="ellipsis" href="forum/post/79349/index.html" target="_blank">品牌新视觉 VI 规范</a></li>
-                        <li><a class="ellipsis" href="forum/post/79339/index.html" target="_blank">新零售视觉策划及设计</a></li>
+                        @foreach($services as $ser)
+                            <li><a class="ellipsis" href="{{hServiceDetail($ser->serviceId)}}" target="_blank">{{$ser->title}}</a></li>
+                        @endforeach
                     </ul>
                 </li>
 

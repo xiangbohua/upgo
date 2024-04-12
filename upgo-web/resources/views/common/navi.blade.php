@@ -1,7 +1,7 @@
 <div id="header">
     <div class="content">
         <div id="headTop">
-            <a href="index.html" id="logo"><img src="{{hUrlImage($siteLogo)}}" alt="{{$brandTitle}}" /></a>
+            <a href="index.html" id="logo"><img src="{{hUrlImage($site_logo)}}" alt="{{$brand_title}}" /></a>
         </div>
         <div id="navWrapper">
             <div class="content">
@@ -19,7 +19,7 @@
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="/about" target="_self"><span data-title="关于">关于{{$brandShortName}}</span>
+                        <a  href="/about" target="_self"><span data-title="关于">关于{{$brand_short_name}}</span>
                         </a>
                     </li>
                     <li class="navitem">

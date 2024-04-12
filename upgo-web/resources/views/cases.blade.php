@@ -6,7 +6,7 @@
         <!--page-->
         <div class="npagePage">
             <div id="banner">
-                <img src="{{hUrlImage($caseTitleImg)}}">
+                <img src="{{hUrlImage($case_title_img)}}">
             </div>
             <div class="content">
                 <div class="mlist project module" style="">

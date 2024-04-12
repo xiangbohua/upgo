@@ -20,15 +20,15 @@
                         <div class="module_container">
                             <div class="row gutter">
                                 <div class="col-50 wow">
-                                    <div class="richtext"><p>&nbsp;</p><p><strong><span style="font-size:16px">合作商务</span></strong><br />联系微信：{{$businessWechat}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p><p>&nbsp;</p><hr /><p>&nbsp;</p></div>
+                                    <div class="richtext"><p>&nbsp;</p><p><strong><span style="font-size:16px">合作商务</span></strong><br />联系微信：{{$business_wechat}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p><p>&nbsp;</p><hr /><p>&nbsp;</p></div>
                                 </div>
                                 <div class="col-50 wow">
-                                    <div class="richtext"><p>&nbsp;</p><p><strong><span style="font-size:16px">简历投递</span></strong><br /><span style="font-family:Arial,Helvetica,sans-serif">{{$resumeContact}} </span><span style="font-family:Arial,Helvetica,sans-serif"></span></p><p>&nbsp;</p><hr /><p>&nbsp;</p></div>
+                                    <div class="richtext"><p>&nbsp;</p><p><strong><span style="font-size:16px">简历投递</span></strong><br /><span style="font-family:Arial,Helvetica,sans-serif">{{$resume_contact}} </span><span style="font-family:Arial,Helvetica,sans-serif"></span></p><p>&nbsp;</p><hr /><p>&nbsp;</p></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="module" style="background-color:;padding:px 0">
+                    <div class="module" style="background-color:; padding:px 0">
                         <div class="module_container">
                             <div class="row gutter">
                                 @foreach($addressList as $index => $item)

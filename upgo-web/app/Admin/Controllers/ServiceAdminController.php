@@ -15,7 +15,7 @@ class ServiceAdminController extends AdminController
      *
      * @var string
      */
-    protected $title = 'WebServicePage';
+    protected $title = '服务内容';
 
     /**
      * Make a grid builder.
@@ -26,15 +26,26 @@ class ServiceAdminController extends AdminController
     {
         $grid = new Grid(new WebServicePage());
 
-        $grid->column('id', __('Id'));
-        $grid->column('title', __('Title'));
-        $grid->column('sub_title', __('Sub title'));
-        $grid->column('image_url', __('Image url'));
-        $grid->column('display', __('Display'));
-        $grid->column('display_index', __('Display index'));
-        $grid->column('is_deleted', __('Is deleted'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('id', __('Id'))->sortable();
+        $grid->column('title', __('服务标题'))->filter('like')->editable();
+        $grid->column('sub_title', __('副标题'))->filter('like')->editable();
+        $grid->column('image_url', __('图片展示'))->image();
+
+        $grid->column('display', __('是否展示'))
+            ->filter(valuesDisplay())
+            ->select(valuesDisplay());
+
+        $grid->column('display_index', __('展示顺序'));
+
+        $grid->column('created_at', __('添加时间'))->display(function ($time) {
+            return hFormatTime($time);
+        });
+        $grid->column('updated_at', __('修改时间'))->display(function ($time) {
+            return hFormatTime($time);
+        });
+
+        $grid->model()->where('is_deleted', '=', 0);
+
 
         return $grid;
     }

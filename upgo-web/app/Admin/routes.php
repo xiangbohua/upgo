@@ -19,6 +19,7 @@ Route::group([
     $router->resource('banner', 'HomeBannerAdminController');
     $router->resource('partner', 'PartnerAdminController');
     $router->resource('service', 'ServiceAdminController');
+    $router->resource('setting', 'SettingAdminController');
 
 
 });

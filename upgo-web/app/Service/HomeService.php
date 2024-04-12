@@ -11,22 +11,22 @@ class HomeService
      * @var string[] 网站配置
      */
     private $webDefaultSetting = [
-        'brandTitle'=>'品牌名称',
-        'brandShortName'=>'品牌简称',
-        'brandDesc'=>'网站详细介绍',
+        'brand_title'=>'品牌名称',
+        'brand_short_name'=>'品牌简称',
+        'brand_desc'=>'网站详细介绍',
 
-        'caseTitleImg'=>'案例界面主图',
-        'serviceTitleImg'=>'服务范围主图',
-        'aboutTitleImg'=>'关于主图',
-        'partnerTitleImg'=>'合作伙伴界面主图',
-        'siteLogo'=>'网站logo',
+        'case_title_img'=>'案例界面主图',
+        'service_title_img'=>'服务范围主图',
+        'about_title_img'=>'关于主图',
+        'partner_title_img'=>'合作伙伴界面主图',
+        'site_logo'=>'网站logo',
 
-        'businessWechat'=>'合作商务微信号',
-        'resumeContact'=>'简历投递地址及其备注',
+        'business_wechat'=>'合作商务微信号',
+        'resume_contact'=>'简历投递地址及其备注',
 
-        'weiboLink'=>'微博地址',
-        'qqLink'=>'qq地址',
-        'weixiQrcodeLink'=>'微信二维码图片',
+        'weibo_link'=>'微博地址',
+        'qq_link'=>'qq地址',
+        'weixi_qrcode_link'=>'微信二维码图片',
     ];
 
     /**
@@ -52,13 +52,13 @@ class HomeService
     public function getFooterInfo() {
         $allSetting = $this->listWebSetting();
         $addressList = $this->listAllContactAddress(3);
-        return array_merge($allSetting, ['addressList'=>$addressList]);
+        $service = $this->listHomeService(3);
+        return array_merge($allSetting, ['addressList'=>$addressList, 'services'=>$service]);
     }
 
     public function listAllContactAddress($limit) {
         $query = DB::table('web_contact_address')
             ->where('is_deleted', 0);
-
 
         if (!empty($limit) && $limit > 0) {
             $query->limit($limit);
@@ -79,26 +79,29 @@ class HomeService
         return $addressList;
     }
 
-    public function listWebSetting() {
-        $allSettingData = DB::table('web_site_setting')
-            ->select(['setting_code','setting_value'])
+    /**
+     * 页脚需要的服务
+     * @param $limit
+     * @return array
+     */
+    public function listHomeService($limit) {
+        $service = new ServiceService();
+
+        $query = DB::table('web_service_page')
+            ->where('is_deleted', 0)
+            ->where('display', 1);
+        $serviceList = $query->orderBy('display_index')
+            ->limit($limit)
             ->get();
-        $allSetting = [];
-        foreach ($allSettingData as $data) {
-            $allSetting[$data->setting_code] = $data->setting_value;
-        }
-        $result = [];
-        foreach ($this->webDefaultSetting as $key=>$value) {
-            $result[$key] = $allSetting[$key] ?? '';
-        }
-        return $result;
+        return $service->convertFromDb($serviceList);
     }
+
 
     /**
      * @return array|string[] 关于界面配置
      */
     public function listAboutPageSetting() {
-        $setting = DB::table('web_about_page')->limit(1)->first();
+        $setting = DB::table('web_about_page')->where('id', 1)->first();
         if (empty($setting)) {
             return $this->aboutPageSetting;
         } else {
@@ -114,4 +117,31 @@ class HomeService
         }
     }
 
+    /**
+     * 获取设置名称
+     * @param $code
+     * @return string
+     */
+    public function getSiteSettingDesc($code) {
+
+        return $this->webDefaultSetting[$code] ?? '';
+    }
+
+    /**
+     * 获取网站配置
+     * @return array
+     */
+    public function listWebSetting() {
+        $setting = DB::table('web_site_setting')
+            ->where('id', 1)
+            ->first();
+        if (empty($setting)) {
+            $result = [];
+            foreach ($this->webDefaultSetting as $key=>$value) {
+                $result[$key] = '';
+            }
+            return $result;
+        }
+        return get_object_vars($setting);
+    }
 }

@@ -41,6 +41,48 @@ class CaseService
         return $this->convertFromDb($cases);
     }
 
+    /**
+     * 通过id获取案例名称
+     * @param $caseId
+     * @return mixed|string
+     */
+    public function getCaseNameById($caseId) {
+        $name = DB::table('web_case_page')->where('id', $caseId)->value('title');
+        return empty($name) ? '' : $name;
+    }
+
+    /**
+     * 通过id获取案例名称
+     * @param $caseId
+     * @return mixed|string
+     */
+    public function getCaseFullNameById($caseId) {
+        $nameInfo = DB::table('web_case_page')
+            ->where('id', $caseId)
+            ->select('title', 'sub_title')
+            ->first();
+        return empty($nameInfo) ? '' : ($nameInfo->title.'-'.$nameInfo->sub_title);
+    }
+
+    /**
+     * 通过id获取案例名称
+     * @param $caseId
+     * @return mixed|string
+     */
+    public function listForDropDown() {
+        $nameInfo = DB::table('web_case_page')
+            ->where('is_deleted', 0)
+            ->select('id', 'title', 'sub_title')
+            ->get();
+
+        $result = [];
+        foreach ($nameInfo as $c) {
+            $result[$c->id] = $c->title .'-'.$c->sub_title;
+        }
+
+        return $result;
+    }
+
     public function listCaseCount($cateId) {
         $query = DB::table('web_case_page')
                 ->where('is_deleted', 0)

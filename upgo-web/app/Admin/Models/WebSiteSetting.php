@@ -5,11 +5,11 @@ namespace App\Admin\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class WebCasePage extends Authenticatable
+class WebSiteSetting extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'web_case_page';
+    protected $table = 'web_site_setting';
 
     /**
      * The attributes that are mass assignable.
@@ -26,7 +26,7 @@ class WebCasePage extends Authenticatable
      * @var array
      */
     protected $hidden = [
-
+        
     ];
 
     /**
@@ -38,5 +38,4 @@ class WebCasePage extends Authenticatable
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
-
 }

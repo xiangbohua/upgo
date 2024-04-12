@@ -19,7 +19,7 @@ class CaseAdminController extends AdminController
      *
      * @var string
      */
-    protected $title = 'WebCasePage';
+    protected $title = '案例';
 
     /**
      * Make a grid builder.
@@ -43,7 +43,7 @@ class CaseAdminController extends AdminController
 
         $grid->column('main_image_url', __('封面'))->image();
 
-        $grid->column('category_id', __('案例分类'))->editable('select', $categoryList);
+        $grid->column('category_id', __('案例分类'))->select($categoryList)->editable();
 
         $grid->column('home_page_display', __('是否首页现实'))
             ->using(['0' => '不显示', '1' => '显示'])->filter(valuesDisplay());
@@ -57,7 +57,7 @@ class CaseAdminController extends AdminController
         });;
         $grid->column('updated_at', __('更新时间'))->display(function ($time) {
             return hFormatTime($time);
-        });;
+        });
 
         $grid->paginate(5);
 
@@ -112,19 +112,19 @@ class CaseAdminController extends AdminController
         $categoryList = $categoryService->getDropList();
 
 //        $form->column('id', __('ID'));
-        $form->text('title', __('标题'));
+        $form->text('title', __('标题'))->rules('required');
 
-        $form->textarea('sub_title', __('案例副标题'));
+        $form->textarea('sub_title', __('案例副标题'))->rules('required');
 
-        $form->image('main_image_url', __('封面'));
+        $form->image('main_image_url', __('封面'))->rules('required');
 
-        $form->select('category_id', __('案例分类'))->options($categoryList);
+        $form->select('category_id', __('案例分类'))->options($categoryList)->rules('required');
 
-        $form->select('home_page_display', __('是否首页现实'))->options(valuesDisplay());
+        $form->switch('home_page_display', __('是否首页现实'))->states(displaySwitch())->rules('required');
 
-        $form->select('display', __('列表显示'))->options(valuesDisplay());
+        $form->switch('display', __('列表显示'))->states(displaySwitch())->rules('required');
 
-        $form->number('display_index', __('展示顺序'))->min(1);
+        $form->number('display_index', __('展示顺序'))->min(1)->rules('required');
 
         $form->footer(function ($footer) {
             // 去掉`重置`按钮

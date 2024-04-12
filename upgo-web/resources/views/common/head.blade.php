@@ -10,7 +10,7 @@
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
-    <link rel="shortcut icon" href="{{hUrlImage($siteLogo)}}" />
+    <link rel="shortcut icon" href="{{hUrlImage($site_logo)}}" />
     <link rel="stylesheet" type="text/css" href="{{hUrlAsset('css/lib.css')}}">
     <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('css/style.css')}}">
     <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('css/style.css')}}">

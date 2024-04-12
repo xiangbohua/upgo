@@ -6,7 +6,7 @@
         <!--page-->
         <div class="npagePage pageEditor" id="page_about.html11">
             <div id="banner">
-                <img src="{{hUrlImage($aboutTitleImg)}}" alt="" />
+                <img src="{{hUrlImage($about_title_img)}}" alt="" />
             </div>
             <div class="content">
                 <div class="postbody">

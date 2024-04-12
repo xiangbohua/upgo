@@ -154,5 +154,12 @@ function hTryShowTime($timeString, $holder = '') {
 }
 
 function valuesDisplay() {
-    return ['1'=>'显示', '0'=>'不显示'];
+    return ['1'=>'展示', '0'=>'不展示'];
+}
+
+function displaySwitch() {
+    return [
+        'on'  => ['value' => 1, 'text' => '展示', 'color' => 'success'],
+        'off' => ['value' => 0, 'text' => '不展示', 'color' => 'danger'],
+    ];
 }
