@@ -59,16 +59,18 @@ class SettingAdminController extends AdminController
         $show->field('brand_title', __($homeSer->getSiteSettingDesc('brand_title')));
         $show->field('brand_short_name', __($homeSer->getSiteSettingDesc('brand_short_name')));
         $show->field('brand_desc', __($homeSer->getSiteSettingDesc('brand_desc')));
-        $show->field('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')));
-        $show->field('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')));
-        $show->field('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')));
-        $show->field('partner_title_img', __($homeSer->getSiteSettingDesc('partner_title_img')));
-        $show->field('site_logo',  __($homeSer->getSiteSettingDesc('site_logo')));
+        $show->field('site_logo',  __($homeSer->getSiteSettingDesc('site_logo')))->image();
+
+        $show->field('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')))->image();
+        $show->field('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->image();
+        $show->field('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')))->image();
+        $show->field('partner_title_img', __($homeSer->getSiteSettingDesc('partner_title_img')))->image();
+
         $show->field('business_wechat', __($homeSer->getSiteSettingDesc('business_wechat')));
         $show->field('resume_contact', __($homeSer->getSiteSettingDesc('resume_contact')));
-        $show->field('weibo_link', __($homeSer->getSiteSettingDesc('weibo_link')));
-        $show->field('qq_link', __($homeSer->getSiteSettingDesc('qq_link')));
-        $show->field('weixi_qrcode_link', __($homeSer->getSiteSettingDesc('weixi_qrcode_link')));
+//        $show->field('weibo_link', __($homeSer->getSiteSettingDesc('weibo_link')));
+//        $show->field('qq_link', __($homeSer->getSiteSettingDesc('qq_link')));
+//        $show->field('weixi_qrcode_link', __($homeSer->getSiteSettingDesc('weixi_qrcode_link')));
 
         $show->panel()
             ->tools(function ($tools) {
@@ -87,22 +89,26 @@ class SettingAdminController extends AdminController
     {
         $form = new Form(new WebSiteSetting());
         $homeSer = new HomeService();
-        $setting = $homeSer->getSettingData();
+        $setting = $homeSer->listWebSetting();
 
+        if ($form->isCreating()) {
 
-        $form->text('brand_title', __($homeSer->getSiteSettingDesc('brand_title')));
-        $form->text('brand_short_name', __($homeSer->getSiteSettingDesc('brand_short_name')));
-        $form->textarea('brand_desc', __($homeSer->getSiteSettingDesc('brand_desc')));
-        $form->image('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')));
-        $form->image('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')));
-        $form->image('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')));
-        $form->image('partner_title_img', __($homeSer->getSiteSettingDesc('partner_title_img')));
-        $form->image('site_logo',  __($homeSer->getSiteSettingDesc('site_logo')));
-        $form->text('business_wechat', __($homeSer->getSiteSettingDesc('business_wechat')));
-        $form->text('resume_contact', __($homeSer->getSiteSettingDesc('resume_contact')));
-        $form->text('weibo_link', __($homeSer->getSiteSettingDesc('weibo_link')));
-        $form->text('qq_link', __($homeSer->getSiteSettingDesc('qq_link')));
-        $form->text('weixi_qrcode_link', __($homeSer->getSiteSettingDesc('weixi_qrcode_link')));
+        }
+
+        $form->text('brand_title', __($homeSer->getSiteSettingDesc('brand_title')))->rules('required');
+        $form->text('brand_short_name', __($homeSer->getSiteSettingDesc('brand_short_name')))->rules('required');
+        $form->textarea('brand_desc', __($homeSer->getSiteSettingDesc('brand_desc')))->rules('required');
+        $form->image('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')))->rules('required');
+        $form->image('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->rules('required');
+        $form->image('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')))->rules('required');
+        $form->image('partner_title_img', __($homeSer->getSiteSettingDesc('partner_title_img')))->rules('required');
+        $form->image('site_logo',  __($homeSer->getSiteSettingDesc('site_logo')))->rules('required');
+        $form->text('business_wechat', __($homeSer->getSiteSettingDesc('business_wechat')))->placeholder('联系我们展示的微信')->rules('required');
+        $form->text('resume_contact', __($homeSer->getSiteSettingDesc('resume_contact')))->placeholder('联系我们显示微信和邮箱')->rules('required')->default('');;
+
+//        $form->text('weibo_link', __($homeSer->getSiteSettingDesc('weibo_link')))->default('');
+//        $form->text('qq_link', __($homeSer->getSiteSettingDesc('qq_link')))->default('');
+//        $form->text('weixi_qrcode_link', __($homeSer->getSiteSettingDesc('weixi_qrcode_link')))->default('');
 
         $form->tools(function (Form\Tools $tools) {
 
@@ -114,24 +120,21 @@ class SettingAdminController extends AdminController
         });
 
         $form->footer(function ($footer) {
-
             // 去掉`重置`按钮
             $footer->disableReset();
-
-//            // 去掉`提交`按钮
-//            $footer->disableSubmit();
-
             // 去掉`查看`checkbox
             $footer->disableViewCheck();
-
             // 去掉`继续编辑`checkbox
             $footer->disableEditingCheck();
-
             // 去掉`继续创建`checkbox
             $footer->disableCreatingCheck();
-
         });
 
+        $form->confirm('确定提交吗？');
+        $form->saved(function (Form $form) {
+            // 跳转页面
+            return redirect('/admin/setting/1');
+        });
 
         return $form;
     }

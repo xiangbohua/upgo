@@ -20,6 +20,7 @@ Route::group([
     $router->resource('partner', 'PartnerAdminController');
     $router->resource('service', 'ServiceAdminController');
     $router->resource('setting', 'SettingAdminController');
+    $router->resource('about', 'AboutAdminController');
 
 
 });
