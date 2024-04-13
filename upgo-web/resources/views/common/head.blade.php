@@ -27,7 +27,7 @@
     <script type="text/javascript" src="{{hUrlAsset('script/lib.min.js')}}"></script>
 
 {{--    <script type="text/javascript" src="templates/ue_content/templates/script/org.js" data-main="indexMain"></script>--}}
-    <script type="text/javascript" src="{{hUrlAsset('script/org.js')}}"></script>
+{{--    <script type="text/javascript" src="{{hUrlAsset('script/org.js')}}"></script>--}}
     <script type="text/javascript" src="{{hUrlAsset('script/search.js')}}"></script>
     <script type="text/javascript" src="{{hUrlAsset('script/8969.js')}}"></script>
     <script type="text/javascript" src="{{hUrlAsset('script/8969.js')}}"></script>

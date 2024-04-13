@@ -1,5 +1,5 @@
 @include('common.head', ['page_title'=>'联系我们'])
-<body><!--wrapper 整体宽度 container-->
+<body class="child"><!--wrapper 整体宽度 container-->
 <div id="siteWrapper">
     @include('common.navi')
     <div id="sitecontent">
