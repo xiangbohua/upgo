@@ -29,6 +29,29 @@ class ServiceService
             ->count();
     }
 
+    public function getServiceDetail($serviceId) {
+        $serviceInfo = DB::table('web_service_page')->where('id', $serviceId)->select('id','title', 'sub_title')->first();
+
+        if (empty($serviceInfo)) {
+            return null;
+        }
+
+        $serviceDetail = DB::table('web_service_page_item')
+            ->where('service_id', $serviceId)
+            ->orderBy('display_index')
+            ->get('image_url');
+
+        $images = [];
+        foreach ($serviceDetail as $d) {
+            $images[] = $d->image_url;
+        }
+
+        return [
+            'serviceInfo'=>$serviceInfo,
+            'images'=>$images
+        ];
+    }
+
     public function convertFromDb($services) {
         $result = [];
         foreach ($services as $ser) {

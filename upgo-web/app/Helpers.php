@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\URL;
  * @param type $secure 是否使用https
  */
 function hUrlAsset($path, $secure = null) {
-    echo URL::asset($path, $secure),
-    false === strpos($path, '?') ? '?rgv=' : '&rgv=',
-    defined('_STATIC_FILE_VERSION_') ? _STATIC_FILE_VERSION_ : 0;
+    echo URL::asset($path, $secure);//,
+//    false === strpos($path, '?') ? '?rgv=' : '&rgv=',
+//    defined('_STATIC_FILE_VERSION_') ? _STATIC_FILE_VERSION_ : 0;
 }
 
 /**

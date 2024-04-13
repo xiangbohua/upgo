@@ -32,4 +32,21 @@ class ServiceController extends BaseController
         return view('service', $result);
     }
 
+    /**
+     * @param ServiceService $serviceService
+     * @param $serviceId
+     * @return void
+     */
+    public function serviceDetail(HomeService $homeService, ServiceService $serviceService, $serviceId) {
+        if (empty($serviceId)) {
+            return redirect('/service');
+        }
+        $serviceInfo = $serviceService->getServiceDetail($serviceId);
+        if (empty($serviceInfo)) {
+            return redirect('/service');
+        }
+
+        return view('services', array_merge($homeService->getFooterInfo(), $serviceInfo));
+    }
+
 }

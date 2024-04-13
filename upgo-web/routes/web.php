@@ -23,6 +23,7 @@ Route::get('/case/page/{page}', 'CaseController@listCaseByCategory');
 Route::get('/case/cate/{cateId}', 'CaseController@listCaseByCategory');
 //有分类，第N页
 Route::get('/case/cate/{cateId}/page/{page}', 'CaseController@listCaseByCategory');
+Route::get('/case/case/{caseId}', 'CaseController@caseDetail');
 
 Route::get('/service', 'ServiceController@listAllService');
 Route::get('/service/{page}', 'ServiceController@listAllService');
@@ -33,3 +34,6 @@ Route::get('/partner/page/{page}', 'HomeController@partnerPage');
 
 Route::get('/contact', 'HomeController@contactPage');
 Route::get('/search/{keyWord}', 'HomeController@searchCase');
+
+
+Route::get('/page/service/d/{serviceId}', 'ServiceController@serviceDetail');

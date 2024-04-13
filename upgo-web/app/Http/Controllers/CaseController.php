@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Service\CaseService;
 use App\Service\CategoryService;
 use App\Service\HomeService;
+use App\Service\ServiceService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -35,6 +36,23 @@ class CaseController extends BaseController
                 ]);
 
         return view('cases', $result);
+    }
+
+    /**
+     * @param ServiceService $serviceService
+     * @param $serviceId
+     * @return void
+     */
+    public function caseDetail(HomeService $homeService, CaseService $caseService, $caseId) {
+        if (empty($caseId)) {
+            return redirect('/case');
+        }
+        $caseInfo = $caseService->getCaseDetail($caseId);
+        if (empty($caseInfo)) {
+            return redirect('/case');
+        }
+
+        return view('case_detail', array_merge($homeService->getFooterInfo(), $caseInfo));
     }
 
 }

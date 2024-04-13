@@ -1,7 +1,7 @@
 <div id="header">
     <div class="content">
         <div id="headTop">
-            <a href="index.html" id="logo"><img src="{{hUrlImage($site_logo)}}" alt="{{$brand_title}}" /></a>
+            <a href="/" id="logo"><img src="{{hUrlImage($site_logo)}}" alt="{{$brand_title}}" /></a>
         </div>
         <div id="navWrapper">
             <div class="content">
@@ -45,9 +45,7 @@
                 <div id="searchbar" class="search-wrap">
                     <div class="search-frame clearfix">
                         <form class="clearfix " action="search/index.html">
-
                             <a href="javascript:;" class="fl searchtext-btn" onclick="$(this).parent().submit()"><i class="fa fa-search search-button"></i></a>
-
                             <div class="search-input"><input placeholder="搜索" name="s"  value="" autocomplete="off" type="text" class=" fl"></div>
                         </form>
                         <a href="javascript:;" class="search-close"><i class="lcitem-top"></i><i class="lcitem-bottom"></i></a>
@@ -56,7 +54,5 @@
                 <div class="clear"></div>
             </div>
         </div>
-
     </div>
-
 </div>

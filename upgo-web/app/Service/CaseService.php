@@ -109,6 +109,34 @@ class CaseService
         return $result;
     }
 
+    /**
+     * 获取详情
+     * @param $caeId
+     * @return array|null
+     */
+    public function getCaseDetail($caeId) {
+        $caseInfo = DB::table('web_case_page')->where('id', $caeId)->select('id','title', 'sub_title')->first();
+
+        if (empty($caseInfo)) {
+            return null;
+        }
+
+        $caseDetail = DB::table('web_case_page_item')
+            ->where('case_id', $caeId)
+            ->orderBy('display_index')
+            ->get('image_url');
+
+        $images = [];
+        foreach ($caseDetail as $d) {
+            $images[] = $d->image_url;
+        }
+
+        return [
+            'serviceInfo'=>$caseInfo,
+            'images'=>$images
+        ];
+    }
+
     private function convertFromDb($dbData) {
         $result = [];
         foreach ($dbData as $ca) {

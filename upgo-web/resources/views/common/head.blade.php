@@ -22,11 +22,13 @@
     <script type="text/javascript" src="{{hUrlAsset('css/13313.css')}}"></script>
     <![endif]-->
 {{--    <!--[if (!IE)|(gte IE 11)]><!--><script type="text/javascript" src="http://code.uemo.net/script/jquery.min.js"></script><!--<![endif]-->--}}
-{{--    <script type="text/javascript" src="templates/ue_content/templates/script/lib.min.js"></script>--}}
     <script type="text/javascript" src="{{hUrlAsset('script/jquery.min.js')}}"></script>
+
     <script type="text/javascript" src="{{hUrlAsset('script/lib.min.js')}}"></script>
+
 {{--    <script type="text/javascript" src="templates/ue_content/templates/script/org.js" data-main="indexMain"></script>--}}
     <script type="text/javascript" src="{{hUrlAsset('script/org.js')}}"></script>
+    <script type="text/javascript" src="{{hUrlAsset('script/search.js')}}"></script>
     <script type="text/javascript" src="{{hUrlAsset('script/8969.js')}}"></script>
     <script type="text/javascript" src="{{hUrlAsset('script/8969.js')}}"></script>
 {{--    <script> if (window.location.origin.indexOf('uemo.net') != -1) { document.domain = "uemo.net"; } else if (window.location.origin.indexOf('jsmo.xin') != -1) { document.domain = "jsmo.xin"; } </script>--}}
