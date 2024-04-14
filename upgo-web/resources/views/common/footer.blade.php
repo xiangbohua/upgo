@@ -54,8 +54,8 @@
     </div>
     <div class="module" id="copyright">
         <div class="module_container">
-            <span class="ellipsis">COPYRIGHT (©) 2024  UPGO品牌战略咨询 | 100亿级超级大单品打造. </span>
-            <a id="fbeian" href="https://beian.miit.gov.cn/" target="_blank">沪ICP备xxx号</a>
+            <span class="ellipsis">COPYRIGHT (©) 2024  {{$slogan}} </span>
+            <a id="fbeian" href="https://beian.miit.gov.cn/" target="_blank">{{$site_code}}</a>
             <span style="vertical-align: top;">&nbsp;&nbsp;&nbsp;&nbsp;技术支持</span>
         </div>
     </div>

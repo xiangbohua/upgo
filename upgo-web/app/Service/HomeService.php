@@ -23,6 +23,8 @@ class HomeService
 
         'business_wechat'=>'合作商务微信号',
         'resume_contact'=>'简历投递地址及其备注',
+        'site_code'=>'网站备案号',
+        'slogan'=>'网站底部Slogan',
 
         'weibo_link'=>'微博地址',
         'qq_link'=>'qq地址',

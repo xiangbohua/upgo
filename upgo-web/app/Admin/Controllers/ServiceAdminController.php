@@ -99,13 +99,13 @@ class ServiceAdminController extends AdminController
 
         $form->text('title', __('服务标题'));
         $form->text('sub_title', __('服务副标题'));
-        $form->image('image_url', __('展示URL'));
+        $form->image('image_url', __('列表展示'))->uniqueName();
         $form->switch('display', __('是否展示'));
         $form->number('display_index', __('展示顺序'))->min(1);
 
 
         $form->hasMany('WebServicePageItem', '图片展示', function (Form\NestedForm $form) {
-            $form->image('image_url', '图片');
+            $form->image('image_url', '图片')->uniqueName();
             $form->number('display_index', '展示顺序');
         });
 

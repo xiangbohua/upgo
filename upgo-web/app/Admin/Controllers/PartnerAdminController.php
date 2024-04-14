@@ -80,7 +80,7 @@ class PartnerAdminController extends AdminController
         $caseService = new CaseService();
 
         $form->text('partner_name', __('合作伙伴名称'))->rules('required');
-        $form->image('logo_url', __('Logo'))->rules('required');;
+        $form->image('logo_url', __('Logo'))->rules('required')->uniqueName();
         $form->number('display_index', __('展示顺序'))->min(1)->rules('required');;
         $form->switch('display', __('列表是否显示'))->states(displaySwitch())->rules('required');;
         $form->select('case_id', __('展示案例'))->options($caseService->listForDropDown())->rules('required');

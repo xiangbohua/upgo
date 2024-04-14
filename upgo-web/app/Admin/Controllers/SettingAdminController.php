@@ -60,6 +60,8 @@ class SettingAdminController extends AdminController
         $show->field('brand_short_name', __($homeSer->getSiteSettingDesc('brand_short_name')));
         $show->field('brand_desc', __($homeSer->getSiteSettingDesc('brand_desc')));
         $show->field('site_logo',  __($homeSer->getSiteSettingDesc('site_logo')))->image();
+        $show->field('site_code',  __($homeSer->getSiteSettingDesc('site_code')));
+        $show->field('slogan',  __($homeSer->getSiteSettingDesc('slogan')));
 
         $show->field('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')))->image();
         $show->field('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->image();
@@ -94,15 +96,18 @@ class SettingAdminController extends AdminController
         if ($form->isCreating()) {
 
         }
-
         $form->text('brand_title', __($homeSer->getSiteSettingDesc('brand_title')))->rules('required');
         $form->text('brand_short_name', __($homeSer->getSiteSettingDesc('brand_short_name')))->rules('required');
         $form->textarea('brand_desc', __($homeSer->getSiteSettingDesc('brand_desc')))->rules('required');
-        $form->image('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')))->rules('required');
-        $form->image('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->rules('required');
-        $form->image('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')))->rules('required');
-        $form->image('partner_title_img', __($homeSer->getSiteSettingDesc('partner_title_img')))->rules('required');
-        $form->image('site_logo',  __($homeSer->getSiteSettingDesc('site_logo')))->rules('required');
+        $form->image('site_logo',  __($homeSer->getSiteSettingDesc('site_logo')))->rules('required')->uniqueName();
+        $form->text('site_code',  __($homeSer->getSiteSettingDesc('site_code')))->rules('required')->required();
+        $form->text('slogan',  __($homeSer->getSiteSettingDesc('slogan')))->rules('required')->required();
+
+        $form->image('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')))->rules('required')->uniqueName();
+        $form->image('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->rules('required')->uniqueName();
+        $form->image('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')))->rules('required')->uniqueName();
+        $form->image('partner_title_img', __($homeSer->getSiteSettingDesc('partner_title_img')))->rules('required')->uniqueName();
+
         $form->text('business_wechat', __($homeSer->getSiteSettingDesc('business_wechat')))->placeholder('联系我们展示的微信')->rules('required');
         $form->text('resume_contact', __($homeSer->getSiteSettingDesc('resume_contact')))->placeholder('联系我们显示微信和邮箱')->rules('required')->default('');;
 
@@ -133,7 +138,7 @@ class SettingAdminController extends AdminController
         $form->confirm('确定提交吗？');
         $form->saved(function (Form $form) {
             // 跳转页面
-            return redirect('/admin/setting/1');
+//            return redirect('/admin/setting/1');
         });
 
         return $form;

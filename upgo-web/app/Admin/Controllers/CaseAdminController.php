@@ -156,7 +156,7 @@ class CaseAdminController extends AdminController
         $form->number('display_index', __('展示顺序'))->min(1)->rules('required');
 
         $form->hasMany('WebCasePageItem', '图片展示', function (Form\NestedForm $form) {
-            $form->image('image_url', '图片');
+            $form->image('image_url', '图片')->uniqueName();
             $form->number('display_index', '展示顺序')->min(1);
         });
 

@@ -15,7 +15,7 @@ class AboutAdminController extends AdminController
      *
      * @var string
      */
-    protected $title = 'WebAboutPage';
+    protected $title = '关于界面';
 
     /**
      * Make a grid builder.
@@ -97,8 +97,8 @@ class AboutAdminController extends AdminController
         $form->textarea('trd_desc', __('第三部分介绍标题c'))->required();
         $form->text('content_title', __('内容标题'))->required();
         $form->textarea('content_desc', __('内容描述'))->required();
-        $form->image('image_1', __('底部第一张图片'))->required();
-        $form->image('image_2', __('底部第二张图片'))->required();
+        $form->image('image_1', __('底部第一张图片'))->required()->uniqueName()->required();
+        $form->image('image_2', __('底部第二张图片'))->required()->uniqueName()->required();
 
         $form->tools(function (Form\Tools $tools) {
 

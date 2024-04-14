@@ -27,7 +27,7 @@ function hUrlAsset($path, $secure = null) {
  * @param type $secure 是否使用https
  */
 function hUrlImage($path, $secure = null) {
-    echo URL::asset($path, $secure);
+    echo '/uploads/'.$path;
 }
 
 function hCaseDetailPage($caseInfoId)

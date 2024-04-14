@@ -87,7 +87,7 @@ class HomeBannerAdminController extends AdminController
 
         $form->text('title', __('标题'));
         $form->select('case_id', __('关联案例'))->options($caseDrop);
-        $form->image('image_url', __('轮播图'))->required();
+        $form->image('image_url', __('轮播图'))->required()->uniqueName();
         $form->switch('display', __('是否展示'))->options(displaySwitch());
         $form->number('display_index', __('展示顺序'))->min(1);
 

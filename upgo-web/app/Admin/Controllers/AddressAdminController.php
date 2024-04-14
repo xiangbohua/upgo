@@ -83,7 +83,7 @@ class AddressAdminController extends AdminController
         $form->mobile('contact_mobile', __('联系手机号'))->required();
         $form->text('contact_chat', __('微信号'))->required();
         $form->text('post_code', __('邮编'))->required();
-        $form->image('display_image', __('图片展示'))->required();
+        $form->image('display_image', __('图片展示'))->required()->uniqueName();
 
         $form->confirm('确定提交吗？');
         return $form;
