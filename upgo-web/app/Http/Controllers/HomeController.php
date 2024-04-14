@@ -33,7 +33,6 @@ class HomeController extends BaseController
         $homePageInfo->bannerList = $bannerService->getBanners();
         $homePageInfo->partnerList = $partnerService->getPartnerForHomePage();
         $homePageInfo->defaultCaseList = $caseService->getDefaultCase();
-        var_dump($homePageInfo->bannerList);
         $result = array_merge($homeService->getFooterInfo(), ['homePageInfo'=>$homePageInfo]);
         return view('home', $result);
     }

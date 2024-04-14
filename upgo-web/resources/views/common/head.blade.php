@@ -25,6 +25,7 @@
     <script type="text/javascript" src="{{hUrlAsset('script/jquery.min.js')}}"></script>
 
     <script type="text/javascript" src="{{hUrlAsset('script/lib.min.js')}}"></script>
+    <script type="text/javascript" src="{{hUrlAsset('script/swiper.js')}}"></script>
 
 {{--    <script type="text/javascript" src="templates/ue_content/templates/script/org.js" data-main="indexMain"></script>--}}
 {{--    <script type="text/javascript" src="{{hUrlAsset('script/org.js')}}"></script>--}}
