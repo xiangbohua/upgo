@@ -1,3 +1,5 @@
+CREATE DATABASE `upgo` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
+
 -- Create syntax for TABLE 'admin_menu'
 CREATE TABLE `admin_menu` (
                               `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
