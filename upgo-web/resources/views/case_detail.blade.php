@@ -1,4 +1,4 @@
-@include('common.head', ['page_title'=>$serviceInfo->title])
+@include('common.head', ['page_title'=>$caseInfo->title])
 <body class="child"><!--wrapper 整体宽度 container-->
 <div id="siteWrapper">
     @include('common.navi')
@@ -14,8 +14,8 @@
                                     <div id="postInfo">
                                         <div class="module">
                                             <div class="module_container">
-                                                <p class="title">{{$serviceInfo->title}}</p>
-                                                <p class="subtitle">{{$serviceInfo->sub_title}}</p>
+                                                <p class="title">{{$caseInfo->title}}</p>
+                                                <p class="subtitle">{{$caseInfo->sub_title}}</p>
                                             </div>
                                         </div>
                                     </div>

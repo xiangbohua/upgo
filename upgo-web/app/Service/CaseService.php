@@ -132,7 +132,7 @@ class CaseService
         }
 
         return [
-            'serviceInfo'=>$caseInfo,
+            'caseInfo'=>$caseInfo,
             'images'=>$images
         ];
     }

@@ -28,11 +28,12 @@ class HomeController extends BaseController
                          HomeService $homeService
                         ) {
         $homePageInfo = new HomePageInfo();
+
         $homePageInfo->categoryList = $categoryService->getDefaultCategory();
         $homePageInfo->bannerList = $bannerService->getBanners();
         $homePageInfo->partnerList = $partnerService->getPartnerForHomePage();
         $homePageInfo->defaultCaseList = $caseService->getDefaultCase();
-
+        var_dump($homePageInfo->bannerList);
         $result = array_merge($homeService->getFooterInfo(), ['homePageInfo'=>$homePageInfo]);
         return view('home', $result);
     }

@@ -6,32 +6,94 @@
         <!--page-->
         <div id="indexPage">
             <!--slider-->
-            <div id="topSlider" class="mslider module">
+            <div id="topSlider" class="mslider module" style="height: 835px;">
                 <div class="module_container wide">
-                    <ul class="content_list" data-slider-height="0" data-slider-auto="1" data-slider-mode="0"
-                        data-slider-pause="4" data-slider-ease="ease-out" data-slider-speed="0.5" style="height:1000px">
-                        @foreach ($homePageInfo->bannerList as $banner)
-                            <li>
-                                <div class="item_bg image" data-thumb=""
-                                     style="background-image:url('{{hUrlImage($banner->imageUrl)}}')">
-                                    <img src="{{hUrlImage($banner->imageUrl)}}"/>
-                                </div>
-                                <div class="wrapper">
-                                    <div class="description mc">
-                                        <p class="title ellipsis"></p>
-                                        <p class="subtitle"></p>
+                    <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 835px;">
+                            <ul class="content_list" data-slider-height="0" data-slider-auto="1" data-slider-mode="0" data-slider-pause="4" data-slider-ease="ease-out" data-slider-speed="0.5" style="height: 835px; width: 915%; position: relative; transition-timing-function: ease-out; transition-duration: 0.5s; transform: translate3d(-5994px, 0px, 0px);">
+                                @foreach ($homePageInfo->bannerList as $banner)
+                                    <li style="height: 835px; float: left; list-style: none; position: relative; width: 999px;" class="bx-clone">
+                                        <div class="item_bg image" data-thumb="" style="background-image:url({{hUrlImage($banner->imageUrl)}})">
+                                            <img src="{{hUrlImage($banner->imageUrl)}}">
+                                        </div>
+                                        <div class="wrapper">
+                                            <div class="description mc">
+                                                <p class="title ellipsis"></p>
+                                                <p class="subtitle"></p>
+                                            </div>
+                                        </div>
+                                        @if(!$banner->onlyImage)
+                                            <a href="{{hCaseDetailPage($banner->caseInfoId)}}}" class="full" target="_blank"></a>
+                                        @endif
+                                    </li>
+                                @endforeach
+                                <li class="active bx-clone" style="height: 835px; float: left; list-style: none; position: relative; width: 999px;">
+                                    <div class="item_bg image" data-thumb="" style="background-image:url(//resources.jsmo.xin/templates/upload/13313/202307/1689821833435.jpg)">
+                                        <img src="//resources.jsmo.xin/templates/upload/13313/202307/1690276074816.jpg">
                                     </div>
-                                </div>
-                                @if(!$banner->onlyImage)
-                                    <a href="{{hCaseDetailPage($banner->caseInfoId)}}}" class="full"
-                                       target="_blank"></a></a>
-                                @endif
-                            </li>
-                        @endforeach
-                    </ul>
-                    <div class="sliderArrow fa fa-angle-down"></div>
+                                    <div class="wrapper">
+                                        <div class="description mc">
+                                            <p class="title ellipsis"></p>
+                                            <p class="subtitle"></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bx-controls bx-has-pager bx-has-controls-direction">
+                            <div class="bx-pager bx-custom-pager">
+                                @foreach ($homePageInfo->bannerList as $key=>$banner)
+                                    <div class="bx-pager-item">
+                                        <a href="" data-slide-index="{{$key}}" class="bx-pager-link">
+                                            <div class="progress">
+                                                <div class="mask auto" style="width: 100%;">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endforeach
+
+                            </div>
+                            <div class="bx-controls-direction">
+                                <a class="bx-prev" href="">
+                                    <i class="fa fa-angle-left">
+                                    </i>
+                                </a>
+                                <a class="bx-next" href="">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sliderArrow fa fa-angle-down">
+                    </div>
                 </div>
             </div>
+{{--            <div id="topSlider" class="mslider module">--}}
+{{--                <div class="module_container wide">--}}
+{{--                    <ul class="content_list" data-slider-height="0" data-slider-auto="1" data-slider-mode="0"--}}
+{{--                        data-slider-pause="4" data-slider-ease="ease-out" data-slider-speed="0.5" style="height:1000px">--}}
+{{--                        @foreach ($homePageInfo->bannerList as $banner)--}}
+{{--                            <li>--}}
+{{--                                <div class="item_bg image" data-thumb=""--}}
+{{--                                     style="background-image:url('{{hUrlImage($banner->imageUrl)}}')">--}}
+{{--                                    <img src="{{hUrlImage($banner->imageUrl)}}"/>--}}
+{{--                                </div>--}}
+{{--                                <div class="wrapper">--}}
+{{--                                    <div class="description mc">--}}
+{{--                                        <p class="title ellipsis"></p>--}}
+{{--                                        <p class="subtitle"></p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                @if(!$banner->onlyImage)--}}
+{{--                                    <a href="{{hCaseDetailPage($banner->caseInfoId)}}}" class="full"--}}
+{{--                                       target="_blank"></a></a>--}}
+{{--                                @endif--}}
+{{--                            </li>--}}
+{{--                        @endforeach--}}
+{{--                    </ul>--}}
+{{--                    <div class="sliderArrow fa fa-angle-down"></div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="mcounter module" style=" background-color:#FFFFFF;">
                 <div class="bgmask"></div>
                 {{--                <div class="module_container wide">--}}

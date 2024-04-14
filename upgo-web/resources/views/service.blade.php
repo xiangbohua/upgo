@@ -1,4 +1,4 @@
-@include('common.head', ['page_title'=>'CASE'])
+@include('common.head', ['page_title'=>'服务内容'])
 <body class="child"><!--wrapper 整体宽度 container-->
 <div id="siteWrapper">
     @include('common.navi')
