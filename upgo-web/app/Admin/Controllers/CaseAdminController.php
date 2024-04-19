@@ -145,7 +145,7 @@ class CaseAdminController extends AdminController
 
         $form->textarea('sub_title', __('案例副标题'))->rules('required');
 
-        $form->image('main_image_url', __('封面'))->rules('required');
+        $form->image('main_image_url', __('封面'))->rules('required')->uniqueName();
 
         $form->select('category_id', __('案例分类'))->options($categoryList)->rules('required');
 
