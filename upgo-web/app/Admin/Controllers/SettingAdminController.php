@@ -138,7 +138,7 @@ class SettingAdminController extends AdminController
         $form->confirm('确定提交吗？');
         $form->saved(function (Form $form) {
             // 跳转页面
-//            return redirect('/admin/setting/1');
+            return redirect('/admin/setting/1');
         });
 
         return $form;
