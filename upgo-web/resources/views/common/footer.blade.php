@@ -24,9 +24,9 @@
                 <li id="fitem_block_1" class="fitem_block_link item_block col-25 wow">
                     <ul>
                         <li class="title"><span class="ellipsis">upgo</span></li>
-                        <li><a class="ellipsis" href="page/about" target="_blank">关于我们</a></li>
-                        <li><a class="ellipsis" href="page/contact" target="_blank">合作机会</a></li>
-                        <li><a class="ellipsis" href="page/contact" target="_blank">简历投递</a></li>
+                        <li><a class="ellipsis" href="about" target="_blank">关于我们</a></li>
+                        <li><a class="ellipsis" href="contact" target="_blank">合作机会</a></li>
+                        <li><a class="ellipsis" href="contact" target="_blank">简历投递</a></li>
                     </ul>
                 </li>
                 <li id="fitem_block_2" class="fitem_block_link item_block col-25 wow">
