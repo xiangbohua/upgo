@@ -140,21 +140,21 @@ class CaseAdminController extends AdminController
         $categoryService = new CategoryService();
         $categoryList = $categoryService->getDropList();
 
-//        $form->column('id', __('ID'));
+        $form->saving(function ($form) {
+            $form->text = hDefault($form->text, '');
+            $form->sub_title = hDefault($form->sub_title, '');
+            $form->home_page_display = hDefault($form->home_page_display, 1);
+            $form->display = hDefault($form->display, 1);
+            $form->display = hDefault($form->display, 1);
+        });
+
         $form->text('title', __('标题'))->rules('required');
-
         $form->textarea('sub_title', __('案例副标题'))->rules('required');
-
         $form->image('main_image_url', __('封面'))->rules('required')->uniqueName();
-
         $form->select('category_id', __('案例分类'))->options($categoryList)->rules('required');
-
         $form->switch('home_page_display', __('是否首页现实'))->states(displaySwitch())->rules('required');
-
         $form->switch('display', __('列表显示'))->states(displaySwitch())->rules('required');
-
         $form->number('display_index', __('展示顺序'))->min(1)->rules('required');
-
         $form->hasMany('WebCasePageItem', '图片展示', function (Form\NestedForm $form) {
             $form->image('image_url', '图片')->uniqueName();
             $form->number('display_index', '展示顺序')->min(1);

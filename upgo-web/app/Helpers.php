@@ -47,6 +47,12 @@ function hCategoryPage($categoryId, $page = 0)
     return '/case/cate/'.$categoryId.'/page/'.$page;
 }
 
+function hDefault($source, $defaultIfNull) {
+    if (!isset($source) || $source == null) {
+        return $defaultIfNull;
+    }
+    return $source;
+}
 
 /**
  * 计算总页数

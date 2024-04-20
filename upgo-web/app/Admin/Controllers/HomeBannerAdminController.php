@@ -83,6 +83,12 @@ class HomeBannerAdminController extends AdminController
         $form = new Form(new WebHomeBanner());
         $caseService = new CaseService();
         $caseDrop = $caseService->listForDropDown();
+        $form->saving(function ($form){
+           $form->title = hDefault($form->title, '');
+           $form->case_id = hDefault($form->case_id, 0);
+           $form->display = hDefault($form->display, 1);
+           $form->display_index = hDefault($form->display_index, 1);
+        });
 
 
         $form->text('title', __('标题'));

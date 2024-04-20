@@ -85,14 +85,28 @@ class AboutAdminController extends AdminController
     protected function form()
     {
         $form = new Form(new WebAboutPage());
+        $form->saving(function ($form) {
+            $form->partner_count = hDefault($form->partner_count, 1);
+            $form->theme_count = hDefault($form->theme_count, 1);
+            $form->artist_count = hDefault($form->artist_count, 1);
+            $form->first_title = hDefault($form->first_title, '');
+            $form->first_desc = hDefault($form->first_desc, '');
+            $form->sec_title = hDefault($form->sec_title, '');
+            $form->sec_desc = hDefault($form->sec_desc, '');
+            $form->trd_title = hDefault($form->trd_title, '');
+            $form->trd_title = hDefault($form->trd_title, '');
+            $form->content_title = hDefault($form->content_title, '');
+            $form->content_desc = hDefault($form->content_desc, '');
+        });
+
 
         $form->number('partner_count', __('合作伙伴数量'))->placeholder('在这里设置数量后将覆盖实际合作伙伴数量')->required();
         $form->number('theme_count', __('主题数量'))->required();
         $form->number('artist_count', __('艺术家数量'))->required();
-        $form->text('first_title', __('第一部分介绍标题'))->required();
-        $form->textarea('first_desc', __('第一部分介绍详情'))->required();
-        $form->text('sec_title', __('第二部分介绍标题'))->required();
-        $form->textarea('sec_desc', __('第二部分介绍详情'))->required();
+        $form->text('first_title', __('第一部分介绍标题'))->default("")->required();
+        $form->textarea('first_desc', __('第一部分介绍详情'))->default("")->required();
+        $form->text('sec_title', __('第二部分介绍标题'))->default("")->required();
+        $form->textarea('sec_desc', __('第二部分介绍详情'))->default("")->required();
         $form->text('trd_title', __('第三部分介绍标题'))->required();
         $form->textarea('trd_desc', __('第三部分介绍标题c'))->required();
         $form->text('content_title', __('内容标题'))->required();

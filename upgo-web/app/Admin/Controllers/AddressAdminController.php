@@ -76,6 +76,14 @@ class AddressAdminController extends AdminController
     protected function form()
     {
         $form = new Form(new WebContactAddress());
+        $form->saving(function ($form) {
+            $form->title_name = hDefault($form->title_name, '');
+            $form->title_hint = hDefault($form->title_hint, '');
+            $form->contact_mobile = hDefault($form->contact_mobile, '');
+            $form->detail_address = hDefault($form->detail_address, '');
+            $form->contact_chat = hDefault($form->contact_chat, '');
+            $form->post_code = hDefault($form->post_code, '');
+        });
 
         $form->text('title_name', __('地址标题'))->required();
         $form->text('title_hint', __('地址提示'))->required();

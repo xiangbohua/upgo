@@ -78,6 +78,10 @@ class PartnerAdminController extends AdminController
     {
         $form = new Form(new WebPartner());
         $caseService = new CaseService();
+        $form->saving(function ($form) {
+            $form->display = hDefault($form->display, 1);
+            $form->case_id = hDefault($form->case_id, 0);
+        });
 
         $form->text('partner_name', __('合作伙伴名称'))->rules('required');
         $form->image('logo_url', __('Logo'))->rules('required')->uniqueName();

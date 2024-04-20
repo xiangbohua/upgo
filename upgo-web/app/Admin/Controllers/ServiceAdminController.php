@@ -97,6 +97,13 @@ class ServiceAdminController extends AdminController
     {
         $form = new Form(new WebServicePage());
 
+        $form->saving(function ($form) {
+           $form->title = hDefault($form->title, '');
+           $form->sub_title = hDefault($form->sub_title, '');
+           $form->display = hDefault($form->display, 1);
+           $form->display_index = hDefault($form->display_index, 1);
+        });
+
         $form->text('title', __('服务标题'));
         $form->text('sub_title', __('服务副标题'));
         $form->image('image_url', __('列表展示'))->uniqueName();

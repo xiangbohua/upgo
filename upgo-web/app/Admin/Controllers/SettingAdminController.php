@@ -91,11 +91,12 @@ class SettingAdminController extends AdminController
     {
         $form = new Form(new WebSiteSetting());
         $homeSer = new HomeService();
-        $setting = $homeSer->listWebSetting();
 
-        if ($form->isCreating()) {
+        $form->saving(function($form) {
+            $form->business_wechat = hDefault($form->business_wechat, '');
+            $form->resume_contact = hDefault($form->resume_contact, '');
+        });
 
-        }
         $form->text('brand_title', __($homeSer->getSiteSettingDesc('brand_title')))->rules('required');
         $form->text('brand_short_name', __($homeSer->getSiteSettingDesc('brand_short_name')))->rules('required');
         $form->textarea('brand_desc', __($homeSer->getSiteSettingDesc('brand_desc')))->rules('required');
