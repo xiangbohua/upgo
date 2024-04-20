@@ -8,17 +8,7 @@
                     </h3>
                     <p class="description">{{$brand_desc}}</p>
                     <div class="shareicon">
-{{--                        <a class="fl" target="_blank"--}}
-{{--                           href="{{$weiboLink}}">--}}
-{{--                            <i class="fa fa-weibo"></i>--}}
-{{--                        </a>--}}
-{{--                        <a class="fl" target="_blank" href="{{$qqLink}}">--}}
-{{--                            <i class="fa fa-qq"></i>--}}
-{{--                        </a>--}}
-{{--                        <a id="mpbtn" class="fl"--}}
-{{--                           href="{{$weixiQrcodeLink}}">--}}
-{{--                            <i class="fa fa-weixin"></i>--}}
-{{--                        </a>--}}
+
                     </div>
                 </li>
                 <li id="fitem_block_1" class="fitem_block_link item_block col-25 wow">

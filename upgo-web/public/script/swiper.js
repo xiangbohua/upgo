@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var maxIndex = $('#swiper_content_list').find('li').length - 1;
     function setItemWidth() {
-        $('.content_list').find('li').width($('#topSlider').width());
+        $('#swiper_content_list').find('li').width($('#topSlider').width());
     }
     function currentIndex(valIfSetting) {
         if (undefined === valIfSetting) {
