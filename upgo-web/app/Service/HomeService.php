@@ -66,6 +66,7 @@ class HomeService
         }
         $addressInfos = $query->get();
         $addressList = [];
+
         foreach ($addressInfos as $addressData) {
             $address = new ContactInfo();
             $address->titleName = $addressData->title_name;
@@ -75,6 +76,8 @@ class HomeService
             $address->contactChat = $addressData->contact_chat;
             $address->postCode = $addressData->post_code;
             $address->displayImage = $addressData->display_image;
+            http://map.baidu.com/?newmap=1&amp;s=con&wd=广州海珠区工业大道中279号&c=257&amp;from=alamap&amp;tpl=mapsite
+            $address->naviUrl= 'http://map.baidu.com/?newmap=1&amp;s=con&wd='.urlencode($addressData->detail_address).'&c=257&amp;from=alamap&amp;tpl=mapsite';
             $addressList[] = $address;
         }
         return $addressList;

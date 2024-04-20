@@ -32,7 +32,7 @@
                     <ul>
                         <li class="title"><span class="ellipsis">联系地址</span></li>
                         @foreach($addressList as $address)
-                            <li><a class="ellipsis" href="http://map.baidu.com/?newmap=1&amp;s=con%26wd%3D%E5%B9%BF%E5%B7%9E%E6%B5%B7%E7%8F%A0%E5%8C%BA%E5%B7%A5%E4%B8%9A%E5%A4%A7%E9%81%93%E4%B8%AD279%E5%8F%B7%26c%3D257&amp;from=alamap&amp;tpl=mapsite" target="_blank">{{$address->detailAddress}}</a></li>
+                            <li><a class="ellipsis" href="{{$address->naviUrl}}" target="_blank">{{$address->detailAddress}}</a></li>
                         @endforeach
                         @if(sizeof($addressList) > 3)
                             <li><a class="ellipsis" href="page/contact" target="_blank">更多联系地址</a></li>

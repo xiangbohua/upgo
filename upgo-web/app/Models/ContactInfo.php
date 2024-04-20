@@ -17,4 +17,6 @@ class ContactInfo
     public $postCode;
 
     public $displayImage;
+
+    public $naviUrl;
 }
