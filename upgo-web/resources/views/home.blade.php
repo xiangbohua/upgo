@@ -87,7 +87,7 @@
                                                 <a href="{{hCaseDetailPage($case->caseInfoId)}}" target="_blank">
                                                     <div class="item_img"
                                                          style="background-image:url({{$case->imageUrl}})">
-                                                        <img src="{{$case->imageUrl}}"/>
+                                                        <img src="{{hUrlImage($case->imageUrl)}}"/>
                                                         <div class="item_img_mask"></div>
                                                         <div class="item_icon">
                                                             <div class="PostImage">
