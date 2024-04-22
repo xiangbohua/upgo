@@ -13,7 +13,6 @@
     <link rel="shortcut icon" href="{{hUrlImage($site_logo)}}" />
     <link rel="stylesheet" type="text/css" href="{{hUrlAsset('css/lib.css')}}">
     <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('css/style.css')}}">
-    <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('css/style.css')}}">
     <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('css/8969.css')}}">
     <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('css/13313.css')}}">
     <!--[if lt IE 9]>

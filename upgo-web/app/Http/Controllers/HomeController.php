@@ -34,7 +34,10 @@ class HomeController extends BaseController
         $homePageInfo->partnerList = $partnerService->getPartnerForHomePage();
         $homePageInfo->defaultCaseList = $caseService->getDefaultCase();
         $result = array_merge($homeService->getFooterInfo(), ['homePageInfo'=>$homePageInfo]);
-        return view('home', $result);
+
+
+
+        return view('mobile/home', $result);
     }
 
 
