@@ -7,7 +7,7 @@
             <div class="content">
                 <ul class="nav">
                     <li class="navitem">
-                        <a  class="active" href="/" target="_self"><span data-title="首页">首页</span>
+                        <a  class="navitem" href="/" target="_self"><span data-title="首页">首页</span>
                         </a>
                     </li>
                     <li class="navitem">
