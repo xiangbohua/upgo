@@ -6,7 +6,7 @@
                     <h3 class="title">
                         <a href="">{{$brand_title}}</a>
                     </h3>
-                    <p class="description">{{$brand_desc}}</p>
+                    <p class="description" style="height: 120px">{{$brand_desc}}</p>
                     <div class="shareicon">
 
                     </div>
