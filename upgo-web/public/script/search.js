@@ -9,7 +9,6 @@ $(document).ready(function() {
         $('#header').removeClass('head-bg')
     });
 
-
     $('.search-input').find('input').on('input', function(input) {
         $('.clearfix').find('div').attr('action', 'search/'+ $(this).val());
     }).on('keyup', function (e) {
@@ -19,8 +18,18 @@ $(document).ready(function() {
         }
     });
 
-
     $('#openMenu').on('click', function () {
         $('.child').toggleClass('openMenu');
+    });
+
+    $(window).scroll(function() {
+        // 获取窗口滚动条的位置
+        var scrollPosition = $(window).scrollTop();
+
+        if (scrollPosition == 0) {
+            $("#header").removeClass("mini");
+        } else {
+            $("#header").addClass("mini");
+        }
     });
 });

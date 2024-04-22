@@ -15,7 +15,7 @@
                                         <div class="module">
                                             <div class="module_container">
                                                 <p class="title">{{$caseInfo->title}}</p>
-                                                <p class="subtitle">{{$caseInfo->sub_title}}</p>
+{{--                                                <p class="subtitle">{{$caseInfo->sub_title}}</p>--}}
                                             </div>
                                         </div>
                                     </div>

@@ -13,10 +13,10 @@
                 </li>
                 <li id="fitem_block_1" class="fitem_block_link item_block col-25 wow">
                     <ul>
-                        <li class="title"><span class="ellipsis">upgo</span></li>
-                        <li><a class="ellipsis" href="about" target="_blank">关于我们</a></li>
-                        <li><a class="ellipsis" href="contact" target="_blank">合作机会</a></li>
-                        <li><a class="ellipsis" href="contact" target="_blank">简历投递</a></li>
+                        <li class="title"><span class="ellipsis">上和行upgo</span></li>
+                        <li><a class="ellipsis" href="case/cate/0/page/0" target="_blank">案例</a></li>
+                        <li><a class="ellipsis" href="service" target="_blank">服务范围</a></li>
+                        <li><a class="ellipsis" href="about" target="_blank">关于上和行</a></li>
                     </ul>
                 </li>
 {{--                <li id="fitem_block_2" class="fitem_block_link item_block col-25 wow">--}}
@@ -37,6 +37,8 @@
                         @if(sizeof($addressList) > 3)
                             <li><a class="ellipsis" href="page/contact" target="_blank">更多联系地址</a></li>
                         @endif
+                        <li><a class="ellipsis">联系微信：{{$business_wechat}}</a></li>
+                        <li><a class="ellipsis">联系电话：{{$resume_contact}}</a></li>
                     </ul>
                 </li>
             </ul>

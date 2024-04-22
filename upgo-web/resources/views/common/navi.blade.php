@@ -41,18 +41,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="search-btn"><a href="javascript:;" class="header-search-form"><i class="fa fa-search search-button"></i></a></div>
-                <div id="searchbar" class="search-wrap">
-                    <div class="search-frame clearfix">
-                        <div class="clearfix " action="search">
-                            <a href="javascript:;" class="fl searchtext-btn"><i class="fa fa-search search-button"></i></a>
-                            <div class="search-input">
-                                <input placeholder="搜索" name="s"  value="" autocomplete="off" type="text" class=" fl">
-                            </div>
-                        </div>
-                        <a href="javascript:;" class="search-close"><i class="lcitem-top"></i><i class="lcitem-bottom"></i></a>
-                    </div>
-                </div>
+{{--                <div class="search-btn"><a href="javascript:;" class="header-search-form"><i class="fa fa-search search-button"></i></a></div>--}}
+{{--                <div id="searchbar" class="search-wrap">--}}
+{{--                    <div class="search-frame clearfix">--}}
+{{--                        <div class="clearfix " action="search">--}}
+{{--                            <a href="javascript:;" class="fl searchtext-btn"><i class="fa fa-search search-button"></i></a>--}}
+{{--                            <div class="search-input">--}}
+{{--                                <input placeholder="搜索" name="s"  value="" autocomplete="off" type="text" class=" fl">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <a href="javascript:;" class="search-close"><i class="lcitem-top"></i><i class="lcitem-bottom"></i></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <div class="clear"></div>
             </div>
         </div>
