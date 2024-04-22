@@ -1,74 +1,9 @@
 @include('common.mobile.head', ['page_title'=>'首页'])
 
-<body ><!--wrapper 整体宽度 container-->
-<div id="sidebar">
-    <div class="content">
-        <ul id="nav">
-            <li>
-                <div id="closelc" class="fr btn hide">
-                    <div class="lcbody">
-                        <div class="lcitem top">
-                            <div class="rect top"></div>
-                        </div>
-                        <div class="lcitem bottom">
-                            <div class="rect bottom"></div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="navitem active " >
-                <a href="//www.toonsoon.com.cn/" target="_self"><span class="circle transform"></span>首页
-                </a>
-            </li>
-            <li class="navitem" >
-                <a href="//www.toonsoon.com.cn/forum/id/10542/" target="_self"><span class="circle transform"></span>案例
-                </a>
-            </li>
-            <li class="navitem" >
-                <a href="//www.toonsoon.com.cn/forum/id/10551/" target="_self"><span class="circle transform"></span>服务范围
-                </a>
-            </li>
-            <li class="navitem" >
-                <a href="//www.toonsoon.com.cn/forum/id/10552/" target="_self"><span class="circle transform"></span>动态
-                </a>
-            </li>
-            <li class="navitem" >
-                <a href="javascript:;" target=""><span class="circle transform"></span>关于
-                    <span class="more"><span class="h"></span><span class="h v transform"></span></span></a>
-                <ul class="subnav" data-height="100" >
-                    <li>
-                        <a  href="//www.toonsoon.com.cn/page/about.html" target="_self"><i class="fa fa-angle-right"></i><span>关于汤臣杰逊</span></a>
-                    </li>
-                    <li>
-                        <a  href="//www.toonsoon.com.cn/forum/id/10554/" target="_self"><i class="fa fa-angle-right"></i><span>合作伙伴</span></a>
-                    </li>
-                </ul>
-            </li>
-            <li class="navitem" >
-                <a href="//www.toonsoon.com.cn/page/contact2.html" target="_self"><span class="circle transform"></span>联系我们
-                </a>
-            </li>
-        </ul>
-        <div class="clear"></div>
-    </div>
-</div>
+
+@include('common.mobile.navi')
 <div id="siteWrapper">
-    <div id="header">
-        <div class="content">
-            <div id="openlc" class="fl btn">
-                <div class="lcbody">
-                    <div class="lcitem top">
-                        <div class="rect top"></div>
-                    </div>
-                    <div class="lcitem bottom">
-                        <div class="rect bottom"></div>
-                    </div>
-                </div>
-            </div>
-            <a href="//www.toonsoon.com.cn/" id="logo"><img src="//resources.jsmo.xin/templates/upload/13313/202307/1689763574260.jpg" alt="汤臣杰逊品牌战略咨询 | 10亿级超级大单品打造" /></a>
-            <div class="search-btn hide" style="display:none"><a href="//www.toonsoon.com.cn/search/" class="header-search-form"><i class="fa fa-search search-button"></i></a></div>
-        </div>
-    </div>
+    @include('common.mobile.header')
     <div id="sitecontent">
         <!--page-->
         <div id="indexPage">
@@ -528,55 +463,7 @@
             </div><!--mlist-->
         </div><!--index-->
         <!--page-->
-        <div id="footer">
-            <div class="module" id="flinks">
-                <div class="module_container">
-                    <ul class="content_list row gutter">
-                        <li id="fitem_block_0" class="fitem_block_info item_block col-25 wow">
-                            <h3 class="title ellipsis"><a href="">汤臣杰逊品牌战略咨询 | 10亿级超级大单品打造</a></h3>
-                            <p class="description">广州汤臣杰逊品牌管理有限公司，是目前中国炙手可热的品牌策略机构，成名于南方，被公认为“不一样的品牌新策略，能让品牌价值迅速被消费者感知”！汤臣杰逊CEO刘威创立独特的「品牌超级体系」，从顶层设计、战略方向帮助品牌在市场中实现差异化定位，突围破局，荣获2021天猫食品品牌升级大奖。  「品牌超级体系」是根据商业逻辑定制的思维模型，通过超级体系地图，建立与用户的沟通矩阵，顺应认知，占领消费者心智，为品</p>
-                            <div class="shareicon">
-                                <a class="fl" target="_blank" href="https://weibo.com/u/6669027508?from=myfollow_all&amp;amp;amp;amp;amp;amp;amp;amp;amp;is_all=1">
-                                    <i class="fa fa-weibo"></i>
-                                </a>
-                                <a class="fl" href="tel:15920410275">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </li>
-                        <li id="fitem_block_1" class="fitem_block_link item_block col-25 wow">
-                            <h3 class="title clearfix"><span class="ellipsis">汤臣杰逊</span><span class="more"><span class="h"></span><span class="h v transform"></span></span></h3>
-                            <ul class="alink-wrap">
-                                <li><a class="ellipsis" href="http://www.toonsoon.com.cn/page/about.html" target="_blank">关于我们</a></li>
-                                <li><a class="ellipsis" href="http://www.toonsoon.com.cn/page/9105/" target="_blank">合作机会</a></li>
-                                <li><a class="ellipsis" href="http://www.toonsoon.com.cn/page/9105/" target="_blank">简历投递</a></li>
-                            </ul>
-                        </li>
-                        <li id="fitem_block_2" class="fitem_block_link item_block col-25 wow">
-                            <h3 class="title clearfix"><span class="ellipsis">服务范围</span><span class="more"><span class="h"></span><span class="h v transform"></span></span></h3>
-                            <ul class="alink-wrap">
-                                <li><a class="ellipsis" href="http://www.toonsoon.com.cn/forum/post/79361/" target="_blank">新视觉创意策划</a></li>
-                                <li><a class="ellipsis" href="http://www.toonsoon.com.cn/forum/post/79349/" target="_blank">品牌新视觉 VI 规范</a></li>
-                                <li><a class="ellipsis" href="http://www.toonsoon.com.cn/forum/post/79339/" target="_blank">新零售视觉策划及设计</a></li>
-                            </ul>
-                        </li>
-                        <li id="fitem_block_3" class="fitem_block_link item_block col-25 wow">
-                            <h3 class="title clearfix"><span class="ellipsis">联系地址</span><span class="more"><span class="h"></span><span class="h v transform"></span></span></h3>
-                            <ul class="alink-wrap">
-                                <li><a class="ellipsis" href="http://map.baidu.com/?newmap=1&amp;s=con%26wd%3D%E5%B9%BF%E5%B7%9E%E6%B5%B7%E7%8F%A0%E5%8C%BA%E5%B7%A5%E4%B8%9A%E5%A4%A7%E9%81%93%E4%B8%AD279%E5%8F%B7%26c%3D257&amp;from=alamap&amp;tpl=mapsite" target="_blank">广州海珠区工业大道中279号自编8号101</a></li>
-                                <li><a class="ellipsis" href="http://map.baidu.com/?newmap=1&amp;s=con%26wd%3D%E6%9D%AD%E5%B7%9E%E6%BB%A8%E6%B1%9F%E5%8C%BA%E9%95%BF%E6%B2%B3%E8%A1%97%E9%81%93%E6%BB%A8%E7%9B%9B%E8%B7%AF1766%E5%8F%B7%26c%3D179&amp;from=alamap&amp;tpl=mapsite" target="_blank">杭州滨江区长河街道滨盛路1766号华联UDC星光时代1004号</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="module" id="copyright">
-                <div class="module_container">
-                    <span class="ellipsis">COPYRIGHT (©) 2024  汤臣杰逊品牌战略咨询 | 10亿级超级大单品打造. </span>
-                    <a id="fbeian" href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备2023119044号</a>
-                </div>
-            </div>
-        </div>
+        @include('common.mobile.footer')
     </div>
     <div id="bgmask"></div>
 </div>
