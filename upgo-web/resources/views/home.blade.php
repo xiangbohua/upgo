@@ -120,7 +120,7 @@
                                             <div class="content">
                                                 <a href="{{hCaseDetailPage($case->caseInfoId)}}" target="_blank">
                                                     <div class="item_img"
-                                                         style="background-image:url({{$case->imageUrl}})">
+                                                         style="background-image:url({{hUrlImage($case->imageUrl)}})">
                                                         <img src="{{hUrlImage($case->imageUrl)}}"/>
                                                         <div class="item_img_mask"></div>
                                                         <div class="item_icon">
@@ -166,8 +166,8 @@
                                                 <a href="{{hCaseDetailPage($partnerInfo->defaultCaseId)}}" class="item_img"
                                                    target="_blank"
                                                    title="{{$partnerInfo->partnerName}}"
-                                                   style="background-image:url({{$partnerInfo->imageUrl}})">
-                                                    <img src="{{$partnerInfo->imageUrl}}" width="225" height="110"/>
+                                                   style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
+                                                    <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
                                                 </a>
                                             </div>
                                         </li>
