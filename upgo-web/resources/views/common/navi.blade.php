@@ -22,14 +22,14 @@
                         <a  href="/about" target="_self"><span data-title="关于">关于{{$brand_short_name}}</span>
                         </a>
                     </li>
-                    <li class="navitem">
-                        <a  href="/partner" target="_self"><span data-title="合作伙伴">合作伙伴</span>
-                        </a>
-                    </li>
-                    <li class="navitem">
-                        <a  href="/contact" target="_self"><span data-title="联系我们">联系我们</span>
-                        </a>
-                    </li>
+{{--                    <li class="navitem">--}}
+{{--                        <a  href="/partner" target="_self"><span data-title="合作伙伴">合作伙伴</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                    <li class="navitem">--}}
+{{--                        <a  href="/contact" target="_self"><span data-title="联系我们">联系我们</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                 </ul>
                 <div id="openBtn" class="fl btn">
                     <div class="lcbody">

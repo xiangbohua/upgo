@@ -2,7 +2,7 @@
     <div class="module" id="flinks">
         <div class="module_container">
             <ul class="content_list row gutter">
-                <li id="fitem_block_0" class="fitem_block_info item_block col-25 wow">
+                <li id="fitem_block_0" class="fitem_block_info item_block col-50 wow">
                     <h3 class="title">
                         <a href="">{{$brand_title}}</a>
                     </h3>
@@ -19,14 +19,14 @@
                         <li><a class="ellipsis" href="contact" target="_blank">简历投递</a></li>
                     </ul>
                 </li>
-                <li id="fitem_block_2" class="fitem_block_link item_block col-25 wow">
-                    <ul>
-                        <li class="title"><span class="ellipsis">服务范围</span></li>
-                        @foreach($services as $ser)
-                            <li><a class="ellipsis" href="{{hServiceDetail($ser->serviceId)}}" target="_blank">{{$ser->title}}</a></li>
-                        @endforeach
-                    </ul>
-                </li>
+{{--                <li id="fitem_block_2" class="fitem_block_link item_block col-25 wow">--}}
+{{--                    <ul>--}}
+{{--                        <li class="title"><span class="ellipsis">服务范围</span></li>--}}
+{{--                        @foreach($services as $ser)--}}
+{{--                            <li><a class="ellipsis" href="{{hServiceDetail($ser->serviceId)}}" target="_blank">{{$ser->title}}</a></li>--}}
+{{--                        @endforeach--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
 
                 <li id="fitem_block_3" class="fitem_block_link item_block col-25 wow">
                     <ul>

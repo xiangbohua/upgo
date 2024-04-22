@@ -36,10 +36,10 @@ class CaseAdminController extends AdminController
         $grid->column('title', __('标题'))->sortable()->display(function ($text) {
             return $text;
         })->filter('like')->editable();
-
-        $grid->column('sub_title', __('案例副标题'))->display(function ($text) {
-            return $text;
-        })->filter('like')->editable();
+//
+//        $grid->column('sub_title', __('案例副标题'))->display(function ($text) {
+//            return $text;
+//        })->filter('like')->editable();
 
         $grid->column('main_image_url', __('封面'))->image();
 
@@ -92,21 +92,13 @@ class CaseAdminController extends AdminController
 
         $categorySer = new CategoryService();
         $dropList = $categorySer->getDropList();
-
         $show->field('title', __('标题'));
-
-        $show->field('sub_title', __('案例副标题'));
-
+//        $show->field('sub_title', __('案例副标题'));
         $show->field('main_image_url', __('封面'))->image();
-
         $show->field('category_id', __('案例分类'))->using($dropList);;
-
         $show->field('home_page_display', __('是否首页现实'))->using(valuesDisplay());;
-
         $show->field('display', __('列表显示'))->using(valuesDisplay());
-
         $show->field('display_index', __('展示顺序'))->number();
-
         $show->relation('WebCasePageItem', '图片展示', function ($grid) {
             $grid->column('image_url', '图片')->image();
             $grid->column('display_index', '展示顺序')->number();
@@ -141,7 +133,7 @@ class CaseAdminController extends AdminController
         $categoryList = $categoryService->getDropList();
 
         $form->saving(function ($form) {
-            $form->text = hDefault($form->text, '');
+            $form->title = hDefault($form->title, '');
             $form->sub_title = hDefault($form->sub_title, '');
             $form->home_page_display = hDefault($form->home_page_display, 1);
             $form->display = hDefault($form->display, 1);
@@ -149,7 +141,7 @@ class CaseAdminController extends AdminController
         });
 
         $form->text('title', __('标题'))->rules('required');
-        $form->textarea('sub_title', __('案例副标题'))->rules('required');
+//        $form->textarea('sub_title', __('案例副标题'))->rules('required');
         $form->image('main_image_url', __('封面'))->rules('required')->uniqueName();
         $form->select('category_id', __('案例分类'))->options($categoryList)->rules('required');
         $form->switch('home_page_display', __('是否首页现实'))->states(displaySwitch())->rules('required');
