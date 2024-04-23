@@ -165,7 +165,7 @@
                                             <div class="content">
                                                 <a href="{{hCaseDetailPage($partnerInfo->defaultCaseId)}}" class="item_img"
                                                    target="_blank"
-                                                   title="{{$partnerInfo->partnerName}}"
+                                                   title="{{hUrlImage($partnerInfo->partnerName)}}"
                                                    style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
                                                     <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
                                                 </a>

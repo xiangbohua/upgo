@@ -169,3 +169,24 @@ function displaySwitch() {
         'off' => ['value' => 0, 'text' => '不展示', 'color' => 'danger'],
     ];
 }
+
+function isMobile() {
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    $mobileKeywords = array('Mobile', 'Android', 'BlackBerry', 'iPhone', 'Windows Phone', 'iPod', 'iPad');
+
+    foreach ($mobileKeywords as $keyword) {
+        if (stripos($userAgent, $keyword) !== false) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+function forUrl($url) {
+    if (isMobile()) {
+        return 'mobile/'. $url;
+    }
+    return $url;
+}

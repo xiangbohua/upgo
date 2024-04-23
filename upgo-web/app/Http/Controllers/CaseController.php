@@ -35,7 +35,7 @@ class CaseController extends BaseController
                     'size'=>$this->defaultPageSize
                 ]);
 
-        return view('cases', $result);
+        return view(forUrl('cases'), $result);
     }
 
     /**
@@ -45,14 +45,14 @@ class CaseController extends BaseController
      */
     public function caseDetail(HomeService $homeService, CaseService $caseService, $caseId) {
         if (empty($caseId)) {
-            return redirect('/case');
+            return redirect(forUrl('/case'));
         }
         $caseInfo = $caseService->getCaseDetail($caseId);
         if (empty($caseInfo)) {
-            return redirect('/case');
+            return redirect(forUrl('/case'));
         }
 
-        return view('case_detail', array_merge($homeService->getFooterInfo(), $caseInfo));
+        return view(forUrl('case_detail'), array_merge($homeService->getFooterInfo(), $caseInfo));
     }
 
 }
