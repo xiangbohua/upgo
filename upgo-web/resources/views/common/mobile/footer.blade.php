@@ -9,9 +9,9 @@
                 <li id="fitem_block_1" class="fitem_block_link item_block col-25 wow">
                     <h3 class="title clearfix"><span class="ellipsis">上和行Upgo</span><span class="more"><span class="h"></span><span class="h v transform"></span></span></h3>
                     <ul class="alink-wrap">
-                        <li><a class="ellipsis" href="case/cate/0/page/0" target="_blank">案例</a></li>
-                        <li><a class="ellipsis" href="service" target="_blank">服务范围</a></li>
-                        <li><a class="ellipsis" href="about" target="_blank">关于上和行</a></li>
+                        <li><a class="ellipsis" href="/case/cate/0/page/0" target="_blank">案例</a></li>
+                        <li><a class="ellipsis" href="/service" target="_blank">服务范围</a></li>
+                        <li><a class="ellipsis" href="/about" target="_blank">关于上和行</a></li>
                     </ul>
                 </li>
                 <li id="fitem_block_2" class="fitem_block_link item_block col-25 wow">

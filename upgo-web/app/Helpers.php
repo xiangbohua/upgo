@@ -70,6 +70,28 @@ function hTotalPage($total, $size)
 }
 
 /**
+ * 组装分页数据
+ * @return void
+ */
+function pageLink($allData, $size, $pageFunction) {
+    $maxShow = 5;
+    $totalData = count($allData);
+    $totalPage = hTotalPage($totalData, $size);
+    $allPage = [];
+    if ($maxShow <= $maxShow) {
+        for ($i = 1; $i < $totalPage; $i++) {
+            $page = new \App\Models\PageInfo();
+            $page->isLeft = false;
+            $page->isLeft = false;
+            $page->pageIndex = $i;
+            $allPage[] = $page;
+        }
+    }
+
+    return $allPage;
+}
+
+/**
  * 匹配数据
  * @param $yesOrNo
  * @param $yesValue

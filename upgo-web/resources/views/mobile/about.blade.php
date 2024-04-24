@@ -92,7 +92,7 @@
     </div>
     <div id="bgmask"></div>
 </div>
-<div class="hide"><script src="//resources.jsmo.xin/templates/upload/13313/13313.js" type="text/javascript"></script></div>
+<div class="hide"></div>
 <div class="loading">
     <div class="spinner"></div>
 </div>

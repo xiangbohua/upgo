@@ -105,7 +105,7 @@
 </div>
 <div id="online_lx">
 </div>
-<div class="hide"><script src="//resources.jsmo.xin/templates/upload/13313/13313.js" type="text/javascript"></script></div>
+<div class="hide"></script></div>
 <div class="loading">
     <div class="spinner"></div>
 </div>
