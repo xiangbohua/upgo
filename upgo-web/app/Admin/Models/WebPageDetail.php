@@ -12,7 +12,7 @@ class WebPageDetail extends Authenticatable
 
     protected $table = 'web_page_detail';
 
-    public function WebServicePage() {
+    public function WebPageDetail() {
         return $this->belongsTo(WebPageDetail::class, 'page_id');
     }
 

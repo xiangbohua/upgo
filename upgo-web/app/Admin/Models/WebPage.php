@@ -12,7 +12,7 @@ class WebPage extends Authenticatable
 
     protected $table = 'web_page';
 
-    public function WebServicePageItem()
+    public function WebPage()
     {
         return $this->hasMany(WebPageDetail::class, 'page_id');
     }
