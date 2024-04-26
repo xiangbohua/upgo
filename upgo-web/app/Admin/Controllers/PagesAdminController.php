@@ -30,7 +30,7 @@ class PagesAdminController extends AdminController
         $grid->column('id', __('Id'))->sortable();
         $grid->column('page_title', __('页面标题'))->filter('like')->editable();
         $grid->column('page_desc', __('页面描述'))->filter('like')->editable();
-
+        $grid->column('banner', __('顶部banner'))->image();
         $grid->column('created_at', __('添加时间'))->display(function ($time) {
             return hFormatTime($time);
         });
@@ -56,6 +56,7 @@ class PagesAdminController extends AdminController
         $show->field('id', __('Id'));
         $show->field('page_title', __('页面标题'));
         $show->field('page_desc', __('页面描述'));
+        $show->field('banner', __('顶部banner'))->image();
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('更新时间'));
 
@@ -95,6 +96,7 @@ class PagesAdminController extends AdminController
 
         $form->text('page_title', __('服务标题'));
         $form->text('page_desc', __('服务副标题'));
+        $form->image('banner', __('顶部banner'));
         $form->hasMany('WebPageDetail', '图片展示', function (Form\NestedForm $form) {
             $form->image('image_url', '图片')->uniqueName();
             $form->number('display_index', '展示顺序');
