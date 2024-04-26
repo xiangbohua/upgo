@@ -5,6 +5,11 @@
     <div id="sitecontent">
         <!--page-->
         <div class="npagePage post">
+            @if(!empty($pageInfo->banner))
+                <div id="banner">
+                    <img src="{{hUrlImage($pageInfo->banner)}}">
+                </div>
+            @endif
             <div class="content">
                 <div class="mlistpost service module">
                     <div class="module_container wide">

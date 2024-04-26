@@ -8,6 +8,8 @@ class PageInfo
 
     public $pageDesc;
 
+    public $banner;
+
     public $images;
 
 }
