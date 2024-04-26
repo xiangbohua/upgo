@@ -13,7 +13,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class PageAdminController extends AdminController
+class PagesAdminController extends AdminController
 {
     /**
      * Title for current resource.
@@ -57,7 +57,7 @@ class PageAdminController extends AdminController
         $show = new Show(WebPage::findOrFail($id));
 
         $show->field('page_title', __('页面标题'));
-        $show->field('page_desc', __('页面描述'))->image();
+        $show->field('page_desc', __('页面描述'));
         $show->relation('WebPageDetail', '图片展示', function ($grid) {
             $grid->column('image_url', '图片')->image();
             $grid->column('display_index', '展示顺序')->number();
@@ -98,7 +98,7 @@ class PageAdminController extends AdminController
 
         $form->text('title', __('页面标题'))->rules('required');
 //        $form->textarea('sub_title', __('案例副标题'))->rules('required');
-        $form->image('page_desc', __('页面描述'))->rules('required')->uniqueName();
+        $form->text('page_desc', __('页面描述'))->require();
         $form->hasMany('WebCasePageItem', '图片展示', function (Form\NestedForm $form) {
             $form->image('image_url', '图片')->uniqueName();
             $form->number('display_index', '展示顺序')->min(1);

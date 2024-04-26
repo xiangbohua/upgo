@@ -25,7 +25,7 @@ Route::group([
     $router->resource('address', 'AddressAdminController');
     $router->resource('category', 'CategoryAdminController');
     $router->resource('about', 'AboutAdminController');
-    $router->resource('pages', 'PageAdminController');
+    $router->resource('pages', 'PagesAdminController');
 
     Route::get('/case/detail/{caseId}', 'CaseAdminController@editImages');
     Route::get('/service/detail/{serviceId}', 'CaseAdminController@editImages');
