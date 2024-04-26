@@ -28,6 +28,7 @@ class PageService
 
         $pageResult = new PageInfo();
         $pageResult->title = $pageInfo->page_title;
+        $pageResult->subTitle = $pageInfo->sub_title;
         $pageResult->pageDesc = $pageInfo->page_desc;
         $pageResult->banner = $pageInfo->banner;
         $pageResult->images = $images;

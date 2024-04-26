@@ -16,8 +16,8 @@ class HomeService
         'brand_desc'=>'网站详细介绍',
 
         'case_title_img'=>'案例界面主图',
-        'service_title_img'=>'服务范围主图',
-        'about_title_img'=>'关于主图',
+        'service_title_img'=>'服务范围页面',
+        'about_title_img'=>'关于页面',
         'partner_title_img'=>'合作伙伴界面主图',
         'site_logo'=>'网站logo',
 

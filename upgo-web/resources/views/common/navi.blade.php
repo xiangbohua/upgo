@@ -15,11 +15,11 @@
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="/service" target="_self"><span data-title="服务范围">服务范围</span>
+                        <a  href="{{webPageUrl($service_title_img)}}" target="_self"><span data-title="服务范围">服务范围</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="/about" target="_self"><span data-title="关于">关于{{$brand_short_name}}</span>
+                        <a  href="{{webPageUrl($about_title_img)}}" target="_self"><span data-title="关于">关于{{$brand_short_name}}</span>
                         </a>
                     </li>
 {{--                    <li class="navitem">--}}

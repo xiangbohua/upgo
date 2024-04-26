@@ -16,17 +16,17 @@
                                         <div class="module">
                                             <div class="module_container">
                                                 <p class="title">{{$pageInfo->pageDesc}}</p>
-                                                <p class="usetdate"></p>
+                                                <p class="usetdate">{{$pageInfo->subTitle}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="postbody">
                                         <div class="module">
-                                            <div class="module_container">
+                                            <div class="module_container" style="max-width:100%">
                                                 <div class="richtext">
                                                     <p>
                                                         @foreach($pageInfo->images as $url)
-                                                            <img alt="" src="{{hUrlImage($url)}}"/>
+                                                            <img alt="" style="width: 100%" src="{{hUrlImage($url)}}"/>
                                                         @endforeach
                                                     </p>
                                                 </div>

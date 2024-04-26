@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Models\WebSiteSetting;
 use App\Service\HomeService;
+use App\Service\WebPageService;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -55,6 +56,8 @@ class SettingAdminController extends AdminController
         $show = new Show(WebSiteSetting::findOrFail($id));
         $homeSer = new HomeService();
 
+        $webPages = new WebPageService();
+
 //        $show->field('id', __($homeSer->getSiteSettingDesc('id')));
         $show->field('brand_title', __($homeSer->getSiteSettingDesc('brand_title')));
         $show->field('brand_short_name', __($homeSer->getSiteSettingDesc('brand_short_name')));
@@ -64,8 +67,14 @@ class SettingAdminController extends AdminController
         $show->field('slogan',  __($homeSer->getSiteSettingDesc('slogan')));
 
         $show->field('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')))->image();
-        $show->field('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->image();
-        $show->field('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')))->image();
+        $show->field('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->display(function($value) {
+            $ser = new WebPageService();
+            return $ser->getPageTitle($value);
+        });
+        $show->field('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')))->display(function($value) {
+            $ser = new WebPageService();
+            return $ser->getPageTitle($value);
+        });
         $show->field('partner_title_img', __($homeSer->getSiteSettingDesc('partner_title_img')))->image();
 
         $show->field('business_wechat', __($homeSer->getSiteSettingDesc('business_wechat')));
@@ -91,6 +100,8 @@ class SettingAdminController extends AdminController
     {
         $form = new Form(new WebSiteSetting());
         $homeSer = new HomeService();
+        $webPageService = new WebPageService();
+        $allPage = $webPageService->listAllPage();
 
         $form->saving(function($form) {
             $form->business_wechat = hDefault($form->business_wechat, '');
@@ -103,10 +114,11 @@ class SettingAdminController extends AdminController
         $form->image('site_logo',  __($homeSer->getSiteSettingDesc('site_logo')))->rules('required')->uniqueName();
         $form->text('site_code',  __($homeSer->getSiteSettingDesc('site_code')))->rules('required')->required();
         $form->text('slogan',  __($homeSer->getSiteSettingDesc('slogan')))->rules('required')->required();
-
         $form->image('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')))->rules('required')->uniqueName();
-        $form->image('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->rules('required')->uniqueName();
-        $form->image('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')))->rules('required')->uniqueName();
+
+        $form->select('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->options($allPage)->rules('required');
+        $form->select('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')))->options($allPage)->rules('required');
+
         $form->image('partner_title_img', __($homeSer->getSiteSettingDesc('partner_title_img')))->rules('required')->uniqueName();
 
         $form->text('business_wechat', __($homeSer->getSiteSettingDesc('business_wechat')))->placeholder('联系我们展示的微信')->rules('required');

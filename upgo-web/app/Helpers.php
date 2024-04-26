@@ -212,3 +212,7 @@ function forUrl($url) {
     }
     return $url;
 }
+
+function webPageUrl($pageId) {
+    return '/web/pages/'.$pageId;
+}

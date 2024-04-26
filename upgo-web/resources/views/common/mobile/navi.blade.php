@@ -23,7 +23,7 @@
                 <a href="/service" target="_self"><span class="circle transform"></span>服务范围</a>
             </li>
             <li class="navitem" >
-                <a href="/about" target="_self"><span class="circle transform"></span>关于</a>
+                <a href="{{webPageUrl($about_title_img)}}" target="_self"><span class="circle transform"></span>关于</a>
             </li>
 {{--            <li class="navitem" >--}}
 {{--                <a href="javascript:;" target=""><span class="circle transform"></span>关于--}}
