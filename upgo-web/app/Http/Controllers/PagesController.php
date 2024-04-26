@@ -24,9 +24,9 @@ class PagesController extends BaseController
         }
         $pageInfo = $pageService->getPageDetail($pageId);
         if (empty($pageInfo)) {
-            return redirect(forUrl('/service'));
+            return redirect(forUrl('/home'));
         }
-
+        var_dump(!empty($pageInfo->pageDesc));
         return view(forUrl('page'), array_merge($homeService->getFooterInfo(), ['pageInfo'=>$pageInfo]));
     }
 

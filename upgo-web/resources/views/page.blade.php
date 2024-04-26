@@ -14,7 +14,7 @@
                         <div class="container_content">
                             <div class="content_wrapper">
                                 <div id="postContent">
-                                    @if(!empty($pageInfo->title))
+                                    @if(!empty($pageInfo->pageDesc))
                                         <div id="postInfo">
                                             <div class="module">
                                                 <div class="module_container">
