@@ -98,7 +98,7 @@ class PagesAdminController extends AdminController
 
         $form->text('title', __('页面标题'))->rules('required');
 //        $form->textarea('sub_title', __('案例副标题'))->rules('required');
-        $form->text('page_desc', __('页面描述'))->require();
+        $form->text('page_desc', __('页面描述'))->rules('required');
         $form->hasMany('WebCasePageItem', '图片展示', function (Form\NestedForm $form) {
             $form->image('image_url', '图片')->uniqueName();
             $form->number('display_index', '展示顺序')->min(1);
