@@ -29,21 +29,19 @@
                                                     <p>
                                                         <img alt="" style="width: 100%" src="{{hUrlImage($pageInfo->banner)}}"/>
                                                     </p>
-                                                    <p>
-                                                        @foreach($pageInfo->details as $detail)
-                                                            @if($detail->text_position == 1)
-                                                                <p style="font-size: 18px; line-height: normal; padding-bottom: 10px; padding-top: 10px">{{$detail->detail_title}}</p>
-                                                                <p>{{$detail->detail_desc}}</p>
-                                                            @endif
-                                                            @if(!empty($detail->image_url))
-                                                                <img alt="" style="width: 100%" src="{{hUrlImage($detail->image_url)}}"/>
-                                                            @endif
-                                                            @if($detail->text_position == 0)
-                                                                <p style="font-size: 18px; line-height: normal; padding-bottom: 10px; padding-top: 10px">{{$detail->detail_title}}</p>
-                                                                <p>{{$detail->detail_desc}}</p>
-                                                            @endif
-                                                        @endforeach
-                                                    </p>
+                                                    @foreach($pageInfo->details as $detail)
+                                                        @if(!empty($detail->detail_title) && $detail->text_position == 1)
+                                                            <p style="font-size: 18px; line-height: normal; padding-bottom: 10px; padding-top: 10px">{{$detail->detail_title}}</p>
+                                                            <p>{{$detail->detail_desc}}</p>
+                                                        @endif
+                                                        @if(!empty($detail->image_url))
+                                                            <p><img alt="" style="width: 100%" src="{{hUrlImage($detail->image_url)}}"/></p>
+                                                        @endif
+                                                        @if(!empty($detail->detail_title) && $detail->text_position == 0)
+                                                            <p style="font-size: 18px; line-height: normal; padding-bottom: 10px; padding-top: 10px">{{$detail->detail_title}}</p>
+                                                            <p>{{$detail->detail_desc}}</p>
+                                                        @endif
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>

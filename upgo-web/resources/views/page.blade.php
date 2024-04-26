@@ -29,23 +29,19 @@
                                         <div class="module">
                                             <div class="module_container">
                                                 <div class="richtext" style="padding-bottom: 10px">
-                                                    <p>
                                                         @foreach($pageInfo->details as $detail)
-                                                            @if($detail->text_position == 1)
+                                                            @if(!empty($detail->detail_title) && $detail->text_position == 1)
                                                                 <p style="font-size: 38px; line-height: normal; padding-bottom: 20px; padding-top: 10px">{{$detail->detail_title}}</p>
                                                                 <p style="font-size: 18px; line-height: normal; padding-bottom: 20px">{{$detail->detail_desc}}</p>
                                                             @endif
-                                                            <p>
-                                                                @if(!empty($detail->image_url))
-                                                                    <img alt="" style="width: 100%" src="{{hUrlImage($detail->image_url)}}">
-                                                                @endif
-
-                                                            @if($detail->text_position == 0)
+                                                            @if(!empty($detail->image_url))
+                                                                <p><img alt="" style="width: 100%" src="{{hUrlImage($detail->image_url)}}"></p>
+                                                            @endif
+                                                            @if(!empty($detail->detail_title) && $detail->text_position == 0)
                                                                 <p style="font-size: 38px; line-height: normal; padding-bottom: 20px; padding-top: 10px">{{$detail->detail_title}}</p>
                                                                 <p style="font-size: 18px; line-height: normal; padding-bottom: 20px">{{$detail->detail_desc}}</p>
                                                             @endif
                                                          @endforeach
-                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
