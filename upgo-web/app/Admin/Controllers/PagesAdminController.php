@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Actions\CaseDetailAction;
 use App\Admin\Models\WebCasePage;
+use App\Admin\Models\WebPageDetail;
 use App\Admin\Models\WebCategory;
 use App\Admin\Models\WebPage;
 use App\Service\CaseService;
