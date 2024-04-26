@@ -60,13 +60,13 @@ class ServiceAdminController extends AdminController
         $show = new Show(WebServicePage::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('title', __('Title'));
-        $show->field('sub_title', __('Sub title'));
-        $show->field('image_url', __('Image url'));
-        $show->field('display', __('Display'));
-        $show->field('display_index', __('Display index'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('title', __('服务标题'));
+        $show->field('sub_title', __('服务自标题'));
+        $show->field('image_url', __('展示界面'));
+        $show->field('display', __('是否展示'));
+        $show->field('display_index', __('展示顺序'));
+        $show->field('created_at', __('添加时间'));
+        $show->field('updated_at', __('修改时间'));
 
         $show->relation('WebServicePageItem', '图片展示', function ($grid) {
             $grid->column('image_url', '图片')->image();

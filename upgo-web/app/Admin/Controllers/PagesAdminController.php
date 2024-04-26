@@ -2,13 +2,8 @@
 
 namespace App\Admin\Controllers;
 
-use App\Admin\Actions\CaseDetailAction;
-use App\Admin\Models\WebCasePage;
-use App\Admin\Models\WebPageDetail;
-use App\Admin\Models\WebCategory;
 use App\Admin\Models\WebPage;
-use App\Service\CaseService;
-use App\Service\CategoryService;
+use App\Admin\Models\WebServicePage;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -21,7 +16,7 @@ class PagesAdminController extends AdminController
      *
      * @var string
      */
-    protected $title = '案例';
+    protected $title = '页面管理';
 
     /**
      * Make a grid builder.
@@ -31,18 +26,19 @@ class PagesAdminController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new WebPage());
-        $grid->column('id', __('ID'))->sortable()->width(80);
-        $grid->column('page_title', __('页面标题'))->sortable()->display(function ($text) {
-            return $text;
-        })->filter('like')->editable();
-        $grid->column('page_desc', __('页面描述'));
+
+        $grid->column('id', __('Id'))->sortable();
+        $grid->column('page_title', __('页面标题'))->filter('like')->editable();
+        $grid->column('page_desc', __('页面描述'))->filter('like')->editable();
+
         $grid->column('created_at', __('添加时间'))->display(function ($time) {
             return hFormatTime($time);
-        });;
-        $grid->column('updated_at', __('更新时间'))->display(function ($time) {
+        });
+        $grid->column('updated_at', __('修改时间'))->display(function ($time) {
             return hFormatTime($time);
         });
-        $grid->paginate(12);
+
+
         $grid->disableExport();
         return $grid;
     }
@@ -57,8 +53,12 @@ class PagesAdminController extends AdminController
     {
         $show = new Show(WebPage::findOrFail($id));
 
+        $show->field('id', __('Id'));
         $show->field('page_title', __('页面标题'));
         $show->field('page_desc', __('页面描述'));
+        $show->field('created_at', __('创建时间'));
+        $show->field('updated_at', __('更新时间'));
+
         $show->relation('WebPageDetail', '图片展示', function ($grid) {
             $grid->column('image_url', '图片')->image();
             $grid->column('display_index', '展示顺序')->number();
@@ -74,7 +74,6 @@ class PagesAdminController extends AdminController
                 // 去掉查看
                 $actions->disableView();
             });
-
         });
 
         return $show;
@@ -87,39 +86,20 @@ class PagesAdminController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new WebPage());
+        $form = new Form(new WebServicePage());
 
         $form->saving(function ($form) {
-            $form->title = hDefault($form->title, '');
-            $form->sub_title = hDefault($form->sub_title, '');
-            $form->home_page_display = hDefault($form->home_page_display, 1);
-            $form->display = hDefault($form->display, 1);
-            $form->display = hDefault($form->display, 1);
+           $form->page_title = hDefault($form->title, '');
+           $form->page_desc = hDefault($form->sub_title, '');
         });
 
-        $form->text('page_title', __('页面标题'))->rules('required');
-//        $form->textarea('sub_title', __('案例副标题'))->rules('required');
-        $form->text('page_desc', __('页面描述'))->rules('required');
+        $form->text('page_title', __('服务标题'));
+        $form->text('page_desc', __('服务副标题'));
         $form->hasMany('WebPageDetail', '图片展示', function (Form\NestedForm $form) {
             $form->image('image_url', '图片')->uniqueName();
-            $form->number('display_index', '展示顺序')->min(1);
+            $form->number('display_index', '展示顺序');
         });
 
-        $form->footer(function ($footer) {
-            // 去掉`重置`按钮
-            $footer->disableReset();
-            // 去掉`提交`按钮
-//            $footer->disableSubmit();
-            // 去掉`查看`checkbox
-//            $footer->disableViewCheck();
-            // 去掉`继续编辑`checkbox
-//            $footer->disableEditingCheck();
-            // 去掉`继续创建`checkbox
-//            $footer->disableCreatingCheck();
-        });
-
-        $form->confirm('确定提交吗？');
         return $form;
     }
-
 }

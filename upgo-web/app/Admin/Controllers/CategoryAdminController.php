@@ -15,7 +15,7 @@ class CategoryAdminController extends AdminController
      *
      * @var string
      */
-    protected $title = 'WebCategory';
+    protected $title = '案例分类';
 
     /**
      * Make a grid builder.

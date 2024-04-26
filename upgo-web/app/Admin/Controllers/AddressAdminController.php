@@ -15,7 +15,7 @@ class AddressAdminController extends AdminController
      *
      * @var string
      */
-    protected $title = 'WebContactAddress';
+    protected $title = '地址联系人';
 
     /**
      * Make a grid builder.
