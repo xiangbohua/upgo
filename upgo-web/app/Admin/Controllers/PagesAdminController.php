@@ -86,7 +86,7 @@ class PagesAdminController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new WebServicePage());
+        $form = new Form(new WebPage());
 
         $form->saving(function ($form) {
            $form->page_title = hDefault($form->title, '');
