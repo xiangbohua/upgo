@@ -25,7 +25,7 @@
                                     <div class="postbody">
                                         <div class="module">
                                             <div class="module_container">
-                                                @foreach($images as $url)
+                                                @foreach($pageInfo->images as $url)
                                                     <div class="richtext">
                                                         <p><img alt="" src="{{hUrlImage($url)}}"></p>
                                                     </div>
