@@ -185,10 +185,20 @@ function valuesDisplay() {
     return ['1'=>'展示', '0'=>'不展示'];
 }
 
+function valuesPosition() {
+    return ['1'=>'顶部', '0'=>'底部'];
+}
+
 function displaySwitch() {
     return [
         'on'  => ['value' => 1, 'text' => '展示', 'color' => 'success'],
         'off' => ['value' => 0, 'text' => '不展示', 'color' => 'danger'],
+    ];
+}
+function positionSwitch() {
+    return [
+        'on'  => ['value' => 1, 'text' => '图片顶部', 'color' => 'success'],
+        'off' => ['value' => 0, 'text' => '图片底部', 'color' => 'danger'],
     ];
 }
 

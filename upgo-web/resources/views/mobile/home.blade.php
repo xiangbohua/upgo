@@ -1,5 +1,4 @@
 @include('common.mobile.head', ['page_title'=>'首页'])
-
 @include('common.mobile.navi')
 <div id="siteWrapper">
     @include('common.mobile.header')
@@ -9,29 +8,48 @@
             <!--slider-->
             <div id="topSlider" class="mslider module">
                 <div class="module_container wide">
-                    <ul class="content_list" data-slider-height="0" data-slider-auto="1" data-slider-mode="0" data-slider-pause="4" data-slider-ease="ease-out" data-slider-speed="0.5" style="height:0px">
-                        @foreach ($homePageInfo->bannerList as $banner)
-                            <li >
-                                <div class="item_bg image" data-thumb="" style="background-image:url({{hUrlImage($banner->imageUrl)}})">
-                                    <img src="{{hUrlImage($banner->imageUrl)}}" />
-                                </div>
-                                @if(!$banner->onlyImage)
-                                    <a href="{{hCaseDetailPage($banner->caseInfoId)}}"></a>
-                                @endif
-
-                                <div class="wrapper">
-                                    <div class="description mc">
-                                        <p class="title ellipsis"></p>
-                                        <p class="subtitle"></p>
-                                        @if(!$banner->onlyImage)
-                                            <a class="more white" href="{{hCaseDetailPage($banner->caseInfoId)}}">More</a>
-                                        @endif
-
+                    <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 293px;">
+                            <ul class="content_list" id="swiper_content_list" current-display-index="0" data-slider-height="0" data-slider-auto="1" data-slider-mode="0" data-slider-pause="4" data-slider-ease="ease-out"
+                                data-slider-speed="0.5" style="height: 0px; width: 915%; position: relative; transition-timing-function: ease-out;
+                                transition-duration: 0.5s; transform: translate3d(0px, 0px, 0px);">
+                                @foreach ($homePageInfo->bannerList as $banner)
+                                    <li style="float: left; list-style: none; position: relative; width: 390px;">
+                                        <div class="item_bg image" data-thumb="" style="background-image:url({{hUrlImage($banner->imageUrl)}})">
+                                            <img src="{{hUrlImage($banner->imageUrl)}}">
+                                        </div>
+                                        <a href="@if(!$banner->onlyImage){{hCaseDetailPage($banner->caseInfoId)}} @endif"></a>
+                                        <div class="wrapper">
+                                            <div class="description mc">
+                                                <p class="title ellipsis"></p>
+                                                <p class="subtitle"></p>
+                                                <a class="more white" href="@if(!$banner->onlyImage) {{hCaseDetailPage($banner->caseInfoId)}} @endif">More</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div class="bx-controls bx-has-pager bx-has-controls-direction">
+                            <div class="bx-pager bx-custom-pager">
+                                @foreach ($homePageInfo->bannerList as $index=>$banner)
+                                    <div class="bx-pager-item">
+                                        <a href="" data-slide-index="{{$index}}" class="bx-pager-link">
+                                            <div class="progress" data-slide-index="{{$index}}">
+                                                <div class="mask"></div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
+                                @endforeach
+                            </div>
+                            <div class="bx-controls-direction">
+                                <a class="bx-prev" href="">
+                                    <i class="fa fa-angle-left"></i>
+                                </a><a class="bx-next" href="">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="sliderArrow fa fa-angle-down"></div>
                 </div>
             </div>
@@ -125,7 +143,6 @@
                                         </div>
                                     </li>
                                 @endforeach
-
                             </ul>
                             <a href="partner" class="more hide">查看更多</a>
                         </div><!--wrapper-->

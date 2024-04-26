@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Models\PageDetailInfo;
 use App\Models\PageInfo;
 use App\Models\ServiceInfo;
 use Illuminate\Support\Facades\DB;
@@ -18,12 +19,18 @@ class PageService
 
         $pageImages = DB::table('web_page_detail')
             ->where('page_id', $pageId)
-            ->orderBy('display_index')
-            ->get('image_url');
+            ->orderBy( 'display_index')
+            ->select('detail_title', 'image_url', 'detail_desc', 'text_position')
+            ->get();
 
-        $images = [];
+        $detail = [];
         foreach ($pageImages as $d) {
-            $images[] = $d->image_url;
+            $od = new PageDetailInfo();
+            $od->image_url = $d->image_url;
+            $od->detail_title = $d->detail_title;
+            $od->detail_desc = $d->detail_desc;
+            $od->text_position = $d->text_position;
+            $detail[] = $d;
         }
 
         $pageResult = new PageInfo();
@@ -31,7 +38,7 @@ class PageService
         $pageResult->subTitle = $pageInfo->sub_title;
         $pageResult->pageDesc = $pageInfo->page_desc;
         $pageResult->banner = $pageInfo->banner;
-        $pageResult->images = $images;
+        $pageResult->details = $detail;
         return $pageResult;
     }
 }

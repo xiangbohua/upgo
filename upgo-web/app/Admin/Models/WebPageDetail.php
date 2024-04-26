@@ -23,7 +23,10 @@ class WebPageDetail extends Authenticatable
      */
     protected $fillable = [
         'image_url',
-        'display_index'
+        'detail_title',
+        'detail_desc',
+        'display_index',
+        'text_position'
     ];
 
     /**

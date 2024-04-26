@@ -10,6 +10,6 @@ class PageInfo
 
     public $banner;
 
-    public $images;
+    public $details;
 
 }

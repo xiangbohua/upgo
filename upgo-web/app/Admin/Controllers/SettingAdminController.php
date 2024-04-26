@@ -57,6 +57,7 @@ class SettingAdminController extends AdminController
         $homeSer = new HomeService();
 
         $webPages = new WebPageService();
+        $allPage = $webPages->listAllPage();
 
 //        $show->field('id', __($homeSer->getSiteSettingDesc('id')));
         $show->field('brand_title', __($homeSer->getSiteSettingDesc('brand_title')));
@@ -67,14 +68,8 @@ class SettingAdminController extends AdminController
         $show->field('slogan',  __($homeSer->getSiteSettingDesc('slogan')));
 
         $show->field('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')))->image();
-        $show->field('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->display(function($value) {
-            $ser = new WebPageService();
-            return $ser->getPageTitle($value);
-        });
-        $show->field('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')))->display(function($value) {
-            $ser = new WebPageService();
-            return $ser->getPageTitle($value);
-        });
+        $show->field('service_title_img', __($homeSer->getSiteSettingDesc('service_title_img')))->using($allPage);
+        $show->field('about_title_img', __($homeSer->getSiteSettingDesc('about_title_img')))->using($allPage);
         $show->field('partner_title_img', __($homeSer->getSiteSettingDesc('partner_title_img')))->image();
 
         $show->field('business_wechat', __($homeSer->getSiteSettingDesc('business_wechat')));

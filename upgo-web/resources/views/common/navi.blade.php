@@ -15,6 +15,10 @@
                         </a>
                     </li>
                     <li class="navitem">
+                        <a  href="/news" target="_self"><span data-title="动态">动态</span>
+                        </a>
+                    </li>
+                    <li class="navitem">
                         <a  href="{{webPageUrl($service_title_img)}}" target="_self"><span data-title="服务范围">服务范围</span>
                         </a>
                     </li>

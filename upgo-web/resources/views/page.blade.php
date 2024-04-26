@@ -25,11 +25,24 @@
                                     <div class="postbody">
                                         <div class="module">
                                             <div class="module_container">
-                                                @foreach($pageInfo->images as $url)
-                                                    <div class="richtext">
-                                                        <p><img alt="" src="{{hUrlImage($url)}}"></p>
-                                                    </div>
-                                                @endforeach
+                                                <div class="richtext" style="padding-bottom: 10px">
+                                                    @foreach($pageInfo->details as $detail)
+                                                        @if($detail->text_position == 1)
+                                                            <p style="font-size: 38px; line-height: normal; padding-bottom: 20px; padding-top: 10px">{{$detail->detail_title}}</p>
+                                                            <p style="font-size: 18px; line-height: normal; padding-bottom: 20px">{{$detail->detail_desc}}</p>
+                                                        @endif
+
+                                                        @if(!empty($detail->image_url))
+                                                            <p><img alt="" style="width: 100%" src="{{hUrlImage($detail->image_url)}}"></p>
+                                                        @endif
+
+                                                        @if($detail->text_position == 0)
+                                                            <p style="font-size: 38px; line-height: normal; padding-bottom: 20px; padding-top: 10px">{{$detail->detail_title}}</p>
+                                                            <p style="font-size: 18px; line-height: normal; padding-bottom: 20px">{{$detail->detail_desc}}</p>
+                                                        @endif
+
+                                                     @endforeach
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

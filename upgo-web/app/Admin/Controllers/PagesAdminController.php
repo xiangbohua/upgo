@@ -29,7 +29,8 @@ class PagesAdminController extends AdminController
 
         $grid->column('id', __('Id'))->sortable();
         $grid->column('page_title', __('页面标题'))->filter('like')->editable();
-        $grid->column('page_desc', __('页面描述'))->filter('like')->editable();
+        $grid->column('page_desc', __('页面描述'))->editable();
+        $grid->column('sub_title', __('页面副标题'))->editable();
         $grid->column('banner', __('顶部banner'))->image();
         $grid->column('created_at', __('添加时间'))->display(function ($time) {
             return hFormatTime($time);
@@ -56,6 +57,7 @@ class PagesAdminController extends AdminController
         $show->field('id', __('Id'));
         $show->field('page_title', __('页面标题'));
         $show->field('page_desc', __('页面描述'));
+        $show->field('sub_title', __('页面副标题'));
         $show->field('banner', __('顶部banner'))->image();
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('更新时间'));
@@ -63,6 +65,11 @@ class PagesAdminController extends AdminController
         $show->relation('WebPageDetail', '图片展示', function ($grid) {
             $grid->column('image_url', '图片')->image();
             $grid->column('display_index', '展示顺序')->number();
+            $grid->column('detail_title', '内容标题')->number();
+            $grid->column('detail_desc', '内容描述')->number();
+            $grid->column('text_position', '文字位置')->using(valuesPosition());
+
+
             $grid->disableFilter();
             $grid->disableExport();
             $grid->disableCreateButton();
@@ -92,14 +99,19 @@ class PagesAdminController extends AdminController
         $form->saving(function ($form) {
            $form->page_title = hDefault($form->page_title, '');
            $form->page_desc = hDefault($form->page_desc, '');
+           $form->sbu_title = hDefault($form->sbu_title, '');
         });
 
-        $form->text('page_title', __('服务标题'));
-        $form->text('page_desc', __('服务副标题'));
+        $form->text('page_title', __('页面标题'));
+        $form->text('page_desc', __('页面描述'));
+        $form->text('sub_title', __('页面副标题'));
         $form->image('banner', __('顶部banner'));
-        $form->hasMany('WebPageDetail', '图片展示', function (Form\NestedForm $form) {
-            $form->image('image_url', '图片')->uniqueName();
-            $form->number('display_index', '展示顺序');
+        $form->hasMany('WebPageDetail', '图片展示', function (Form\NestedForm $form2) {
+            $form2->text('detail_title', '内容标题');
+            $form2->text('detail_desc', '内容描述');
+            $form2->image('image_url', '内容图片')->uniqueName();
+            $form2->number('display_index', '展示顺序');
+            $form2->switch('text_position', __('文字位置'))->states(positionSwitch())->rules('required');
         });
 
         return $form;

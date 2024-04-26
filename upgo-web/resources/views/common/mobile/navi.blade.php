@@ -20,7 +20,10 @@
                 <a href="{{hCategoryPage(0)}}" target="_self"><span class="circle transform"></span>案例</a>
             </li>
             <li class="navitem" >
-                <a href="/service" target="_self"><span class="circle transform"></span>服务范围</a>
+                <a href="{{webPageUrl($service_title_img)}}" target="_self"><span class="circle transform"></span>服务范围</a>
+            </li>
+            <li class="navitem" >
+                <a href="/news" target="_self"><span class="circle transform"></span>动态</a>
             </li>
             <li class="navitem" >
                 <a href="{{webPageUrl($about_title_img)}}" target="_self"><span class="circle transform"></span>关于</a>
