@@ -1,7 +1,8 @@
-@include('common.head', ['page_title'=>'合作伙伴'])
-<body class="child"><!--wrapper 整体宽度 container-->
+@include('common.mobile.head', ['page_title'=>'合作伙伴'])
+<body  class="child"><!--wrapper 整体宽度 container-->
+@include('common.mobile.navi')
 <div id="siteWrapper">
-    @include('common.navi')
+    @include('common.mobile.header')
     <div id="sitecontent">
         <!--page-->
         <div class="npagePage">
@@ -9,19 +10,17 @@
                 <div class="mlist imagelink module" style="">
                     <div class="bgmask"></div>
                     <div class="module_container">
-                        <div class="container_hc">
-                            <div class="container_header wow">
-                                <p class="title">合作伙伴</p>
-                                <p class="subtitle">Bset Partner</p>
-                            </div>
+                        <div class="container_header wow">
+                            <p class="title">合作伙伴</p>
+                            <p class="subtitle">Bset Partner</p>
                         </div>
                         <div class="container_content nocat">
                             <div class="content_wrapper ">
                                 <ul class="content_list row gutter">
                                     @foreach($partnerList as $index => $partnerItem)
-                                        <li id="item_block_{{$index}}" class="item_block col-16 wow" style="animation-delay:.0s">
+                                        <li id="item_block_{{$index}}" class="item_block col-50">
                                             <div class="content">
-                                                <a @if($partnerItem->defaultCaseId > 0) href="{{hCaseDetailPage($partnerItem->defaultCaseId)}}" @endif class="item_img" target="_blank" title="{{$partnerItem->title}}"  style="background-image:url({{hUrlImage($partnerItem->imageUrl)}})">
+                                                <a @if($partnerItem->defaultCaseId > 0) href="{{hCaseDetailPage($partnerItem->defaultCaseId)}}" @endif class="item_img" target="_blank" title="{{$partnerItem->title}}" style="background-image:url({{hUrlImage($partnerItem->imageUrl)}})">
                                                     <img src="{{hUrlImage($partnerItem->imageUrl)}}" width="225" height="110"/>
                                                 </a>
                                             </div>
@@ -29,7 +28,7 @@
                                     @endforeach
 
                                 </ul>
-                                <a href="" class="more hide wow" style="animation-delay:.5s">查看更多</a>
+                                <a href="" class="more hide">查看更多</a>
                             </div><!--wrapper-->
                             <div class="clear"></div>
                             <div id="pages">
@@ -57,16 +56,11 @@
             </div>
         </div><!--npagePage list-->
         <!--page-->
+        <@include('common.mobile.footer')
     </div>
-    @include('common.footer')
-</div><!--siteWrapper-->
-<div id="rshares">
+    <div id="bgmask"></div>
 </div>
-<div class="fixed" id="fixed_weixin">
-</div>
-<div id="online_lx">
-</div>
-<div class="hide"><script src="//resources.jsmo.xin/templates/upload/13313/13313.js" type="text/javascript"></script></div>
+<div class="hide"></script></div>
 <div class="loading">
     <div class="spinner"></div>
 </div>

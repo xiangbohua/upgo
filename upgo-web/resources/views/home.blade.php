@@ -64,6 +64,40 @@
                 </div>
                 <div class="mcounter module" style=" background-color:#FFFFFF;">
                     <div class="bgmask"></div>
+                    <div class="module_container wide">
+                        <div class="container_content">
+                            <ul class="content_list row">
+                                <li class="col-25">
+                                    <div>
+                                        <p class="number"><span class="counterDX" data-counter-value="3">3</span><span class="unit">年</span></p>
+                                        <p class="title">3年间</p>
+                                    </div>
+                                </li>
+                                <li class="col-25">
+                                    <div>
+                                        <p class="number"><span class="counterDX" data-counter-value="23">23</span><span class="unit">+</span></p>
+                                        <p class="title">助23个品牌</p>
+                                    </div>
+                                </li>
+                                <li class="col-25">
+                                    <div>
+                                        <p class="number"><span class="counterDX" data-counter-value="3">3</span><span class="unit"></span></p>
+                                        <p class="title">占据类目前3</p>
+                                    </div>
+                                </li>
+                                <li class="col-25">
+                                    <div>
+                                        <p class="number"><span class="counterDX" data-counter-value="126">126</span><span class="unit">亿</span></p>
+                                        <p class="title">提升126亿销售</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mcounter module" style=" background-color:#FFFFFF;">
+                    <div class="bgmask"></div>
                 </div><!--counter-->
                 <div class="mlist project module" style="">
                     <div class="bgmask"></div>
@@ -131,7 +165,7 @@
                                             <div class="content">
                                                 <a href="{{hCaseDetailPage($partnerInfo->defaultCaseId)}}" class="item_img"
                                                    target="_blank"
-                                                   title="{{$partnerInfo->partnerName}}"
+                                                   title="{{hUrlImage($partnerInfo->partnerName)}}"
                                                    style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
                                                     <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
                                                 </a>

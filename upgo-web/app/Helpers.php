@@ -70,6 +70,28 @@ function hTotalPage($total, $size)
 }
 
 /**
+ * 组装分页数据
+ * @return void
+ */
+function pageLink($allData, $size, $pageFunction) {
+    $maxShow = 5;
+    $totalData = count($allData);
+    $totalPage = hTotalPage($totalData, $size);
+    $allPage = [];
+    if ($maxShow <= $maxShow) {
+        for ($i = 1; $i < $totalPage; $i++) {
+            $page = new \App\Models\PageInfo();
+            $page->isLeft = false;
+            $page->isLeft = false;
+            $page->pageIndex = $i;
+            $allPage[] = $page;
+        }
+    }
+
+    return $allPage;
+}
+
+/**
  * 匹配数据
  * @param $yesOrNo
  * @param $yesValue
@@ -168,4 +190,25 @@ function displaySwitch() {
         'on'  => ['value' => 1, 'text' => '展示', 'color' => 'success'],
         'off' => ['value' => 0, 'text' => '不展示', 'color' => 'danger'],
     ];
+}
+
+function isMobile() {
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    $mobileKeywords = array('Mobile', 'Android', 'BlackBerry', 'iPhone', 'Windows Phone', 'iPod', 'iPad');
+
+    foreach ($mobileKeywords as $keyword) {
+        if (stripos($userAgent, $keyword) !== false) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+function forUrl($url) {
+    if (isMobile()) {
+        return 'mobile/'. $url;
+    }
+    return $url;
 }

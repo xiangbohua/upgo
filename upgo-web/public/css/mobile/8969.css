@@ -1,0 +1,632 @@
+@charset "utf-8";
+/* CSS Document */
+.mlist .content_list .item_block .item_img {
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.mlist .module_container.wide {
+    padding-left: 0;
+    padding-right: 0
+}
+.mlist .content_list .item_block {
+    margin-bottom: 10px;
+    animation-name: fadeInUp;
+}
+.mlist .content_list .item_block .content {
+    transition: all .2s linear;
+}
+.mlist .content_list .item_block .content {
+    background-color: #fff
+}
+.mlist .content_list .item_block .title {
+    font-size: 16px
+}
+.mlist .content_list .item_block .subtitle {
+    font-size: 13px;
+    color: #939393;
+    margin-top: 3px
+}
+.mlistpost .module_container.wide {
+    padding-left: 0;
+    padding-right: 0
+}
+.mlistpost #postSlider .slider .bx-wrapper .bx-pager {
+    bottom: 20px
+}
+.mlistpost #postSlider .slider .bx-wrapper .bx-pager.bx-default-pager a {
+    border-color: rgba(255,255,255,.7)
+}
+.mlistpost #postSlider .slider .bx-wrapper .bx-pager.bx-default-pager a.active, .mlistpost #postSlider .slider .bx-wrapper .bx-pager.bx-default-pager a:focus {
+    background-color: #fff;
+    border-color: #fff
+}
+.mlistpost #postContent #postInfo {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #d3d3d3;
+}
+.mlistpost #postContent #postInfo .title {
+    font-size: 16px
+}
+.mlistpost #postContent #postInfo .usetdate {
+    font-size: 13px;
+    color: #939393;
+    margin-top: 3px
+}
+.mlistpost .postfooter .module_container {
+    padding: 20px 10px;
+    margin-top: 20px;
+    border-top: 1px dotted #d3d3d3;
+    border-bottom: 1px dotted #d3d3d3;
+}
+.mlistpost .postfooter .tags {
+    width: 100%
+}
+.mlistpost #listContent .listtitle {
+    text-align: center;
+    padding: 30px 0
+}
+.mlist.service .content_list .item_block .item_img {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.mlist.service .content_list .item_block .item_wrapper {
+    padding: 15px 10px;
+    text-align: center;
+    transition: all linear .2s;
+    transform: translate(0, 0)
+}
+.mlist.service .content_list .item_block .item_wrapper .description {
+    font-size: 12px;
+    margin: 10px 0 10px;
+    color: #aaa;
+    height: 36px;
+    overflow: hidden;
+    line-height: 18px
+}
+.mlist.project .content_list .item_block .item_img {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.mlist.project .content_list .item_block .item_wrapper {
+    padding: 15px 10px 18px 10px;
+    text-align: center
+}
+.mlistpost.project > .module_container {
+    padding-top: 0
+}
+.mlistpost.project .content_list li img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto
+}
+.mlistpost.project #postContent #postInfo {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto
+}
+.mlist.news .content_list .item_block .item_img {
+    display: block;
+    position: relative;
+}
+.mlist.news .content_list .item_block .item_date {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    background: #fff;
+    font-size: 12px;
+    color: #939393;
+    font-family: HELVETICANEUELTPRO-THEX, Arial
+}
+.mlist.news .content_list .item_block .item_wrapper {
+    padding: 10px
+}
+.mlist.news .content_list .item_block .item_wrapper .line {
+    width: 100%;
+    height: 1px;
+    background: #dbdbdb;
+    margin: 12px 0;
+}
+.mlist.news .content_list .item_block .item_wrapper .line div {
+    transition: all 0.3s ease 0s;
+    width: 0;
+    height: 1px;
+    background: #232323;
+}
+.mlist.news .content_list .item_block .item_wrapper .description {
+    font-size: 13px;
+    color: #939393;
+    height: 48px;
+    line-height: 24px;
+    position: relative;
+    overflow: hidden
+}
+.mlist.team .content_list .item_block .content {
+    background: none
+}
+.mlist.team .content_list .item_block .item_img {
+    display: block;
+    position: relative;
+}
+.mlist.team .content_list .item_block .item_img_summary {
+    margin-top: 12px;
+    top: 100%;
+    width: 100%;
+    height: 44px;
+    transition: all 0.4s ease 0s;
+}
+.mlist.team .content_list .item_block .item_img_summary p {
+    text-align: center;
+}
+.mlist.team .content_list .item_block .item_wrapper {
+    padding: 0 8px;
+    opacity: 1;
+}
+.shareicon {
+    float: left;
+    margin-top: 10px
+}
+body {
+    background: #000
+}
+.mlist.videom .content_list .item_block .item_img {
+    position: relative;
+    display: block
+}
+.mlist.videom .content_list .item_block .item_img_mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.2);
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+.mlist.videom .content_list .item_block .item_icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 0;
+    margin-left: -42px;
+    margin-top: -42px;
+}
+.mlist.videom .content_list .item_block .item_icon svg {
+    transform: scale(.8, .8);
+}
+.mlist.videom .content_list .item_block .item_icon circle {
+    fill: none;
+    stroke-width: 3;
+    stroke: rgba(255,255,255,1);
+}
+.mlist.videom .content_list .item_block .item_icon polygon {
+    fill: rgba(255,255,255,1);
+}
+.mlist.videom .content_list .item_block .item_wrapper {
+    padding: 25px 10px;
+    text-align: center
+}
+
+/*event*/
+.mlist.event .content_wrapper{ height:auto; position:relative }
+.mlist.event .content_wrapper .content_list:before{position:absolute; width:1px; height:100%; background-color:#d8d8d8; content:''; top:8px; left:80px}
+.mlist.event .content_list .item_block .content{ background:none; position:relative}
+.mlist.event .content_list .item_block .content .item_date{ color:#939393; text-align:right;line-height: 20px;font-size: 14px;width: 60px;
+    float: left;}
+.mlist.event .content_list .item_block .content .point{ width:5px; height:5px; border-radius:2px; background-color:#939393; float:left; margin-left:18px; margin-top:8px; transition:all .3s ease}
+.mlist.event .content_list .item_block .content .item_wrapper {margin-left: 100px;margin-bottom: 20px; margin-right:5px}
+.mlist.event .content_list .item_block .content .item_wrapper .title{ color:#6f6f6f;text-align: left;font-size: 13px; line-height:18px}
+
+
+.mlist.service .content_list .item_block .item_img {
+    padding-bottom:66.666%;
+}
+.mlist.project .content_list .item_block .item_img {
+    padding-bottom:81.333%;
+}
+.mlist.news .content_list .item_block .item_img {
+    padding-bottom:73.666%;
+}
+.mlist.team .content_list .item_block .item_img {
+    padding-bottom:126.666%;
+}
+.mlist.imagelink .content_list .item_block .item_img {
+    padding-bottom:50%;
+}
+.mlist.videom .content_list .item_block .item_img {
+    padding-bottom:66.666%;
+}
+.mlist .content_list .item_block .item_img img {
+    display: none;
+}
+.mlist.imagelink .content_list .item_block .item_img img {
+    display: none;
+}
+
+#indexPage #topSlider, #indexPage #topSlider ul.content_list{ height:100% !important}
+
+/* 手机样式-start- */
+
+.agent-mobile #header {
+    height: 60px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, .06);
+    position: relative;
+    z-index: 3;
+}
+
+.agent-mobile #logo img {
+    height: 24px;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+}
+
+.agent-mobile #logo {
+    padding: 15px 0;
+}
+
+.agent-mobile #header .btn {
+    padding: 17px 15px;
+}
+
+.agent-mobile #indexPage .container_category {
+    display: none;
+}
+
+.agent-mobile .mlistpost.project #postContent #postInfo .usetdate {
+    display: none;
+}
+
+.agent-mobile #indexPage #topSlider .bx-wrapper .bx-pager a,
+.agent-mobile #indexPage #topSlider .bx-wrapper .bx-pager a div.progress {
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.agent-mobile #indexPage #topSlider .bx-wrapper .bx-pager a.active div.mask {
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    position: relative;
+    top: -1px;
+}
+
+.agent-mobile #indexPage #topSlider .bx-wrapper .bx-pager a {
+    margin: 0 8px;
+}
+
+.agent-mobile .container_header .title {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+}
+
+.agent-mobile .container_header {
+    text-align: left;
+    width: 92%;
+}
+
+.agent-mobile .mlist.project .content_list .item_block .item_wrapper {
+    text-align: left;
+}
+
+.agent-mobile .mlist .content_list .item_block .title {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    height: 1.5rem;
+}
+
+.agent-mobile .mlist.project.module {
+    background-color: #fff;
+}
+
+.agent-mobile .mlist .content_list .item_block .subtitle {
+    min-height: 18px;
+}
+
+.agent-mobile .npagePage .mlist .module_container {
+    padding-top: 45px;
+}
+
+.agent-mobile .npagePage .mlist.project .content_wrapper {
+    width: 96%;
+    margin-left: 2%;
+}
+
+.agent-mobile .module.mcounter ul.content_list li div {
+    border: none;
+    position: relative;
+}
+
+.agent-mobile .module.mcounter ul.content_list li div::after {
+    content: '';
+    width: 1px;
+    height: 20px;
+    background-color: #e6e6e6;
+    transform: rotate(30deg);
+    position: absolute;
+    right: 0;
+    top: 12px;
+}
+
+.agent-mobile .module.mcounter ul.content_list li:last-child div::after {
+    display: none;
+}
+
+.agent-mobile .module.mcounter ul.content_list li p.number .unit {
+    vertical-align: 6px;
+    margin-left: 3px;
+}
+
+.agent-mobile .module.mcustomize .content_list .description {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background-color: #68adf0;
+}
+
+.agent-mobile #indexPage .team .module_container {
+    padding-top: 40px;
+}
+
+.agent-mobile #indexPage .team .bx-wrapper .bx-pager.bx-default-pager a {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #c8c8c8;
+}
+
+.agent-mobile #indexPage .team .bx-wrapper .bx-pager.bx-default-pager a.active {
+    background-color: #666;
+}
+
+.agent-mobile #indexPage .team .container_content {
+    width: 92%;
+    margin-left: 4%;
+}
+
+.agent-mobile #indexPage .team {
+    padding-bottom: 30px;
+}
+
+.agent-mobile #indexPage .videom {
+    background-color: #fff;
+    padding-top: 20px;
+}
+
+.agent-mobile #indexPage #footer #flinks .fitem_block_link li a {
+    line-height: 2rem;
+}
+
+.agent-mobile .project .content_list .item_block {
+    margin-bottom: 0px;
+}
+
+.agent-mobile .videom .content_list .item_block {
+    width: 100%;
+}
+
+.agent-mobile .mlist.videom .content_list .item_block .item_wrapper {
+    padding-top: 20px;
+}
+
+.agent-mobile #footer #flinks .module_container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.agent-mobile #footer #flinks .row.gutter>[class*="col-"] {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.agent-mobile #footer #flinks .fitem_block_link li {
+    height: 30px;
+    line-height: 30px;
+}
+
+.agent-mobile #sidebar ul li:first-child,
+.agent-mobile #sidebar ul li:nth-child(2) {
+    border-top: none;
+}
+
+.agent-mobile #sidebar ul li {
+    border-color: rgba(255, 255, 255, .05);
+}
+
+.agent-mobile .npagePage .mlist.project.module {
+    background-color: #f8f8f8;
+}
+
+.agent-mobile .npagePage .container_header .subtitle {
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.agent-mobile .npagePage .project .content_list .item_block {
+    margin-bottom: 10px;
+}
+
+.agent-mobile .mlistpost .tags a {
+    background-color: transparent;
+    border: none;
+}
+
+.agent-mobile .npagePage .mlist.service .content_list .item_block {
+    width: 92%;
+    margin-bottom: 0;
+    margin-left: 4%;
+}
+
+.agent-mobile .npagePage .mlist.service .content_list .item_block .item_wrapper {
+    padding: 25px 20px 40px 20px;
+}
+
+.agent-mobile .mlist.service .content_list .item_block .item_wrapper .description {
+    text-align: left;
+    line-height: 22px;
+    height: 44px;
+}
+
+.agent-mobile .npagePage .mlist.service .content_list .item_block .item_wrapper .description {
+    border-top: 1px solid #f1f1f1;
+    padding-top: 20px;
+    margin-top: 18px;
+}
+
+.agent-mobile .npagePage .mlist.service .module_container .container_content .more {
+    margin-top: 15px;
+    color: #777;
+}
+
+.agent-mobile .mlistpost.service #postContent #postInfo .usetdate {
+    display: none;
+}
+
+.agent-mobile .mlistpost.service #postContent #postInfo .title,
+.agent-mobile .mlistpost.news #postContent #postInfo .title {
+    font-size: 1.5rem;
+}
+
+.agent-mobile .npagePage .mlist.news .content_list .item_block .item_wrapper {
+    padding: 20px;
+}
+
+.agent-mobile .npagePage .mlist.news .content_list .item_block {
+    width: 92%;
+    margin-left: 4%;
+    margin-bottom: 20px;
+}
+
+.agent-mobile .npagePage .mlist.news .content_list .item_block .item_wrapper .line {
+    background-color: #f1f1f1;
+}
+
+.agent-mobile .mlistpost.news .module_container .content_wrapper #postContent {
+    width: 92%;
+    margin-left: 4%;
+}
+
+.agent-mobile .mlistpost.news #postContent #postInfo .usetdate {
+    width: auto;
+}
+
+.agent-mobile #sidebar ul li .subnav li:nth-child(2) {
+    border-top: 1px solid rgba(255, 255, 255, .05);
+}
+
+.agent-mobile .npagePage.pageEditor {
+    background-color: #fff;
+}
+
+.agent-mobile .mlistpost.team>.module_container {
+    padding-top: 0;
+}
+
+.agent-mobile .npagePage .mlistpost.team .module_container {
+    text-align: left;
+}
+
+.agent-mobile .npagePage .mlistpost.team #postContent #postInfo {
+    width: 92%;
+    margin-left: 4%;
+}
+
+.agent-mobile .mlistpost.project #postContent #postSlider {
+    display: none;
+}
+
+.agent-mobile .mlistpost.project #postContent #postInfo {
+    border: none;
+    margin-bottom: 0px;
+}
+
+.agent-mobile .mlistpost.project #postContent #postInfo .title {
+    font-size: 18px;
+}
+
+.agent-mobile .mlistpost.project #postContent,
+.agent-mobile .mlistpost.project #postContent .postbody .module {
+    background-color: #fff;
+}
+
+.agent-mobile .mlistpost.project #postContent #postInfo .module {
+    background-color: #fff;
+}
+
+@media screen and (max-width:768px) {
+    .agent-desktop .mlist.news .content_list .item_block .item_wrapper {
+        width: 90%;
+        margin-left: 4%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #indexPage .mlist.project .container_category {
+        position: relative;
+        top: 0;
+        float: left;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .mlistpost.team #postContent #postSlider {
+        width: 100%;
+        margin-top: 0;
+        height: auto;
+    }
+    .mlistpost.team #postSlider .module_container {
+        overflow: visible;
+    }
+    .mlistpost #postSlider .slider img {
+        width: 380px;
+    }
+    .mlistpost.team #postContent .row-top {
+        width: 100%;
+    }
+    .mlistpost.team #postContent .row-bottom {
+        max-width: 100%;
+    }
+    .mlistpost.team .postbody {
+        width: 100%;
+        float: left;
+        padding-top: 20px;
+    }
+    .mlistpost.team .postfooter {
+        padding-left: 0;
+    }
+    .agent-desktop .child #header .nav>li:hover a span,
+    .child #header .nav>li a.active span {
+        color: #fff;
+    }
+    html[class*=agent-mobile] .module_container {
+        padding: 80px 5%;
+    }
+    #navWrapper .search-wrap input {
+        width: 96%;
+        padding-left: 2%;
+    }
+}
+.videom .module_container{padding: 25px 0 37px 0;}
+
+
+.agent-mobile #indexPage .service {
+    background-color: #f8f8f8;
+    padding: 20px 0 40px 0;
+}
+
+.agent-mobile #indexPage .service .content_list .item_block .content {
+    background-color: transparent;
+}
+/* 手机样式-end- */

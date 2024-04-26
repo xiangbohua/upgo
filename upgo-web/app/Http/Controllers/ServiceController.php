@@ -29,7 +29,7 @@ class ServiceController extends BaseController
                 'current'=>$page,
                 'size'=>$size
             ]);
-        return view('service', $result);
+        return view(forUrl('service'), $result);
     }
 
     /**
@@ -39,14 +39,14 @@ class ServiceController extends BaseController
      */
     public function serviceDetail(HomeService $homeService, ServiceService $serviceService, $serviceId) {
         if (empty($serviceId)) {
-            return redirect('/service');
+            return redirect(forUrl('/service'));
         }
         $serviceInfo = $serviceService->getServiceDetail($serviceId);
         if (empty($serviceInfo)) {
-            return redirect('/service');
+            return redirect(forUrl('/service'));
         }
 
-        return view('services', array_merge($homeService->getFooterInfo(), $serviceInfo));
+        return view(forUrl('services'), array_merge($homeService->getFooterInfo(), $serviceInfo));
     }
 
 }

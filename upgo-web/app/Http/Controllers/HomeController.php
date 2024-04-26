@@ -34,7 +34,8 @@ class HomeController extends BaseController
         $homePageInfo->partnerList = $partnerService->getPartnerForHomePage();
         $homePageInfo->defaultCaseList = $caseService->getDefaultCase();
         $result = array_merge($homeService->getFooterInfo(), ['homePageInfo'=>$homePageInfo]);
-        return view('home', $result);
+
+        return view(forUrl('home'), $result);
     }
 
 
@@ -49,7 +50,7 @@ class HomeController extends BaseController
         $footerInfo = $homeService->getFooterInfo();
 
         $aboutPageSetting = $homeService->listAboutPageSetting();
-        return view('about', array_merge($footerInfo, $aboutPageSetting));
+        return view(forUrl('about'), array_merge($footerInfo, $aboutPageSetting));
     }
 
 
@@ -69,7 +70,7 @@ class HomeController extends BaseController
             'totalPage'=>hTotalPage($partnerCount, $this->defaultPageSize),
             'current'=>$page
         ];
-        return view('partner', array_merge($footerInfo, $result));
+        return view(forUrl('partner'), array_merge($footerInfo, $result));
     }
 
     /**
@@ -84,7 +85,7 @@ class HomeController extends BaseController
             'addressList'=>$homeService->listAllContactAddress(0)
         ];
 
-        return view('contact', array_merge($footerInfo, $webSetting, $result));
+        return view(forUrl('contact'), array_merge($footerInfo, $webSetting, $result));
     }
 
     public function searchCase(HomeService $homeService,
@@ -96,7 +97,7 @@ class HomeController extends BaseController
             'searchResult'=>$caseList,
             'keyWord'=>$keyWork
         ];
-        return view('search', array_merge($footerInfo, $result));
+        return view(forUrl('search'), array_merge($footerInfo, $result));
     }
 
 }
