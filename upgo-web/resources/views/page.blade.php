@@ -14,14 +14,17 @@
                         <div class="container_content">
                             <div class="content_wrapper">
                                 <div id="postContent">
-                                    <div id="postInfo">
-                                        <div class="module">
-                                            <div class="module_container">
-                                                <p class="title">{{$pageInfo->title}}</p>
-                                                <p class="subtitle">{{$pageInfo->pageDesc}}</p>
+                                    @if(!empty($pageInfo->title))
+                                        <div id="postInfo">
+                                            <div class="module">
+                                                <div class="module_container">
+                                                    <p class="title">{{$pageInfo->title}}</p>
+                                                    <p class="subtitle">{{$pageInfo->pageDesc}}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endif
+
                                     <div class="postbody">
                                         <div class="module">
                                             <div class="module_container">
