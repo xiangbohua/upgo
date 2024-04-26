@@ -90,8 +90,9 @@ class PagesAdminController extends AdminController
         $form = new Form(new WebPage());
 
         $form->saving(function ($form) {
-           $form->page_title = hDefault($form->title, '');
-           $form->page_desc = hDefault($form->sub_title, '');
+           $form->page_title = hDefault($form->page_title, '');
+           $form->page_desc = hDefault($form->page_desc, '');
+           $form->banner = hDefault($form->banner, '');
         });
 
         $form->text('page_title', __('服务标题'));
