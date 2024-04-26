@@ -37,3 +37,5 @@ Route::get('/search/{keyWord}', 'HomeController@searchCase');
 
 
 Route::get('/page/service/d/{serviceId}', 'ServiceController@serviceDetail');
+
+Route::get('/web/page/{pageId}', 'PageController@webPageDetail');

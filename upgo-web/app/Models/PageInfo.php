@@ -4,10 +4,10 @@ namespace App\Models;
 
 class PageInfo
 {
-    public $isLeft;
+    public $title;
 
-    public $pageIndex;
+    public $pageDesc;
 
-    public $isRight;
+    public $images;
 
 }
