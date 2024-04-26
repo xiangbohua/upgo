@@ -13,7 +13,7 @@ class WebPageDetail extends Authenticatable
 
 
     public function WebCasePageItem() {
-        return $this->belongsTo(WebCasePage::class, 'case_id');
+        return $this->belongsTo(WebCasePage::class, 'page_id');
     }
 
     /**
