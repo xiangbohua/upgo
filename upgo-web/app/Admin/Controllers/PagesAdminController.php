@@ -34,7 +34,7 @@ class PagesAdminController extends AdminController
         $grid->column('page_title', __('页面标题'))->sortable()->display(function ($text) {
             return $text;
         })->filter('like')->editable();
-        $grid->column('page_desc', __('页面描述'))->image();
+        $grid->column('page_desc', __('页面描述'));
         $grid->column('created_at', __('添加时间'))->display(function ($time) {
             return hFormatTime($time);
         });;
