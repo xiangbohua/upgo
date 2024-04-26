@@ -10,7 +10,7 @@ use function PHPUnit\Framework\returnArgument;
 class PageService
 {
     public function getPageDetail($pageId) {
-        $pageInfo = DB::table('web_page')->where('id', $pageId)->select('id','page_title', 'banner', 'page_desc')->first();
+        $pageInfo = DB::table('web_page')->where('id', $pageId)->select('id','page_title', 'banner','sub_title', 'page_desc')->first();
 
         if (empty($pageInfo)) {
             return null;
