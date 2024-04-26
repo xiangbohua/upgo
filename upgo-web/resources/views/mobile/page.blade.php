@@ -12,15 +12,16 @@
                         <div class="container_content">
                             <div class="content_wrapper">
                                 <div id="postContent">
-                                    <div id="postInfo">
-                                        <div class="module">
-                                            <div class="module_container">
-                                                <p class="title">{{$pageInfo->pageDesc}}</p>
-                                                <p class="subtitle ellipsis">{{$pageInfo->subTitle}}</p>
-
+                                    @if(strlen(trim($pageInfo->pageDesc)) >0)
+                                        <div id="postInfo">
+                                            <div class="module">
+                                                <div class="module_container">
+                                                    <p class="title">{{$pageInfo->pageDesc}}</p>
+                                                    <p class="subtitle ellipsis">{{$pageInfo->subTitle}}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endif
                                     <div class="postbody">
                                         <div class="module">
                                             <div class="module_container" style="max-width:100%">
