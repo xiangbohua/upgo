@@ -22,7 +22,7 @@ class WebPageDetail extends Authenticatable
      * @var array
      */
     protected $fillable = [
-
+        'image_url'
     ];
 
     /**
