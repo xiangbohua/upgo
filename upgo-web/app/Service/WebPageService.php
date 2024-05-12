@@ -15,8 +15,12 @@ class WebPageService
        return $title;
    }
 
-   public function listAllPage() {
-       $pages = DB::table('web_page')->select('id', 'page_title')->get();
+   public function listAllPage($pageType = 0) {
+       $query = DB::table('web_page')->select('id', 'page_title');
+        if (!empty($pageType)) {
+            $query->where('page_type', $pageType);
+        }
+       $pages = $query->get();
        $result = [];
        foreach ($pages as $page) {
            $result[$page->id] = $page->page_title;

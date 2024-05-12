@@ -30,7 +30,7 @@
                                         <div class="module">
                                             <div class="module_container">
                                                 <div class="richtext">
-                                                    <p>{{$caseInfo->title}}</p>
+{{--                                                    <p>{{$caseInfo->title}}</p>--}}
                                                     @foreach($images as $url)
                                                         <p><img alt="" src="{{hUrlImage($url)}}" /></p>
                                                         <p>收藏</p>

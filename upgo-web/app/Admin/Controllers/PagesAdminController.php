@@ -31,6 +31,7 @@ class PagesAdminController extends AdminController
         $grid->column('page_title', __('页面标题'))->filter('like')->editable();
         $grid->column('page_desc', __('页面描述'))->editable();
         $grid->column('sub_title', __('页面副标题'))->editable();
+        $grid->column('page_type', __('页面类型'))->select(valuesPageType());
         $grid->column('banner', __('顶部banner'))->image();
         $grid->column('created_at', __('添加时间'))->display(function ($time) {
             return hFormatTime($time);
@@ -59,16 +60,16 @@ class PagesAdminController extends AdminController
         $show->field('page_desc', __('页面描述'));
         $show->field('sub_title', __('页面副标题'));
         $show->field('banner', __('顶部banner'))->image();
+        $show->field('page_type', __('页面类型'))->using(valuesPageType());
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('更新时间'));
 
         $show->relation('WebPageDetail', '图片展示', function ($grid) {
             $grid->column('image_url', '图片')->image();
             $grid->column('display_index', '展示顺序')->number();
-            $grid->column('detail_title', '内容标题')->number();
-            $grid->column('detail_desc', '内容描述')->number();
+            $grid->column('detail_title', '内容标题');
+            $grid->column('detail_desc', '内容描述');
             $grid->column('text_position', '文字位置')->using(valuesPosition());
-
 
             $grid->disableFilter();
             $grid->disableExport();
@@ -106,6 +107,7 @@ class PagesAdminController extends AdminController
         $form->text('page_desc', __('页面描述'));
         $form->text('sub_title', __('页面副标题'));
         $form->image('banner', __('顶部banner'));
+        $form->select('page_type', __('页面类型'))->options(valuesPageType());
         $form->hasMany('WebPageDetail', '图片展示', function (Form\NestedForm $form2) {
             $form2->text('detail_title', '内容标题');
             $form2->text('detail_desc', '内容描述');

@@ -13,7 +13,7 @@ class CaseService
             ->where('display', 1)
             ->where('home_page_display', 1)
             ->orderBy('display_index')
-            ->limit(8)
+            ->limit(12)
             ->get();
 
 

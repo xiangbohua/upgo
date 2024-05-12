@@ -15,6 +15,7 @@
                     <ul>
                         <li class="title"><span class="ellipsis">上和行upgo</span></li>
                         <li><a class="ellipsis" href="/case/cate/0/page/0" target="_blank">案例</a></li>
+                        <li><a class="ellipsis" href="/news" target="_blank">动态</a></li>
                         <li><a class="ellipsis" href="{{webPageUrl($service_title_img)}}" target="_blank">服务范围</a></li>
                         <li><a class="ellipsis" href="{{webPageUrl($about_title_img)}}" target="_blank">关于上和行</a></li>
                     </ul>

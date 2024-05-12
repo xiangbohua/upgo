@@ -7,23 +7,23 @@
             <div class="content">
                 <ul class="nav">
                     <li class="navitem">
-                        <a  class="navitem" href="/" target="_self"><span data-title="首页">首页</span>
+                        <a  class="navitem" href="/" target="_self" style="color: white"><span data-title="首页">首页</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="{{hCategoryPage(0)}}" target="_self"><span data-title="案例">案例</span>
+                        <a  href="{{hCategoryPage(0)}}" target="_self" style="color: white"><span data-title="案例">案例</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="/news" target="_self"><span data-title="动态">动态</span>
+                        <a  href="/news" target="_self" style="color: white"><span data-title="动态">动态</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="{{webPageUrl($service_title_img)}}" target="_self"><span data-title="服务范围">服务范围</span>
+                        <a  href="{{webPageUrl($service_title_img)}}" target="_self" style="color: white"><span data-title="服务范围">服务范围</span>
                         </a>
                     </li>
                     <li class="navitem">
-                        <a  href="{{webPageUrl($about_title_img)}}" target="_self"><span data-title="关于">关于{{$brand_short_name}}</span>
+                        <a  href="{{webPageUrl($about_title_img)}}" target="_self" style="color: white"><span data-title="关于">关于{{$brand_short_name}}</span>
                         </a>
                     </li>
 {{--                    <li class="navitem">--}}

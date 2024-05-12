@@ -6,16 +6,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class WebPage extends Authenticatable
+class WebNews extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'web_page';
-
-    public function WebPageDetail()
-    {
-        return $this->hasMany(WebPageDetail::class, 'page_id');
-    }
+    protected $table = 'web_news';
 
     /**
      * The attributes that are mass assignable.
@@ -23,7 +18,7 @@ class WebPage extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'page_type'
+
     ];
 
     /**

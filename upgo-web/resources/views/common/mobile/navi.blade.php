@@ -14,19 +14,19 @@
                 </div>
             </li>
             <li class="navitem" >
-                <a href="/" target="_self"><span class="circle transform"></span>首页</a>
+                <a href="/" target="_self" style="color: white"><span class="circle transform"></span>首页</a>
             </li>
             <li class="navitem" >
-                <a href="{{hCategoryPage(0)}}" target="_self"><span class="circle transform"></span>案例</a>
+                <a href="{{hCategoryPage(0)}}" target="_self" style="color: white"><span class="circle transform"></span>案例</a>
             </li>
             <li class="navitem" >
-                <a href="{{webPageUrl($service_title_img)}}" target="_self"><span class="circle transform"></span>服务范围</a>
+                <a href="{{webPageUrl($service_title_img)}}" target="_self" style="color: white"><span class="circle transform"></span>服务范围</a>
             </li>
             <li class="navitem" >
-                <a href="/news" target="_self"><span class="circle transform"></span>动态</a>
+                <a href="/news" target="_self"><span class="circle transform" style="color: white"></span>动态</a>
             </li>
             <li class="navitem" >
-                <a href="{{webPageUrl($about_title_img)}}" target="_self"><span class="circle transform"></span>关于</a>
+                <a href="{{webPageUrl($about_title_img)}}" target="_self" style="color: white"><span class="circle transform"></span>关于</a>
             </li>
 {{--            <li class="navitem" >--}}
 {{--                <a href="javascript:;" target=""><span class="circle transform"></span>关于--}}

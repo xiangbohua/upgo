@@ -46,6 +46,17 @@ function hCategoryPage($categoryId, $page = 0)
 //    }
     return '/case/cate/'.$categoryId.'/page/'.$page;
 }
+function hNewsPage($page = 0)
+{
+//    if (empty($categoryId) && $categoryId == 0 && empty($page) && $page == 0) {
+//        return '/case/cate';
+//    }
+//
+//    if (empty($categoryId)) {
+//        return '/case/page/'.$page;
+//    }
+    return '/news/'.$page;
+}
 
 function hDefault($source, $defaultIfNull) {
     if (!isset($source) || $source == null) {
@@ -156,8 +167,8 @@ function hdate($timestamp = 0, $formatter = 'Y-m-d H:i:s')
     return date($formatter, $timestamp);
 }
 
-function hFormatTime($time) {
-    return date("Y-m-d h:m", strtotime($time));
+function hFormatTime($time, $for = "Y-m-d h:m") {
+    return date($for, strtotime($time));
 }
 
 function hIsTestEvn(){
@@ -187,6 +198,9 @@ function valuesDisplay() {
 
 function valuesPosition() {
     return ['1'=>'顶部', '0'=>'底部'];
+}
+function valuesPageType() {
+    return [1=>'设置页面', 2=>'动态页面'];
 }
 
 function displaySwitch() {

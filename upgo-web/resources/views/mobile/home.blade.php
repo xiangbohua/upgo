@@ -60,26 +60,26 @@
                         <ul class="content_list row">
                             <li class="col-25">
                                 <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span class="unit">年</span></p>
-                                    <p class="title">3年间</p>
+                                    <p class="number"><span class="counterDX" data-counter-value="3">{{$for_years}}</span><span class="unit">年</span></p>
+                                    <p class="title">{{$for_years}}年间</p>
                                 </div>
                             </li>
                             <li class="col-25">
                                 <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="23">23</span><span class="unit">+</span></p>
-                                    <p class="title">助23个品牌</p>
+                                    <p class="number"><span class="counterDX" data-counter-value="23">{{$help_brands}}</span><span class="unit">+</span></p>
+                                    <p class="title">助{{$help_brands}}个品牌</p>
                                 </div>
                             </li>
                             <li class="col-25">
                                 <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="3">3</span><span class="unit"></span></p>
-                                    <p class="title">占据类目前3</p>
+                                    <p class="number"><span class="counterDX" data-counter-value="3">{{$category_beyond}}</span><span class="unit"></span></p>
+                                    <p class="title">占据类目前{{$category_beyond}}</p>
                                 </div>
                             </li>
                             <li class="col-25">
                                 <div>
-                                    <p class="number"><span class="counterDX" data-counter-value="126">126</span><span class="unit">亿</span></p>
-                                    <p class="title">提升126亿销售</p>
+                                    <p class="number"><span class="counterDX" data-counter-value="126">{{$sale_amounts}}</span><span class="unit">亿</span></p>
+                                    <p class="title">提升{{$sale_amounts}}亿销售</p>
                                 </div>
                             </li>
                         </ul>

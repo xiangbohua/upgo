@@ -20,6 +20,7 @@ class HomeService
         'about_title_img'=>'关于页面',
         'partner_title_img'=>'合作伙伴界面主图',
         'site_logo'=>'网站logo',
+        'new_title_img'=>'动态Banner',
 
         'business_wechat'=>'合作商务微信号',
         'resume_contact'=>'简历投递地址及其备注',
@@ -29,6 +30,11 @@ class HomeService
         'weibo_link'=>'微博地址',
         'qq_link'=>'qq地址',
         'weixi_qrcode_link'=>'微信二维码图片',
+
+        'for_years'=>'首页时间',
+        'help_brands'=>'帮助品牌',
+        'category_beyond'=>'类目排名',
+        'sale_amounts'=>'销量提升',
     ];
 
     /**

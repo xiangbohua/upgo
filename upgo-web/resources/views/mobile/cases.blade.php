@@ -13,7 +13,7 @@
                         <div class="container_header wow">
                             <p class="title">CASE</p>
                         </div>
-                        <div class="container_category wow">
+                        <div class="container_category wow" style="text-align: left">
                             <a href="{{hCategoryPage(0)}}" class="active"><span>全部</span></a>
                             @foreach ($cateList as $cateInfo)
                                 <a href="{{hCategoryPage($cateInfo->categoryId)}}"><span>{{$cateInfo->cateName}}</span></a>

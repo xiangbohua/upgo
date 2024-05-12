@@ -57,13 +57,14 @@ class SettingAdminController extends AdminController
         $homeSer = new HomeService();
 
         $webPages = new WebPageService();
-        $allPage = $webPages->listAllPage();
+        $allPage = $webPages->listAllPage(1);
 
 //        $show->field('id', __($homeSer->getSiteSettingDesc('id')));
         $show->field('brand_title', __($homeSer->getSiteSettingDesc('brand_title')));
         $show->field('brand_short_name', __($homeSer->getSiteSettingDesc('brand_short_name')));
         $show->field('brand_desc', __($homeSer->getSiteSettingDesc('brand_desc')));
         $show->field('site_logo',  __($homeSer->getSiteSettingDesc('site_logo')))->image();
+        $show->field('new_title_img',  __($homeSer->getSiteSettingDesc('new_title_img')))->image();
         $show->field('site_code',  __($homeSer->getSiteSettingDesc('site_code')));
         $show->field('slogan',  __($homeSer->getSiteSettingDesc('slogan')));
 
@@ -77,6 +78,12 @@ class SettingAdminController extends AdminController
 //        $show->field('weibo_link', __($homeSer->getSiteSettingDesc('weibo_link')));
 //        $show->field('qq_link', __($homeSer->getSiteSettingDesc('qq_link')));
 //        $show->field('weixi_qrcode_link', __($homeSer->getSiteSettingDesc('weixi_qrcode_link')));
+
+        $show->field('for_years',  __($homeSer->getSiteSettingDesc('for_years')));
+        $show->field('help_brands',  __($homeSer->getSiteSettingDesc('help_brands')));
+        $show->field('category_beyond',  __($homeSer->getSiteSettingDesc('category_beyond')));
+        $show->field('sale_amounts',  __($homeSer->getSiteSettingDesc('sale_amounts')));
+
 
         $show->panel()
             ->tools(function ($tools) {
@@ -96,7 +103,7 @@ class SettingAdminController extends AdminController
         $form = new Form(new WebSiteSetting());
         $homeSer = new HomeService();
         $webPageService = new WebPageService();
-        $allPage = $webPageService->listAllPage();
+        $allPage = $webPageService->listAllPage(1);
 
         $form->saving(function($form) {
             $form->business_wechat = hDefault($form->business_wechat, '');
@@ -107,6 +114,7 @@ class SettingAdminController extends AdminController
         $form->text('brand_short_name', __($homeSer->getSiteSettingDesc('brand_short_name')))->rules('required');
         $form->textarea('brand_desc', __($homeSer->getSiteSettingDesc('brand_desc')))->rules('required');
         $form->image('site_logo',  __($homeSer->getSiteSettingDesc('site_logo')))->rules('required')->uniqueName();
+        $form->image('new_title_img',  __($homeSer->getSiteSettingDesc('new_title_img')))->rules('required')->uniqueName();
         $form->text('site_code',  __($homeSer->getSiteSettingDesc('site_code')))->rules('required')->required();
         $form->text('slogan',  __($homeSer->getSiteSettingDesc('slogan')))->rules('required')->required();
         $form->image('case_title_img', __($homeSer->getSiteSettingDesc('case_title_img')))->rules('required')->uniqueName();
@@ -122,6 +130,11 @@ class SettingAdminController extends AdminController
 //        $form->text('weibo_link', __($homeSer->getSiteSettingDesc('weibo_link')))->default('');
 //        $form->text('qq_link', __($homeSer->getSiteSettingDesc('qq_link')))->default('');
 //        $form->text('weixi_qrcode_link', __($homeSer->getSiteSettingDesc('weixi_qrcode_link')))->default('');
+
+        $form->number('for_years',  __($homeSer->getSiteSettingDesc('for_years')))->rules('required')->required();
+        $form->number('help_brands',  __($homeSer->getSiteSettingDesc('help_brands')))->rules('required')->required();
+        $form->number('category_beyond',  __($homeSer->getSiteSettingDesc('category_beyond')))->rules('required')->required();
+        $form->number('sale_amounts',  __($homeSer->getSiteSettingDesc('sale_amounts')))->rules('required')->required();
 
         $form->tools(function (Form\Tools $tools) {
 

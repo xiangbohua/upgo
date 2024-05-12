@@ -12,7 +12,7 @@ $(document).ready(function() {
         if ($('#fitem_block_1').find('h3').hasClass('active')) {
             $('#fitem_block_1').find('ul').height('0px');
         } else {
-            $('#fitem_block_1').find('ul').height('90px');
+            $('#fitem_block_1').find('ul').height('120px');
         }
         $('#fitem_block_1').find('h3').toggleClass('active');
     })
@@ -20,7 +20,7 @@ $(document).ready(function() {
         if ($('#fitem_block_2').find('h3').hasClass('active')) {
             $('#fitem_block_2').find('ul').height('0px');
         } else {
-            $('#fitem_block_2').find('ul').height('90px');
+            $('#fitem_block_2').find('ul').height('120px');
         }
         $('#fitem_block_2').find('h3').toggleClass('active');
     })

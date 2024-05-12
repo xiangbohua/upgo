@@ -28,6 +28,10 @@ Route::get('/case/case/{caseId}', 'CaseController@caseDetail');
 Route::get('/service', 'ServiceController@listAllService');
 Route::get('/service/{page}', 'ServiceController@listAllService');
 
+Route::get('/news', 'NewsController@listNews');
+Route::get('/news/{page}', 'NewsController@listNews');
+
+
 Route::get('/about', 'HomeController@aboutPage');
 Route::get('/partner', 'HomeController@partnerPage');
 Route::get('/partner/page/{page}', 'HomeController@partnerPage');
