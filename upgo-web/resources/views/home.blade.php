@@ -38,9 +38,9 @@
                                 <div class="bx-pager bx-custom-pager">
                                     @foreach ($homePageInfo->bannerList as $key=>$banner)
                                         <div class="bx-pager-item">
-                                            <a href="" data-slide-index="{{$key}}" onclick="return false;" class="bx-pager-link">
-                                                <div class="progress">
-                                                    <div class="mask auto" style="width: 100%;">
+                                            <a href="" id="mask-cover-{{$key}}" data-slide-index="{{$key}}" onclick="return false" class="bx-pager-link">
+                                                <div class="progress" data-slide-index="{{$key}}">
+                                                    <div class="mask auto" progress-mask="{{$key}}"  data-slide-index="{{$key}}" style="">
                                                     </div>
                                                 </div>
                                             </a>
