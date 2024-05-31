@@ -30,7 +30,7 @@ class CaseAdminController extends AdminController
     {
         $grid = new Grid(new WebCasePage());
         $categoryService = new CategoryService();
-        $categoryList = $categoryService->getDropList();
+        $categoryList = $categoryService->getDropList(true, true);
 
         $grid->column('id', __('ID'))->sortable()->width(80);
         $grid->column('title', __('标题'))->sortable()->display(function ($text) {
@@ -91,7 +91,7 @@ class CaseAdminController extends AdminController
         $show = new Show(WebCasePage::findOrFail($id));
 
         $categorySer = new CategoryService();
-        $dropList = $categorySer->getDropList();
+        $dropList = $categorySer->getDropList(true, true);
         $show->field('title', __('标题'));
 //        $show->field('sub_title', __('案例副标题'));
         $show->field('main_image_url', __('封面'))->image();
@@ -130,7 +130,7 @@ class CaseAdminController extends AdminController
         $form = new Form(new WebCasePage());
 
         $categoryService = new CategoryService();
-        $categoryList = $categoryService->getDropList();
+        $categoryList = $categoryService->getDropList(true, true);
 
         $form->saving(function ($form) {
             $form->title = hDefault($form->title, '');

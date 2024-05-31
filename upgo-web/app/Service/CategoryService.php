@@ -25,12 +25,18 @@ class CategoryService
         return $result;
     }
 
-    public function getDropList() {
+    public function getDropList($withAll = false, $showAll) {
         $result = [];
-        $categorys = DB::table('web_category')
-            ->where('display', 1)
-            ->select(['id', 'cate_name'])
-            ->get();
+        if ($withAll) {
+            $result[0] = '全部';
+        }
+        $categorysQuery = DB::table('web_category')
+
+            ->select(['id', 'cate_name']);
+        if (!$showAll) {
+            $categorysQuery->where('display', 1);
+        }
+        $categorys = $categorysQuery->get();
         foreach ($categorys as $cate) {
             $result[$cate->id] = $cate->cate_name;
         }
