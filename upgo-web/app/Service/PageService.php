@@ -19,7 +19,7 @@ class PageService
 
         $pageImages = DB::table('web_page_detail')
             ->where('page_id', $pageId)
-            ->orderBy( 'display_index', 'desc')
+            ->orderBy( 'display_index')
             ->select('detail_title', 'image_url', 'detail_desc', 'text_position')
             ->get();
 
