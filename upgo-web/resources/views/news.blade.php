@@ -30,7 +30,7 @@
                                                 <div class="item_wrapper">
                                                     <a class="title ellipsis" href="{{webPageUrl($newsItem->pageId)}}" target="_blank">{{$newsItem->title}}</a>
                                                     <div class="line"><div></div></div>
-                                                    <div class="description">
+                                                    <div style="width: 100%" class="description">
                                                         <p>{{$newsItem->subTitle}}</p>
                                                     </div>
                                                 </div>
