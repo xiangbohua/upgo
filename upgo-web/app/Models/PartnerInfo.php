@@ -12,4 +12,9 @@ class PartnerInfo extends ImageInfo
      * @var 当前列表的现实顺序
      */
     public $index;
+
+    /**
+     * @var 官网
+     */
+    public $partnerSite;
 }

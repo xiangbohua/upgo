@@ -62,40 +62,42 @@
                         </div>
                     </div>
                 </div>
-                <div class="mcounter module" style=" background-color:#FFFFFF;">
-                    <div class="bgmask"></div>
-                    <div class="module_container wide">
-                        <div class="container_content">
-                            <ul class="content_list row">
-                                <li class="col-25">
-                                    <div>
-                                        <p class="number"><span class="counterDX" data-counter-value="3">{{$for_years}}</span><span class="unit">年</span></p>
-                                        <p class="title">{{$for_years}}年间</p>
-                                    </div>
-                                </li>
-                                <li class="col-25">
-                                    <div>
-                                        <p class="number"><span class="counterDX" data-counter-value="23">{{$help_brands}}</span><span class="unit">+</span></p>
-                                        <p class="title">助{{$help_brands}}个品牌</p>
-                                    </div>
-                                </li>
-                                <li class="col-25">
-                                    <div>
-                                        <p class="number"><span class="counterDX" data-counter-value="3">{{$category_beyond}}</span><span class="unit"></span></p>
-                                        <p class="title">占据类目前{{$category_beyond}}</p>
-                                    </div>
-                                </li>
-                                <li class="col-25">
-                                    <div>
-                                        <p class="number"><span class="counterDX" data-counter-value="126">{{$sale_amounts}}</span><span class="unit">亿</span></p>
-                                        <p class="title">提升{{$sale_amounts}}亿销售</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="clear"></div>
+                @if (!empty($show_numbers))
+                    <div class="mcounter module" style=" background-color:#FFFFFF;">
+                        <div class="bgmask"></div>
+                        <div class="module_container wide">
+                            <div class="container_content">
+                                <ul class="content_list row">
+                                    <li class="col-25">
+                                        <div>
+                                            <p class="number"><span class="counterDX" data-counter-value="3">{{$for_years}}</span><span class="unit">年</span></p>
+                                            <p class="title">{{$for_years}}年间</p>
+                                        </div>
+                                    </li>
+                                    <li class="col-25">
+                                        <div>
+                                            <p class="number"><span class="counterDX" data-counter-value="23">{{$help_brands}}</span><span class="unit">+</span></p>
+                                            <p class="title">助{{$help_brands}}个品牌</p>
+                                        </div>
+                                    </li>
+                                    <li class="col-25">
+                                        <div>
+                                            <p class="number"><span class="counterDX" data-counter-value="3">{{$category_beyond}}</span><span class="unit"></span></p>
+                                            <p class="title">占据类目前{{$category_beyond}}</p>
+                                        </div>
+                                    </li>
+                                    <li class="col-25">
+                                        <div>
+                                            <p class="number"><span class="counterDX" data-counter-value="126">{{$sale_amounts}}</span><span class="unit">亿</span></p>
+                                            <p class="title">提升{{$sale_amounts}}亿销售</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="clear"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endif
                 <div class="mcounter module" style=" background-color:#FFFFFF;">
                     <div class="bgmask"></div>
                 </div><!--counter-->
@@ -164,12 +166,21 @@
                                         <li id="item_block_{{$partnerInfo->index}}" class="item_block col-16 wow"
                                             style="animation-delay:.0s">
                                             <div class="content">
-                                                <a href="{{hCaseDetailPage($partnerInfo->defaultCaseId)}}" class="item_img"
-                                                   target="_blank"
-                                                   title="{{hUrlImage($partnerInfo->partnerName)}}"
-                                                   style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
-                                                    <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
-                                                </a>
+                                                @if(!empty($partnerInfo->partnerSite))
+                                                    <a href="{{$partnerInfo->partnerSite}}" class="item_img"
+                                                       target="_blank"
+                                                       title="{{hUrlImage($partnerInfo->partnerName)}}"
+                                                       style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
+                                                        <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
+                                                    </a>
+                                                @else
+                                                    <a @if($partnerInfo->defaultCaseId > 0) href="{{hCaseDetailPage($partnerInfo->defaultCaseId)}}" @endif class="item_img"
+                                                       target="_blank"
+                                                       title="{{hUrlImage($partnerInfo->partnerName)}}"
+                                                       style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
+                                                        <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
+                                                    </a>
+                                                @endif
                                             </div>
                                         </li>
                                     @endforeach

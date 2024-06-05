@@ -20,7 +20,7 @@ class PageService
         $pageImages = DB::table('web_page_detail')
             ->where('page_id', $pageId)
             ->orderBy( 'display_index')
-            ->select('detail_title', 'image_url', 'detail_desc', 'text_position')
+            ->select('detail_title', 'image_url', 'detail_desc', 'text_position', 'title_left_right', 'text_left_right')
             ->get();
 
 
@@ -32,7 +32,9 @@ class PageService
             $od->detail_title = $d->detail_title;
             $od->detail_desc = $d->detail_desc;
             $od->text_position = $d->text_position;
-            $detail[] = $d;
+            $od->title_left_right = $this->getTextAlignText($d->title_left_right);
+            $od->text_left_right = $this->getTextAlignText($d->text_left_right);
+            $detail[] = $od;
         }
 
         $pageResult = new PageInfo();
@@ -42,5 +44,24 @@ class PageService
         $pageResult->banner = $pageInfo->banner;
         $pageResult->details = $detail;
         return $pageResult;
+    }
+
+    /**
+     * css 文本
+     * @param $settingValue
+     * @return string
+     */
+    private function getTextAlignText($settingValue) {
+
+        if (empty($settingValue)) {
+            return 'left';
+        }
+        $setting = [0=>'left', 1=>'center', 2=>'right'];
+
+        if (isset($setting[$settingValue])) {
+            return $setting[$settingValue];
+        }
+
+        return $setting[0];//默认left
     }
 }

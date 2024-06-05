@@ -196,9 +196,8 @@ function valuesDisplay() {
     return ['1'=>'展示', '0'=>'不展示'];
 }
 
-function valuesPosition() {
-    return ['1'=>'顶部', '0'=>'底部'];
-}
+
+
 function valuesPageType() {
     return [1=>'设置页面', 2=>'动态页面'];
 }
@@ -209,11 +208,17 @@ function displaySwitch() {
         'off' => ['value' => 0, 'text' => '不展示', 'color' => 'danger'],
     ];
 }
+function valuesPosition() {
+    return ['1'=>'顶部', '0'=>'底部'];
+}
 function positionSwitch() {
     return [
         'on'  => ['value' => 1, 'text' => '图片顶部', 'color' => 'success'],
         'off' => ['value' => 0, 'text' => '图片底部', 'color' => 'danger'],
     ];
+}
+function textLeftRightPosition() {
+    return ['0'=>'靠左', '1'=>'居中', 2=>'靠右'];
 }
 
 function isMobile() {

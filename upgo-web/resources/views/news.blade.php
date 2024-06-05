@@ -21,13 +21,13 @@
                             <div class="content_wrapper ">
                                 <ul class="content_list row gutter">
                                     @foreach($newsList as $index => $newsItem)
-                                        <li id="item_block_0" class="item_block col-25 wow"  style="animation-delay:.0s">
+                                        <li id="item_block_0" class="item_block col-25 wow"  style="animation-delay:.0s; margin-bottom: 0px">
                                             <div class="content">
                                                 <a href="{{webPageUrl($newsItem->pageId)}}" class="item_img" target="_blank" style="background-image:url({{hUrlImage($newsItem->banner)}})">
                                                     <img src="{{hUrlImage($newsItem->banner)}}"/>
                                                     <div class="item_img_mask"></div>
                                                 </a>
-                                                <div class="item_wrapper">
+                                                <div class="item_wrapper" style="padding: 0px">
                                                     <a class="title ellipsis" href="{{webPageUrl($newsItem->pageId)}}" target="_blank">{{$newsItem->title}}</a>
                                                     <div class="line"><div></div></div>
                                                     <div style="width: 100%" class="description">

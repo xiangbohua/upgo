@@ -23,6 +23,7 @@ class PartnerService
             $partner->imageUrl = $pat->logo_url;
             $partner->displayIndex = $pat->display_index;
             $partner->index = $index;
+            $partner->partnerSite = $pat->partner_site;
             $result[] = $partner;
             $index ++;
         }
@@ -53,6 +54,7 @@ class PartnerService
             $partner->imageUrl = $pat->logo_url;
             $partner->displayIndex = $pat->display_index;
             $partner->index = $index;
+            $partner->partnerSite = $pat->partner_site;
             $result[] = $partner;
             $index ++;
         }

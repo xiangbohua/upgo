@@ -45,7 +45,7 @@
                                                     <div class="item_wrapper">
                                                         <p class="title ellipsis"
                                                            target="_blank">{{$oneCase->title}}</p>
-                                                        <p class="subtitle ellipsis">{{$oneCase->subTitle}}</p>
+{{--                                                        <p class="subtitle ellipsis">{{$oneCase->subTitle}}</p>--}}
                                                     </div>
                                                 </a>
                                             </div>

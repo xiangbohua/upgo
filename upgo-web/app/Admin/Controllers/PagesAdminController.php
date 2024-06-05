@@ -70,6 +70,8 @@ class PagesAdminController extends AdminController
             $grid->column('detail_title', '内容标题');
             $grid->column('detail_desc', '内容描述');
             $grid->column('text_position', '文字位置')->using(valuesPosition());
+            $grid->column('title_left_right', '标题居中')->using(textLeftRightPosition());
+            $grid->column('text_left_right', '内容居中')->using(textLeftRightPosition());
 
             $grid->disableFilter();
             $grid->disableExport();
@@ -102,7 +104,6 @@ class PagesAdminController extends AdminController
            $form->page_desc = hDefault($form->page_desc, '');
            $form->sbu_title = hDefault($form->sbu_title, '');
         });
-
         $form->text('page_title', __('页面标题'));
         $form->text('page_desc', __('页面描述'));
         $form->text('sub_title', __('页面副标题'));
@@ -110,7 +111,16 @@ class PagesAdminController extends AdminController
         $form->select('page_type', __('页面类型'))->options(valuesPageType());
         $form->hasMany('WebPageDetail', '图片展示', function (Form\NestedForm $form2) {
             $form2->text('detail_title', '内容标题');
+            $form2->select('title_left_right', __('标题居中'))
+                ->options(textLeftRightPosition())
+                ->rules('required')
+                ->setWidth(2, 2);
+
             $form2->text('detail_desc', '内容描述');
+            $form2->select('text_left_right', __('内容居中'))
+                ->options(textLeftRightPosition())
+                ->rules('required')
+                ->setWidth(2, 2);;
             $form2->image('image_url', '内容图片')->uniqueName();
             $form2->number('display_index', '展示顺序');
             $form2->switch('text_position', __('文字位置'))->states(positionSwitch())->rules('required');

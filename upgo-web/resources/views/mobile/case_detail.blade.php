@@ -33,7 +33,7 @@
 {{--                                                    <p>{{$caseInfo->title}}</p>--}}
                                                     @foreach($images as $url)
                                                         <p><img alt="" src="{{hUrlImage($url)}}" /></p>
-                                                        <p>收藏</p>
+{{--                                                        <p>收藏</p>--}}
                                                     @endforeach
                                                 </div>
                                             </div>

@@ -17,14 +17,14 @@
                             <div class="content_wrapper ">
                                 <ul class="content_list row gutter">
                                     @foreach($newsList as $index => $newsItem)
-                                    <li id="item_block_0" class="item_block col-50">
+                                    <li id="item_block_0" class="item_block col-50" style="margin-bottom: 10px">
                                         <div class="content">
                                             <a href="{{webPageUrl($newsItem->pageId)}}" target="_self">
                                                 <div class="item_img" style="background-image:url({{hUrlImage($newsItem->banner)}})">
                                                     <img src="{{hUrlImage($newsItem->banner)}}" width="760" height="560"/>
                                                     <div class="item_date">{{$newsItem->year.$newsItem->date}}</div>
                                                 </div>
-                                                <div class="item_wrapper">
+                                                <div class="item_wrapper" style="padding: 2px">
                                                     <div class="title ellipsis">{{$newsItem->title}}</div>
                                                     <div class="line"><div></div></div>
                                                     <div class="description">

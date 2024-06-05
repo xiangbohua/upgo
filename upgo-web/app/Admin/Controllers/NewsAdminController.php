@@ -26,10 +26,12 @@ class NewsAdminController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new WebNews());
-
+        $pageService = new WebPageService();
         $grid->column('id', __('Id'));
         $grid->column('news_title', __('动态标题'));
-        $grid->column('page_id', __('动态页面'));
+        $grid->column('page_id', __('动态页面'))->display(function($pageId) use ($pageService) {
+            return $pageService->getPageTitle($pageId);
+        });
         $grid->column('display', __('是否展示'))
             ->filter(valuesDisplay())
             ->select(valuesDisplay());
@@ -53,9 +55,11 @@ class NewsAdminController extends AdminController
     protected function detail($id)
     {
         $show = new Show(WebNews::findOrFail($id));
+        $pageService = new WebPageService();
+        $allPage = $pageService->listAllPage(2);
 
         $show->field('news_title', __('动态标题'));
-        $show->field('page_id', __('动态页面'));
+        $show->field('page_id', __('动态页面'))->using($allPage);
         $show->field('display', __('是否展示'))->using(valuesDisplay());;
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('创建时间'));
@@ -74,8 +78,11 @@ class NewsAdminController extends AdminController
 
         $pageService = new WebPageService();
         $allPage = $pageService->listAllPage(2);
+
         $form->text('news_title', __('动态标题'));
-        $form->select('page_id', __('页面'))->options($allPage)->rules('required');;
+        $form->select('page_id', __('页面'))
+            ->options($allPage)->rules('required')
+            ->help('新建新闻时，请先去【系统设置-->页面管理】中编辑新闻页面...');;;;
         $form->switch('display', __('是否显示'));
 
         return $form;

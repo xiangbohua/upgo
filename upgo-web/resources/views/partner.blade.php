@@ -21,9 +21,15 @@
                                     @foreach($partnerList as $index => $partnerItem)
                                         <li id="item_block_{{$index}}" class="item_block col-16 wow" style="animation-delay:.0s">
                                             <div class="content">
-                                                <a @if($partnerItem->defaultCaseId > 0) href="{{hCaseDetailPage($partnerItem->defaultCaseId)}}" @endif class="item_img" target="_blank" title="{{$partnerItem->title}}"  style="background-image:url({{hUrlImage($partnerItem->imageUrl)}})">
-                                                    <img src="{{hUrlImage($partnerItem->imageUrl)}}" width="225" height="110"/>
-                                                </a>
+                                                @if(!empty($partnerItem->partnerSite))
+                                                    <a href="{{$partnerItem->partnerSite}}" class="item_img" target="_blank" title="{{$partnerItem->title}}"  style="background-image:url({{hUrlImage($partnerItem->imageUrl)}})">
+                                                        <img src="{{hUrlImage($partnerItem->imageUrl)}}" width="225" height="110"/>
+                                                    </a>
+                                                @else
+                                                    <a @if($partnerItem->defaultCaseId > 0) href="{{hCaseDetailPage($partnerItem->defaultCaseId)}}" @endif class="item_img" target="_blank" title="{{$partnerItem->title}}"  style="background-image:url({{hUrlImage($partnerItem->imageUrl)}})">
+                                                        <img src="{{hUrlImage($partnerItem->imageUrl)}}" width="225" height="110"/>
+                                                    </a>
+                                                @endif
                                             </div>
                                         </li>
                                     @endforeach

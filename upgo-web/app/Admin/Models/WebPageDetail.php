@@ -26,7 +26,9 @@ class WebPageDetail extends Authenticatable
         'detail_title',
         'detail_desc',
         'display_index',
-        'text_position'
+        'text_position',
+        'title_left_right',
+        'text_left_right'
     ];
 
     /**
