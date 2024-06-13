@@ -108,7 +108,7 @@ class PagesAdminController extends AdminController
         $form->text('page_desc', __('页面描述'));
         $form->text('sub_title', __('页面副标题'));
         $form->image('banner', __('顶部banner'));
-        $form->select('page_type', __('页面类型'))->options(valuesPageType());
+        $form->select('page_type', __('页面类型'))->options(valuesPageType())->rules('required');
         $form->hasMany('WebPageDetail', '图片展示', function (Form\NestedForm $form2) {
             $form2->text('detail_title', '内容标题');
             $form2->select('title_left_right', __('标题居中'))
