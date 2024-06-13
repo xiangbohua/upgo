@@ -40,14 +40,16 @@
                             </div><!--wrapper-->
                             <div class="clear"></div>
                             <div id="pages">
-                                <a href="//www.toonsoon.com.cn/forum/id/10552/page/1/"  class="active">1</a>
-                                <a href="//www.toonsoon.com.cn/forum/id/10552/page/2/">2</a>
-                                <a href="//www.toonsoon.com.cn/forum/id/10552/page/3/">3</a>
-                                <a href="//www.toonsoon.com.cn/forum/id/10552/page/4/">4</a>
-                                <a href="//www.toonsoon.com.cn/forum/id/10552/page/5/">5</a>
-                                <span>...</span>
-                                <a href="//www.toonsoon.com.cn/forum/id/10552/page/6/">6</a>
-                                <a class="next" href="//www.toonsoon.com.cn/forum/id/10552/page/2/">&nbsp;<i class="fa fa-angle-right"></i></a>
+
+                                @if($current > 1)
+                                    <a class="prev" href="{{hNewsPage($current - 1)}}">&nbsp<i class="fa fa-angle-left"></i></a>
+                                @endif
+                                @for($pageIndex = 1; $pageIndex <= $totalPage; $pageIndex ++)
+                                    <a @if($current != $pageIndex) href="{{hNewsPage($pageIndex)}}" @endif @if($pageIndex == $current) class="active" @endif>{{$pageIndex}}</a>
+                                @endfor
+                                @if($totalPage > 1 && $current < $totalPage)
+                                    <a class="next" href="{{hNewsPage($current + 1)}}">&nbsp;<i class="fa fa-angle-right"></i></a>
+                                @endif
                             </div>
                         </div>
                         <div class="clear"></div>
