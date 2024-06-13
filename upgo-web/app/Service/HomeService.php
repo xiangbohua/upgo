@@ -31,7 +31,8 @@ class HomeService
         'qq_link'=>'qq地址',
         'weixi_qrcode_link'=>'微信二维码图片',
 
-        'show_numbers'=>'是否展示统计数字',
+        'show_numbers'=>'首页是否展示统计数字',
+        'show_partner'=>'首页是否展示合作伙伴',
 
         'for_years'=>'首页时间',
         'help_brands'=>'帮助品牌',

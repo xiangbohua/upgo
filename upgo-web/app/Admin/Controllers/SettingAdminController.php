@@ -79,6 +79,7 @@ class SettingAdminController extends AdminController
 //        $show->field('qq_link', __($homeSer->getSiteSettingDesc('qq_link')));
 //        $show->field('weixi_qrcode_link', __($homeSer->getSiteSettingDesc('weixi_qrcode_link')));
         $show->field('show_numbers', __($homeSer->getSiteSettingDesc('show_numbers')))->using(valuesDisplay());;
+        $show->field('show_partner', __($homeSer->getSiteSettingDesc('show_partner')))->using(valuesDisplay());;
         $show->field('for_years',  __($homeSer->getSiteSettingDesc('for_years')));
         $show->field('help_brands',  __($homeSer->getSiteSettingDesc('help_brands')));
         $show->field('category_beyond',  __($homeSer->getSiteSettingDesc('category_beyond')));
@@ -132,6 +133,7 @@ class SettingAdminController extends AdminController
 //        $form->text('weixi_qrcode_link', __($homeSer->getSiteSettingDesc('weixi_qrcode_link')))->default('');
 
         $form->switch('show_numbers', __($homeSer->getSiteSettingDesc('show_numbers')))->states(displaySwitch())->rules('required')->help('是否展示首页banner下方数字信息...');;
+        $form->switch('show_partner', __($homeSer->getSiteSettingDesc('show_partner')))->states(displaySwitch())->rules('required')->help('首页是否展示合作伙伴logo...');;
         $form->number('for_years',  __($homeSer->getSiteSettingDesc('for_years')))->rules('required')->required();
         $form->number('help_brands',  __($homeSer->getSiteSettingDesc('help_brands')))->rules('required')->required();
         $form->number('category_beyond',  __($homeSer->getSiteSettingDesc('category_beyond')))->rules('required')->required();

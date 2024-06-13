@@ -5,6 +5,12 @@
     src: url(fonts/HELVETICANEUELTPRO-THEX.OTF)
 }
 
+.case-cate-active {
+    color: #232323;
+    border-bottom: 1px solid #232323;
+    padding-bottom: 4px;
+}
+
 * {
     margin: 0;
     padding: 0

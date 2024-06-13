@@ -151,49 +151,51 @@
                         <div class="clear"></div>
                     </div>
                 </div><!--mlist-->
-                <div class="mlist imagelink module" style=" background-color:#FFFFFF;">
-                    <div class="bgmask"></div>
-                    <div class="module_container">
-                        <div class="container_hc">
-                            <div class="container_category wow one hide">
-                                <a href="/page/partner" class="active"><span>全部</span></a>
+                @if (!empty($show_partner))
+                    <div class="mlist imagelink module" style=" background-color:#FFFFFF;">
+                        <div class="bgmask"></div>
+                        <div class="module_container">
+                            <div class="container_hc">
+                                <div class="container_category wow one hide">
+                                    <a href="/page/partner" class="active"><span>全部</span></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="container_content">
-                            <div class="content_wrapper">
-                                <ul class="content_list row gutter">
-                                    @foreach($homePageInfo->partnerList as $partnerInfo)
-                                        <li id="item_block_{{$partnerInfo->index}}" class="item_block col-16 wow"
-                                            style="animation-delay:.0s">
-                                            <div class="content">
-                                                @if(!empty($partnerInfo->partnerSite))
-                                                    <a href="{{$partnerInfo->partnerSite}}" class="item_img"
-                                                       target="_blank"
-                                                       title="{{hUrlImage($partnerInfo->partnerName)}}"
-                                                       style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
-                                                        <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
-                                                    </a>
-                                                @else
-                                                    <a @if($partnerInfo->defaultCaseId > 0) href="{{hCaseDetailPage($partnerInfo->defaultCaseId)}}" @endif class="item_img"
-                                                       target="_blank"
-                                                       title="{{hUrlImage($partnerInfo->partnerName)}}"
-                                                       style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
-                                                        <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
-                                                    </a>
-                                                @endif
-                                            </div>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                                <a href="{{hCategoryPage(0)}}" class="more hide wow"
-                                   style="animation-delay:.5s">查看更多</a>
-                            </div><!--wrapper-->
+                            <div class="container_content">
+                                <div class="content_wrapper">
+                                    <ul class="content_list row gutter">
+                                        @foreach($homePageInfo->partnerList as $partnerInfo)
+                                            <li id="item_block_{{$partnerInfo->index}}" class="item_block col-16 wow"
+                                                style="animation-delay:.0s">
+                                                <div class="content">
+                                                    @if(!empty($partnerInfo->partnerSite))
+                                                        <a href="{{$partnerInfo->partnerSite}}" class="item_img"
+                                                           target="_blank"
+                                                           title="{{hUrlImage($partnerInfo->partnerName)}}"
+                                                           style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
+                                                            <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
+                                                        </a>
+                                                    @else
+                                                        <a @if($partnerInfo->defaultCaseId > 0) href="{{hCaseDetailPage($partnerInfo->defaultCaseId)}}" @endif class="item_img"
+                                                           target="_blank"
+                                                           title="{{hUrlImage($partnerInfo->partnerName)}}"
+                                                           style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
+                                                            <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
+                                                        </a>
+                                                    @endif
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                    <a href="{{hCategoryPage(0)}}" class="more hide wow"
+                                       style="animation-delay:.5s">查看更多</a>
+                                </div><!--wrapper-->
+                                <div class="clear"></div>
+                                <a href="/page/partner" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>
+                            </div>
                             <div class="clear"></div>
-                            <a href="/page/partner" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>
                         </div>
-                        <div class="clear"></div>
-                    </div>
-                </div><!--mlist-->
+                    </div><!--mlist-->
+                @endif
             </div><!--index-->
             <!--page-->
         </div>

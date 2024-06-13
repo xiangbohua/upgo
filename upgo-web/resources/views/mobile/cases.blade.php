@@ -14,13 +14,13 @@
                             <p class="title">CASE</p>
                         </div>
                         <div class="container_category wow" style="text-align: left">
-                            <a href="{{hCategoryPage(0)}}" class="active"><span>全部</span></a>
+                            <a href="{{hCategoryPage(0)}}"><span>全部</span></a>
                             @foreach ($cateList as $cateInfo)
-                                <a href="{{hCategoryPage($cateInfo->categoryId)}}"><span>{{$cateInfo->cateName}}</span></a>
+                                <a href="{{hCategoryPage($cateInfo->categoryId)}}" @if($cateInfo->categoryId == $currentCategory) class=".case-cate-active" @endif><span>{{$cateInfo->cateName}}</span></a>
                             @endforeach
                         </div>
                         <div class="container_content">
-                            <div class="content_wrapper ">
+                            <div class="content_wrapper" style="margin-left: 0; width: 100%">
                                 <ul class="content_list row gutter">
                                     @foreach($caseList as $index => $oneCase)
                                         <li id="item_block_$index" class="item_block col-50">

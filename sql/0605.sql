@@ -10,3 +10,9 @@ alter table web_site_setting add column `show_numbers` tinyint(2) NOT NULL DEFAU
 
 alter table web_page_detail add column  `title_left_right` tinyint(2) DEFAULT '0' after text_position;
 alter table web_page_detail add column  `text_left_right` tinyint(2) DEFAULT '0' after title_left_right;
+
+
+
+
+
+alter table web_site_setting add column show_partner tinyint(2) default 1 after show_numbers;

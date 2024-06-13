@@ -8,7 +8,7 @@
             <!--slider-->
             <div id="topSlider" class="mslider module">
                 <div class="module_container wide">
-                    <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 293px;">
+                    <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: auto;">
                             <ul class="content_list" id="swiper_content_list" current-display-index="0" data-slider-height="0" data-slider-auto="1" data-slider-mode="0" data-slider-pause="4" data-slider-ease="ease-out"
                                 data-slider-speed="0.5" style="height: 0px; width: 915%; position: relative; transition-timing-function: ease-out;
                                 transition-duration: 0.5s; transform: translate3d(0px, 0px, 0px);">
@@ -99,7 +99,7 @@
                     <div class="container_category wow">
                         <a href="{{hCategoryPage(0)}}"><span>全部</span></a>
                         @foreach ($homePageInfo->categoryList as $cateInfo)
-                            <a href="{{hCategoryPage($cateInfo->categoryId)}}"><span>{{$cateInfo->cateName}}</span></a>
+                            <a href="{{hCategoryPage($cateInfo->categoryId)}}" @if() @endif><span>{{$cateInfo->cateName}}</span></a>
                         @endforeach
                     </div>
                     <div class="container_content">
@@ -129,39 +129,42 @@
                     <div class="clear"></div>
                 </div>
             </div><!--mlist-->
-            <div class="mlist imagelink module" style=" background-color:#FFFFFF;">
-                <div class="bgmask"></div>
-                <div class="module_container">
-                    <div class="container_category wow one hide">
-                        <a href="partner" class="active"><span>全部</span></a>
-                    </div>
-                    <div class="container_content">
-                        <div class="content_wrapper">
-                            <ul class="content_list row gutter">
-                                @foreach($homePageInfo->partnerList as $key=>$partnerInfo)
-                                    <li id="item_block_{{$key}}" class="item_block col-50">
-                                        <div class="content">
-                                            @if(!empty($partnerInfo->partnerSite))
-                                                <a href="{{$partnerInfo->partnerSite}}" target="_blank" title="{{$partnerInfo->partnerName}}" style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
-                                                    <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
-                                                </a>
-                                            @else
-                                                <a @if (!empty($partnerInfo->defaultCaseId)) href="{{hCaseDetailPage($partnerInfo->defaultCaseId)}}" @endif class="item_img" target="_blank" title="{{$partnerInfo->partnerName}}" style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
-                                                    <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
-                                                </a>
-                                            @endif
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                            <a href="partner" class="more hide">查看更多</a>
-                        </div><!--wrapper-->
+            @if (!empty($show_partner))
+                <div class="mlist imagelink module" style=" background-color:#FFFFFF;">
+                    <div class="bgmask"></div>
+                    <div class="module_container">
+                        <div class="container_category wow one hide">
+                            <a href="partner" class="active"><span>全部</span></a>
+                        </div>
+                        <div class="container_content">
+                            <div class="content_wrapper">
+                                <ul class="content_list row gutter">
+                                    @foreach($homePageInfo->partnerList as $key=>$partnerInfo)
+                                        <li id="item_block_{{$key}}" class="item_block col-50">
+                                            <div class="content">
+                                                @if(!empty($partnerInfo->partnerSite))
+                                                    <a href="{{$partnerInfo->partnerSite}}" target="_blank" title="{{$partnerInfo->partnerName}}" style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
+                                                        <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
+                                                    </a>
+                                                @else
+                                                    <a @if (!empty($partnerInfo->defaultCaseId)) href="{{hCaseDetailPage($partnerInfo->defaultCaseId)}}" @endif class="item_img" target="_blank" title="{{$partnerInfo->partnerName}}" style="background-image:url({{hUrlImage($partnerInfo->imageUrl)}})">
+                                                        <img src="{{hUrlImage($partnerInfo->imageUrl)}}" width="225" height="110"/>
+                                                    </a>
+                                                @endif
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                                <a href="partner" class="more hide">查看更多</a>
+                            </div><!--wrapper-->
+                            <div class="clear"></div>
+                            <a href="partner" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>
+                        </div>
                         <div class="clear"></div>
-                        <a href="partner" class="more wow hide">MORE<i class="fa fa-angle-right"></i></a>
                     </div>
-                    <div class="clear"></div>
-                </div>
-            </div><!--mlist-->
+                </div><!--mlist-->
+            @endif
+
         </div><!--index-->
         <!--page-->
         @include('common.mobile.footer')
