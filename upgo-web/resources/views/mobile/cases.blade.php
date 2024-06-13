@@ -16,7 +16,7 @@
                         <div class="container_category wow" style="text-align: left">
                             <a href="{{hCategoryPage(0)}}"><span>全部</span></a>
                             @foreach ($cateList as $cateInfo)
-                                <a href="{{hCategoryPage($cateInfo->categoryId)}}" @if($cateInfo->categoryId == $currentCategory) class=".case-cate-active" @endif><span>{{$cateInfo->cateName}}</span></a>
+                                <a href="{{hCategoryPage($cateInfo->categoryId)}}" @if($cateInfo->categoryId == $currentCategory) class="case-cate-active" @endif><span>{{$cateInfo->cateName}}</span></a>
                             @endforeach
                         </div>
                         <div class="container_content">
