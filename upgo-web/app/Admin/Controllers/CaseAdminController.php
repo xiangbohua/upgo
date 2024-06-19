@@ -45,10 +45,10 @@ class CaseAdminController extends AdminController
 
         $grid->column('category_id', __('案例分类'))->filter($categoryList)->select($categoryList);
 
-        $grid->column('home_page_display', __('是否首页现实'))
+        $grid->column('home_page_display', __('是否首页显示'))
             ->filter(valuesDisplay())->select(valuesDisplay());
 
-        $grid->column('display', __('列表显示'))
+        $grid->column('display', __('列表是否显示'))
             ->filter(valuesDisplay())->select(valuesDisplay());
 
         $grid->column('display_index', __('展示顺序'))->sortable();
@@ -164,6 +164,8 @@ class CaseAdminController extends AdminController
             // 去掉`继续创建`checkbox
 //            $footer->disableCreatingCheck();
         });
+
+        
 
         $form->confirm('确定提交吗？');
         return $form;

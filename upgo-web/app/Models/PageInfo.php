@@ -7,9 +7,9 @@ class PageInfo
     public $title;
     public $subTitle;
     public $pageDesc;
-
     public $banner;
-
     public $details;
+    public $cover;
+    public $pageName;
 
 }

@@ -24,7 +24,7 @@
                                         <li id="item_block_0" class="item_block col-25 wow"  style="animation-delay:.0s; margin-bottom: 0px">
                                             <div class="content">
                                                 <a href="{{webPageUrl($newsItem->pageId)}}" class="item_img" target="_blank" style="background-image:url({{hUrlImage($newsItem->banner)}})">
-                                                    <img src="{{hUrlImage($newsItem->banner)}}"/>
+                                                    <img src="{{hUrlImage($newsItem->cover)}}"/>
                                                     <div class="item_img_mask"></div>
                                                 </a>
                                                 <div class="item_wrapper" style="padding: 0px">

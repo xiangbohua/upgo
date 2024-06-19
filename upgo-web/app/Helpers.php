@@ -199,7 +199,7 @@ function valuesDisplay() {
 
 
 function valuesPageType() {
-    return [1=>'设置页面', 2=>'动态页面'];
+    return [2=>'动态页面', 1=>'设置页面'];
 }
 
 function displaySwitch() {

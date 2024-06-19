@@ -21,7 +21,7 @@
                                         <div class="content">
                                             <a href="{{webPageUrl($newsItem->pageId)}}" target="_self">
                                                 <div class="item_img" style="background-image:url({{hUrlImage($newsItem->banner)}})">
-                                                    <img src="{{hUrlImage($newsItem->banner)}}" width="760" height="560"/>
+                                                    <img src="{{hUrlImage($newsItem->cover)}}" width="760" height="560"/>
                                                     <div class="item_date">{{$newsItem->year.$newsItem->date}}</div>
                                                 </div>
                                                 <div class="item_wrapper" style="padding: 2px">

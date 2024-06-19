@@ -11,7 +11,8 @@ use function PHPUnit\Framework\returnArgument;
 class PageService
 {
     public function getPageDetail($pageId) {
-        $pageInfo = DB::table('web_page')->where('id', $pageId)->select('id','page_title', 'banner','sub_title', 'page_desc')->first();
+        $pageInfo = DB::table('web_page')->where('id', $pageId)
+            ->select('id','page_title', 'banner', 'page_name', 'cover', 'sub_title', 'page_desc')->first();
 
         if (empty($pageInfo)) {
             return null;
@@ -38,6 +39,8 @@ class PageService
         }
 
         $pageResult = new PageInfo();
+        $pageResult->cover = $pageInfo->cover;
+        $pageResult->pageName = $pageInfo->page_name;
         $pageResult->title = $pageInfo->page_title;
         $pageResult->subTitle = $pageInfo->sub_title;
         $pageResult->pageDesc = $pageInfo->page_desc;

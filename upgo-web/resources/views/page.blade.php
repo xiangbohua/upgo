@@ -1,4 +1,4 @@
-@include('common.head', ['page_title'=>$pageInfo->title])
+@include('common.head', ['page_title'=>$pageInfo->pageName])
 <body class="child"><!--wrapper 整体宽度 container-->
 <div id="siteWrapper">
     @include('common.navi')

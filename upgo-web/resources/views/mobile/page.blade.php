@@ -1,4 +1,4 @@
-@include('common.mobile.head', ['page_title'=>$pageInfo->title])
+@include('common.mobile.head', ['page_title'=>$pageInfo->pageName])
 <body  class="child"><!--wrapper 整体宽度 container-->
 @include('common.mobile.navi')
 <div id="siteWrapper">

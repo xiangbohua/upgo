@@ -11,4 +11,6 @@ class NewsInfo
     public $pageDesc;
     public $year;
     public $date;
+    public $cover;
+    public $pageName;
 }

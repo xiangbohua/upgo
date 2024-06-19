@@ -19,7 +19,16 @@ class NewsService
 
         $query = DB::table('web_news as n')
             ->join('web_page as p', 'p.id', '=', 'n.page_id')
-            ->select('p.page_title', 'p.sub_title', 'p.page_desc', 'n.page_id', 'p.banner', 'n.created_at')
+            ->select(
+                'p.page_title',
+                        'p.sub_title',
+                        'p.page_desc',
+                        'n.page_id',
+                        'p.banner',
+                        'n.created_at',
+                'p.cover',
+                'p.page_name'
+            )
             ->where('n.display', 1);
 
         $news = $query->orderBy('n.created_at', 'desc')
@@ -38,6 +47,8 @@ class NewsService
         $result = [];
         foreach ($data as $dbItem) {
             $r = new NewsInfo();
+            $r->cover = $dbItem->cover;
+            $r->pageName = $dbItem->page_name;
             $r->title = $dbItem->page_title;
             $r->subTitle = $dbItem->sub_title;
             $r->pageDesc = $dbItem->page_desc;

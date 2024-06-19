@@ -24,8 +24,7 @@ class CaseService
         $page = !isset($page) || $page <= 0 ? 1 : $page;
 
         $query = DB::table('web_case_page')
-            ->where('display', 1)
-            ->where('home_page_display', 1);
+            ->where('display', 1);
         if (isset($cateId) && !is_null($cateId) && $cateId > 0) {
             $query->where('category_id', $cateId);
         }
@@ -82,8 +81,7 @@ class CaseService
 
     public function listCaseCount($cateId) {
         $query = DB::table('web_case_page')
-                ->where('display', 1)
-                ->where('home_page_display', 1);
+                ->where('display', 1);
 
         if (isset($cateId) && !is_null($cateId) && $cateId > 0) {
             $query->where('category_id', $cateId);
