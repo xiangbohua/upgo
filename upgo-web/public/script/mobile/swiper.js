@@ -53,7 +53,6 @@ $(document).ready(function() {
     var waitTimer = undefined;
     // 设置定时任务
     setInterval(function() {
-        return;
         if (waitTimer !== undefined) {
             if (waitingTime < 0) {
                 clearInterval(waitTimer);
