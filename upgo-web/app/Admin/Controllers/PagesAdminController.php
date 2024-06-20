@@ -48,7 +48,6 @@ class PagesAdminController extends AdminController
         $grid->actions(function ($actions) {
             $actions->add(new PreView());
         });
-        $grid->model()->orderBy('display_index');
         return $grid;
     }
 
