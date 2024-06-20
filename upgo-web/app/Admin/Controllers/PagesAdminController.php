@@ -34,7 +34,9 @@ class PagesAdminController extends AdminController
         $grid->column('page_title', __('页面标题'))->filter('like')->editable();
         $grid->column('page_desc', __('页面描述'))->editable();
         $grid->column('sub_title', __('页面副标题'))->editable();
-        $grid->column('page_type', __('页面类型'))->select(valuesPageType());
+        $grid->column('page_type', __('页面类型'))
+            ->select(valuesPageType())
+            ->filter(valuesPageType());
         $grid->column('cover', __('封面图'))->image();
         $grid->column('banner', __('顶部banner'))->image();
         $grid->column('created_at', __('添加时间'))->display(function ($time) {
@@ -48,6 +50,17 @@ class PagesAdminController extends AdminController
         $grid->actions(function ($actions) {
             $actions->add(new PreView());
         });
+
+        $grid->quickSearch(function ($model, $query) {
+            $model->where('page_name', 'like', "%{$query}%")
+                ->orWhere('page_title', 'like', "%{$query}%");
+        });
+
+        $grid->filter(function($filter){
+            // 去掉默认的id过滤器
+            $filter->disableIdFilter();
+        });
+
         return $grid;
     }
 

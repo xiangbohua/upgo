@@ -62,13 +62,13 @@ class HomeBannerAdminController extends AdminController
         $show = new Show(WebHomeBanner::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('title', __('Title'));
-        $show->field('case_id', __('Case id'));
-        $show->field('image_url', __('Image url'));
-        $show->field('display', __('Display'));
-        $show->field('display_index', __('Display index'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('title', __('标题'));
+        $show->field('case_id', __('关联案例'));
+        $show->field('image_url', __('banner图片'));
+        $show->field('display', __('是否展示'));
+        $show->field('display_index', __('展示顺序'));
+        $show->field('created_at', __('创建时间'));
+        $show->field('updated_at', __('修改时间'));
 
         return $show;
     }
@@ -92,7 +92,7 @@ class HomeBannerAdminController extends AdminController
 
 
         $form->text('title', __('标题'));
-        $form->select('case_id', __('关联案例'))->options($caseDrop);
+        $form->select('case_id', __('关联案例'))->options($caseDrop)->help("选择案例后，点击banner可以跳转到案例详情");
         $form->image('image_url', __('轮播图'))->required()->uniqueName();
         $form->switch('display', __('是否展示'))->options(displaySwitch());
         $form->number('display_index', __('展示顺序'))->min(1);

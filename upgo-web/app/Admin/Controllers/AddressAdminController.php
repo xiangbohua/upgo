@@ -27,11 +27,11 @@ class AddressAdminController extends AdminController
         $grid = new Grid(new WebContactAddress());
 
         $grid->column('id', __('Id'));
-        $grid->column('title_name', __('地址标题'));
-        $grid->column('title_hint', __('地址提示'));
-        $grid->column('detail_address', __('详细地址'));
-        $grid->column('contact_mobile', __('联系手机号'));
-        $grid->column('contact_chat', __('微信号'));
+        $grid->column('title_name', __('地址标题'))->help('地址名称...');
+        $grid->column('title_hint', __('地址提示'))->help('用于展示...');
+        $grid->column('detail_address', __('详细地址'))->help('用于展示...');
+        $grid->column('contact_mobile', __('联系手机号'))->help('用于展示...');
+        $grid->column('contact_chat', __('微信号'))->help('用于展示...');
         $grid->column('post_code', __('邮编'));
         $grid->column('display_image', __('图片展示'))->image();
         $grid->column('created_at', __('添加时间'))->display(function ($time) {

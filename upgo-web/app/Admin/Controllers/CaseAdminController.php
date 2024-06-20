@@ -78,6 +78,9 @@ class CaseAdminController extends AdminController
             $filter->like('sub_title', '附标题');
         });
 
+        $grid->quickSearch(function ($model, $query) {
+            $model->where('title', 'like', "%{$query}%");
+        });
         return $grid;
     }
 
@@ -141,13 +144,13 @@ class CaseAdminController extends AdminController
             $form->display = hDefault($form->display, 1);
         });
 
-        $form->text('title', __('标题'))->rules('required');
+        $form->text('title', __('标题'))->rules('required')->help('会在封面展示...');;
 //        $form->textarea('sub_title', __('案例副标题'))->rules('required');
-        $form->image('main_image_url', __('封面'))->rules('required')->uniqueName();
-        $form->select('category_id', __('案例分类'))->options($categoryList)->rules('required');
-        $form->switch('home_page_display', __('是否首页现实'))->states(displaySwitch())->rules('required');
-        $form->switch('display', __('列表显示'))->states(displaySwitch())->rules('required');
-        $form->number('display_index', __('展示顺序'))->min(1)->rules('required');
+        $form->image('main_image_url', __('封面'))->rules('required')->uniqueName()->help('封面图...');
+        $form->select('category_id', __('案例分类'))->options($categoryList)->rules('required')->help('没有确定分类可选全部...');
+        $form->switch('home_page_display', __('是否首页现实'))->states(displaySwitch())->rules('required')->help('是否在首页显示，不影响案例页面是否显示...');
+        $form->switch('display', __('列表显示'))->states(displaySwitch())->rules('required')->help('是否显示，不显示则首页和案例页面均不显示...');
+        $form->number('display_index', __('展示顺序'))->min(1)->rules('required')->help('顺序...');
         $form->hasMany('WebCasePageItem', '图片展示', function (Form\NestedForm $form) {
             $form->image('image_url', '图片')->uniqueName();
             $form->number('display_index', '展示顺序')->min(1);
@@ -172,8 +175,6 @@ class CaseAdminController extends AdminController
             $caseService = new CaseService();
             $caseService->reIndexCase($form->id, $form->display_index);
         });
-
-
         return $form;
     }
 

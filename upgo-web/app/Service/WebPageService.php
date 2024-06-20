@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class WebPageService
 {
-   public function getPageName($pageId) {
+   public function getPageTitle($pageId) {
        $title = DB::table('web_page')->where('id', $pageId)->value('page_name');
        if (empty($title)) {
            return '';

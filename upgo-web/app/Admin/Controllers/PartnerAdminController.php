@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Admin\Models\WebPartner;
 use App\Service\CaseService;
+use App\Service\PartnerService;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -27,7 +28,7 @@ class PartnerAdminController extends AdminController
     {
         $grid = new Grid(new WebPartner());
 
-        $grid->column('id', __('Id'))->sortable();
+//        $grid->column('id', __('Id'))->sortable();
         $grid->column('partner_name', __('伙伴名称'))
             ->filter('like')->editable();
         $grid->column('logo_url', __('Logo'))->image();
@@ -44,6 +45,11 @@ class PartnerAdminController extends AdminController
         $grid->column('updated_at', __('修改时间'))->display(function ($time) {
             return hFormatTime($time);
         });
+
+        $grid->quickSearch(function ($model, $query) {
+            $model->where('partner_name', 'like', "%{$query}%");
+        });
+        $grid->model()->orderBy('display_index');
 
         return $grid;
     }
@@ -90,8 +96,13 @@ class PartnerAdminController extends AdminController
         $form->switch('display', __('首页是否显示'))->states(displaySwitch())->rules('required');;
         $form->text('partner_site', __('伙伴官网(优先)'))->help('优先跳转到伙伴官网，地址请以http或者https开头...');
         $form->select('case_id', __('展示案例'))->options($caseService->listForDropDown())
-            ->help('输入伙伴官网后不再跳转到案例详情...');;;
+            ->help('输入伙伴官网后不再跳转到案例详情...');
 
+
+        $form->saved(function (Form $form) {
+            $caseService = new PartnerService();
+            $caseService->reIndexCase($form->id, $form->display_index);
+        });
         return $form;
     }
 

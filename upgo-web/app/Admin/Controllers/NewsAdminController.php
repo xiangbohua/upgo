@@ -49,6 +49,10 @@ class NewsAdminController extends AdminController
         $grid->actions(function ($actions) {
             $actions->add(new PreViewNew());
         });
+
+        $grid->quickSearch(function ($model, $query) {
+            $model->where('news_title', 'like', "%{$query}%");
+        });
         return $grid;
     }
 
@@ -89,9 +93,9 @@ class NewsAdminController extends AdminController
         $form->text('news_title', __('动态标题'));
         $form->select('page_id', __('页面'))
             ->options($allPage)->rules('required')
-            ->help('新建新闻时，请先去【系统设置-->页面管理】中编辑新闻页面...');;;;
+            ->help('新建新闻时，请先去【系统设置-->页面管理】中编辑新闻页面...');
         $form->switch('display', __('是否显示'));
-        $form->number('display_index', __('显示顺序'));
+        $form->number('display_index', __('显示顺序'))->help('选择后自动排序...');;
 
 
         $form->saved(function (Form $form) {
