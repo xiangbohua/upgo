@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Models\WebCategory;
+use App\Service\CategoryService;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -26,7 +27,7 @@ class CategoryAdminController extends AdminController
     {
         $grid = new Grid(new WebCategory());
 
-        $grid->column('id', __('Id'))->sortable();
+//        $grid->column('id', __('Id'))->sortable();
         $grid->column('cate_name', __('分类名称'))->filter('like');
         $grid->column('display_index', __('展示顺序'))->sortable();
         $grid->column('display', __('是否显示'))->filter(valuesDisplay())->select(valuesDisplay());
@@ -37,6 +38,7 @@ class CategoryAdminController extends AdminController
             return hFormatTime($time);
         });
 
+        $grid->model()->orderBy('display_index');
         $grid->disableExport();
 
         return $grid;
@@ -52,7 +54,6 @@ class CategoryAdminController extends AdminController
     {
         $show = new Show(WebCategory::findOrFail($id));
 
-        $show->field('id', __('Id'));
         $show->field('cate_name', __('分类名称'));
         $show->field('display_index', __('展示顺序'));
         $show->field('display', __('是否显示'))->using(valuesDisplay());
@@ -76,6 +77,12 @@ class CategoryAdminController extends AdminController
         $form->switch('display', __('是否展示'))->options(displaySwitch());
 
         $form->confirm('确定提交吗？');
+
+
+        $form->saved(function (Form $form) {
+            $caseService = new CategoryService();
+            $caseService->reIndexCase($form->id, $form->display_index);
+        });
         return $form;
     }
 }
