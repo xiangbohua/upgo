@@ -11,7 +11,7 @@
             <div class="content">
                 <div class="mlist project module" style="">
                     <div class="bgmask"></div>
-                    <div class="module_container wide" stype="background: linear-gradient(to bottom, #fff 4920px, #fff 4200px);">
+                    <div class="module_container wide" style="background: linear-gradient(to bottom, #fff 4920px, #fff 4200px);">
                         <div class="container_hc" style="background-color: #fff;">
                             <div class="container_header wow animated" style="visibility: visible;">
                                 <p class="title">CASE</p>
