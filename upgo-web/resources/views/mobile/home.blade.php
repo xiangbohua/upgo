@@ -14,10 +14,10 @@
                                 transition-duration: 0.5s; transform: translate3d(0px, 0px, 0px);">
                                 @foreach ($homePageInfo->bannerList as $banner)
                                     <li style="float: left; list-style: none; position: relative; width: 390px;">
-                                        <div class="item_bg image" data-thumb="" style="background-image:url({{hUrlImage($banner->imageUrl)}})">
+                                        <div class="item_bg image home_banner" data-thumb="" style="background-image:url({{hUrlImage($banner->imageUrl)}})">
                                             <img src="{{hUrlImage($banner->imageUrl)}}">
                                         </div>
-                                        <a href="@if(!$banner->onlyImage){{hCaseDetailPage($banner->caseInfoId)}} @endif"></a>
+                                        <a class="home_banner"  href="@if(!$banner->onlyImage){{hCaseDetailPage($banner->caseInfoId)}} @endif"></a>
                                         <div class="wrapper">
                                             <div class="description mc">
                                                 <p class="title ellipsis"></p>

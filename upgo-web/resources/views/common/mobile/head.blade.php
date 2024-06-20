@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="{{hUrlImage($site_logo)}}" />
     <link rel="stylesheet" type="text/css" href="{{hUrlAsset('css/mobile/lib.css')}}">
     <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('css/mobile/style.css')}}">
-    <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('css/mobile/8969.css')}}">
+    <link rel="stylesheet" type="text/css"  href="{{hUrlAsset('css/mobile/8968.css')}}">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="http://code.uemo.net/script/jquery-1.8.3.min.js"></script>
     <![endif]-->
