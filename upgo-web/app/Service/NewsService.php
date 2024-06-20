@@ -60,4 +60,23 @@ class NewsService
         }
         return $result;
     }
+
+    /**
+     * 重新排序
+     * @param $currentId
+     * @return void
+     */
+    public function reIndexCase($currentId, $newIndex) {
+        $record = DB::table('web_news')
+            ->orderBy('display_index', 'asc')
+            ->orderBy('updated_at', 'desc')
+            ->select('id', 'display_index')
+            ->get();
+
+        foreach ($record as $index => $rec) {
+            DB::table('web_news')
+                ->where('id', $rec->id)
+                ->update(['display_index'=>$index + 1]);
+        }
+    }
 }

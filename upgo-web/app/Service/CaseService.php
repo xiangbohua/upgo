@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Models\CaseInfo;
 use App\Models\CategoryInfo;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CaseService
 {
@@ -134,6 +135,26 @@ class CaseService
             'images'=>$images
         ];
     }
+
+    /**
+     * 重新排序
+     * @param $currentId
+     * @return void
+     */
+    public function reIndexCase($currentId, $newIndex) {
+        $record = DB::table('web_case_page')
+            ->orderBy('display_index', 'asc')
+            ->orderBy('updated_at', 'desc')
+            ->select('id', 'display_index')
+            ->get();
+
+        foreach ($record as $index => $rec) {
+            DB::table('web_case_page')
+                ->where('id', $rec->id)
+                ->update(['display_index'=>$index + 1]);
+        }
+    }
+
 
     private function convertFromDb($dbData) {
         $result = [];

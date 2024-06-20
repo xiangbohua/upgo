@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use App\Admin\Actions\Get\PreView;
 use App\Admin\Models\WebPage;
 use App\Admin\Models\WebServicePage;
+use App\Service\CaseService;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -28,7 +29,7 @@ class PagesAdminController extends AdminController
     {
         $grid = new Grid(new WebPage());
 
-        $grid->column('id', __('Id'))->sortable();
+//        $grid->column('id', __('Id'))->sortable();
         $grid->column('page_name', __('页面名称'))->filter('like')->editable();
         $grid->column('page_title', __('页面标题'))->filter('like')->editable();
         $grid->column('page_desc', __('页面描述'))->editable();
@@ -47,6 +48,7 @@ class PagesAdminController extends AdminController
         $grid->actions(function ($actions) {
             $actions->add(new PreView());
         });
+        $grid->model()->orderBy('display_index');
         return $grid;
     }
 

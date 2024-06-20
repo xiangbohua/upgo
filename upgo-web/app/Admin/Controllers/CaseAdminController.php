@@ -32,7 +32,7 @@ class CaseAdminController extends AdminController
         $categoryService = new CategoryService();
         $categoryList = $categoryService->getDropList(true, true);
 
-        $grid->column('id', __('ID'))->sortable()->width(80);
+//        $grid->column('id', __('ID'))->sortable()->width(80);
         $grid->column('title', __('标题'))->sortable()->display(function ($text) {
             return $text;
         })->filter('like')->editable();
@@ -59,6 +59,7 @@ class CaseAdminController extends AdminController
             return hFormatTime($time);
         });
 
+        $grid->model()->orderBy('display_index');
 //        $grid->paginate(5);
 
         $grid->disableExport();
@@ -165,9 +166,14 @@ class CaseAdminController extends AdminController
 //            $footer->disableCreatingCheck();
         });
 
-        
-
         $form->confirm('确定提交吗？');
+
+        $form->saved(function (Form $form) {
+            $caseService = new CaseService();
+            $caseService->reIndexCase($form->id, $form->display_index);
+        });
+
+
         return $form;
     }
 
