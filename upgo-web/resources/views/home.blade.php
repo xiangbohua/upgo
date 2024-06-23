@@ -17,7 +17,7 @@
                                     transition-timing-function: ease-out; transition-duration: 0.5s; transform: translate3d(0px, 0px, 0px);">
 
                                     @foreach ($homePageInfo->bannerList as $banner)
-                                        <li style="height: 835px; float: left; list-style: none; position: relative; width: 999px;" class="bx-clone">
+                                        <li style="height: 835px; float: left; list-style: none; position: relative; width: 100%;" class="bx-clone">
                                             <div class="item_bg image" data-thumb="" style="background-image:url({{hUrlImage($banner->imageUrl)}})">
                                                 <img src="{{hUrlImage($banner->imageUrl)}}">
                                             </div>

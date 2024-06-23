@@ -49,6 +49,7 @@ $(document).ready(function() {
     var waitTimer = undefined;
     // 设置定时任务
     setInterval(function() {
+        return;
         if (waitTimer !== undefined) {
             if (waitingTime < 0) {
                 clearInterval(waitTimer);
@@ -84,5 +85,34 @@ $(document).ready(function() {
         $('[data-slide-index]').removeClass('active');
         $('[progress-mask]').css('width', '100%');
     }
+
+
+
+    function resizeTopBanner(newHeight) {
+        $('#topSlider').height(newHeight);
+        $('.bx-viewport').height(newHeight);
+        $('#swiper_content_list').height(newHeight);
+        $('#swiper_content_list').find('li').height(newHeight);
+    }
+
+    let initHeight = $(window).height();
+    resizeTopBanner(initHeight);
+
+    let originWidth = $('#topSlider').width();
+    let originHeight = $('#topSlider').height();
+    window.addEventListener('resize', () => {
+        var newWidth = $('#topSlider').width();
+        var changeWidth = newWidth - originWidth;
+
+        var newHeight= originHeight +  changeWidth;
+        if (newHeight < 580) {
+            newHeight = 580;
+        }
+        if (newHeight > 1080) {
+            newHeight = 1080;
+        }
+        resizeTopBanner(newHeight);
+    })
+
 
 });
