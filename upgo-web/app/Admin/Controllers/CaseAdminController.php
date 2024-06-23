@@ -142,6 +142,10 @@ class CaseAdminController extends AdminController
             $form->home_page_display = hDefault($form->home_page_display, 1);
             $form->display = hDefault($form->display, 1);
             $form->display = hDefault($form->display, 1);
+
+            if ($form->main_image_url == null) {
+                $form->model()->forceFill(['main_image_url'=>'']);
+            }
         });
 
         $form->text('title', __('标题'))->rules('required')->help('会在封面展示...');;

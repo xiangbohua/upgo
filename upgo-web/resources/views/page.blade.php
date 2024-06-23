@@ -3,9 +3,11 @@
 <div id="siteWrapper">
     @include('common.navi')
     <div id="sitecontent">
-        <div id="banner">
-            <img src="{{hUrlImage($pageInfo->banner)}}">
-        </div>
+        @if(!empty($pageInfo->banner))
+            <div id="banner">
+                <img src="{{hUrlImage($pageInfo->banner)}}">
+            </div>
+        @endif
         <!--page-->
         <div class="npagePage post">
             <div class="content">

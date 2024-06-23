@@ -10,6 +10,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Illuminate\Support\Facades\Log;
 
 class PagesAdminController extends AdminController
 {
@@ -120,10 +121,17 @@ class PagesAdminController extends AdminController
     {
         $form = new Form(new WebPage());
 
-        $form->saving(function ($form) {
+
+        $form->saving(function (Form $form) {
            $form->page_title = hDefault($form->page_title, '');
            $form->page_desc = hDefault($form->page_desc, '');
            $form->sbu_title = hDefault($form->sbu_title, '');
+           if ($form->banner == null) {
+               $form->model()->forceFill(['banner'=>'']);
+           }
+           if ($form->cover == null) {
+               $form->model()->forceFill(['cover'=>'']);
+           }
         });
         $form->text('page_name', __('页面名称'))->rules('required')->help("页面名称，不再详情页显示，主要用于页面选择项...");
         $form->text('page_title', __('页面标题'))->help("页面标题，页面顶部的大号自提，动态页面可填");
@@ -150,6 +158,9 @@ class PagesAdminController extends AdminController
             $form2->switch('text_position', __('文字位置'))->states(positionSwitch())->rules('required');
         });
 
+        $form->saved(function ($form){
+
+        });
         return $form;
     }
 }
