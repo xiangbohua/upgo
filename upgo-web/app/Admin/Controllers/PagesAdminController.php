@@ -120,25 +120,17 @@ class PagesAdminController extends AdminController
     protected function form()
     {
         $form = new Form(new WebPage());
-
-
         $form->saving(function (Form $form) {
            $form->page_title = hDefault($form->page_title, '');
            $form->page_desc = hDefault($form->page_desc, '');
            $form->sbu_title = hDefault($form->sbu_title, '');
-           if ($form->banner == null) {
-               $form->model()->forceFill(['banner'=>'']);
-           }
-           if ($form->cover == null) {
-               $form->model()->forceFill(['cover'=>'']);
-           }
         });
         $form->text('page_name', __('页面名称'))->rules('required')->help("页面名称，不再详情页显示，主要用于页面选择项...");
         $form->text('page_title', __('页面标题'))->help("页面标题，页面顶部的大号自提，动态页面可填");
         $form->text('page_desc', __('页面描述'))->help("页面最顶部的描述，小号字体，可不填");
         $form->text('sub_title', __('页面副标题'))->help("页面副标题，可不填...");
-        $form->image('banner', __('顶部banner'))->help("页面详情的banner，顶部长图，可不填...");
-        $form->image('cover', __('页面封面'))->help("缩略图展示使用...");
+        $form->image('cover', __('页面封面'))->help("缩略图展示使用...")->removable();
+        $form->image('banner', __('顶部banner'))->help("页面详情的banner，顶部长图，可不填...")->removable();
         $form->select('page_type', __('页面类型'))->options(valuesPageType())->rules('required')->help("动态页面：先编辑在添加，在这里添加页面，然后去动态管理界面添加；设置页面：关于、服务选择");
 
         $form->hasMany('WebPageDetail', '图片展示', function (Form\NestedForm $form2) {

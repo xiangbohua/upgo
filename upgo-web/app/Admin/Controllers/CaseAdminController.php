@@ -142,15 +142,11 @@ class CaseAdminController extends AdminController
             $form->home_page_display = hDefault($form->home_page_display, 1);
             $form->display = hDefault($form->display, 1);
             $form->display = hDefault($form->display, 1);
-
-            if ($form->main_image_url == null) {
-                $form->model()->forceFill(['main_image_url'=>'']);
-            }
         });
 
         $form->text('title', __('标题'))->rules('required')->help('会在封面展示...');;
 //        $form->textarea('sub_title', __('案例副标题'))->rules('required');
-        $form->image('main_image_url', __('封面'))->rules('required')->uniqueName()->help('封面图...');
+        $form->image('main_image_url', __('封面'))->rules('required')->uniqueName()->help('封面图...')->removable();
         $form->select('category_id', __('案例分类'))->options($categoryList)->rules('required')->help('没有确定分类可选全部...');
         $form->switch('home_page_display', __('是否首页现实'))->states(displaySwitch())->rules('required')->help('是否在首页显示，不影响案例页面是否显示...');
         $form->switch('display', __('列表显示'))->states(displaySwitch())->rules('required')->help('是否显示，不显示则首页和案例页面均不显示...');
