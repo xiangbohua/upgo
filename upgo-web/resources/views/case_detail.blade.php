@@ -20,7 +20,7 @@
                                         </div>
                                     </div>
                                     <div class="postbody">
-                                        <div class="module">
+                                        <div class="module" style="background-color: #fff;">
                                             <div class="module_container">
                                                 @foreach($images as $url)
                                                     <div class="richtext">

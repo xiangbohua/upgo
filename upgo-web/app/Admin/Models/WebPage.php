@@ -23,7 +23,10 @@ class WebPage extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'page_type'
+        'page_type',
+        'page_title',
+        'banner',
+        'cover'
     ];
 
     /**
