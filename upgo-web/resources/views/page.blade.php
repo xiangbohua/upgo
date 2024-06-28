@@ -4,9 +4,9 @@
     @include('common.navi')
     <div id="sitecontent">
         @if(!empty($pageInfo->banner))
-            <div id="banner">
-                <img src="{{hUrlImage($pageInfo->banner)}}">
-            </div>
+{{--            <div id="banner">--}}
+{{--                <img src="{{hUrlImage($pageInfo->banner)}}">--}}
+{{--            </div>--}}
         @endif
         <!--page-->
         <div class="npagePage post">
