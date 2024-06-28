@@ -27,9 +27,9 @@
                                             <div class="module_container" style="max-width:100%">
                                                 <div class="richtext">
                                                     @if(!empty($pageInfo->banner))
-                                                        <p>
-                                                            <img alt="" style="width: 100%" src="{{hUrlImage($pageInfo->banner)}}"/>
-                                                        </p>
+{{--                                                        <p>--}}
+{{--                                                            <img alt="" style="width: 100%" src="{{hUrlImage($pageInfo->banner)}}"/>--}}
+{{--                                                        </p>--}}
                                                     @endif
                                                     @foreach($pageInfo->details as $detail)
                                                         @if(!empty($detail->detail_title) && $detail->text_position == 1)
