@@ -38,6 +38,8 @@ class PageService
             $detail[] = $od;
         }
 
+        Log::info("Image:" . json_encode($detail));
+
         $pageResult = new PageInfo();
         $pageResult->cover = $pageInfo->cover;
         $pageResult->pageName = $pageInfo->page_name;
