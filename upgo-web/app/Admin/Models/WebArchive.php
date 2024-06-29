@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class WebNews extends Authenticatable
+class WebArchive extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'web_news';
+    protected $table = 'web_archive';
 
     /**
      * The attributes that are mass assignable.

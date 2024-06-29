@@ -27,6 +27,11 @@ Route::group([
     $router->resource('about', 'AboutAdminController');
     $router->resource('pages', 'PagesAdminController');
     $router->resource('news', 'NewsAdminController');
+    $router->resource('archive', 'WebArchiveAdminController');
+
+
+//    Route::get('/archive', 'WebArchiveAdminController@listArchive');
+
 
     Route::get('/case/detail/{caseId}', 'CaseAdminController@editImages');
     Route::get('/service/detail/{serviceId}', 'CaseAdminController@editImages');

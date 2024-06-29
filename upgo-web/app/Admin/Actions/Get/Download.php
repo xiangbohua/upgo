@@ -12,6 +12,8 @@ class Download extends RowAction
     public function handle(Model $model)
     {
         // $model ...
+        $archiveCode = $model->archiveCode;
+
 
         return $this->response()->success('Success message.')->refresh();
     }
