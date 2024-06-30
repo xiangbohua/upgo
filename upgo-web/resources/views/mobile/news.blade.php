@@ -20,7 +20,7 @@
                                     <li id="item_block_0" class="item_block col-50" style="margin-bottom: 10px">
                                         <div class="content">
                                             <a href="{{webPageUrl($newsItem->pageId)}}" target="_self">
-                                                <div class="item_img" style="background-image:url({{hUrlImage($newsItem->banner)}})">
+                                                <div class="item_img" style="background-image:url({{hUrlImage($newsItem->cover)}})">
                                                     <img src="{{hUrlImage($newsItem->cover)}}" width="760" height="560"/>
                                                     <div class="item_date">{{$newsItem->year.$newsItem->date}}</div>
                                                 </div>
